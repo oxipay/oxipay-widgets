@@ -5,12 +5,18 @@ cd /to/this/directory
 npm install
 npm run build
 ```
-This will result in a folder entitled 'dist' and the following files will be created.
+This will result in a folder entitled 'widgets' and the following files will be created.
 
 - register-interest-large.js
 - register-interest-large.map.js
 - register-interest-small.js
 - register-interest-small.map.js
+- more-info-small.js
+- more-info-small.map.js
+- more-info-large.js
+- more-info-large.map.js
+- price-info.js
+- price-info.map.js
 
 ### Dependencies
 This widget builder uses the following key technologies:
@@ -26,11 +32,19 @@ This widget builder uses the following key technologies:
 In the location you require the banner, use the following markup:
 
 ```HTML
-<!-- Small -->
+<!-- Register Interest Small -->
 <script id="oxipay-banner" src="register-interest-small.js"></script>
 
-<!-- Large -->
+<!-- Register Interest Large -->
 <script id="oxipay-banner" src="register-interest-large.js"></script>
-```
 
+<!-- Price Info -->
+<script id="oxipay-banner" src="price-info.js?productPrice=0"></script>
+
+ <!-- More Info Large-->
+ <script id='oxipay-banner' src="more-info-large.js"></script>
+
+ <!-- More Info Small-->
+ <script id='oxipay-banner' src="more-info-small.js"></script>
+```
 The script will bring in all of its CSS and dependencies, and register the button click events
