@@ -20,7 +20,7 @@ import * as jq from 'jquery';
     var roundedDownProductPrice = Math.floor( productPriceDividedByFour * Math.pow(10, 2) ) / Math.pow(10, 2) ;
 
     const template = `<a id="oxipay-tag-02" href="#${Config.infoModalId}">
-            <p>or only 4 payments of $${roundedDownProductPrice} by</p> <img alt="Oxipay" src="${Config.baseContentUrl}/content/images/oxipay.svg" /> <span>More info</span>
+            <p>or only 4 payments of $${roundedDownProductPrice.toFixed(2)} by</p> <img alt="Oxipay" src="${Config.baseContentUrl}/content/images/oxipay.svg" /> <span>More info</span>
         </a>`;
 
     const widget = new ModalInjector($);
