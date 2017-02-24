@@ -13,7 +13,7 @@ var jq = require("jquery");
     }
     var productPriceDividedByFour = productPrice / 4;
     var roundedDownProductPrice = Math.floor(productPriceDividedByFour * Math.pow(10, 2)) / Math.pow(10, 2);
-    var template = "<a id=\"oxipay-tag-02\" href=\"#" + config_1.Config.infoModalId + "\">\n            <p>or only 4 payments of $" + roundedDownProductPrice.toFixed(2) + " by</p> <img alt=\"Oxipay\" src=\"" + config_1.Config.baseContentUrl + "/content/images/oxipay.svg\" /> <span>More info</span>\n        </a>";
+    var template = "<a id=\"oxipay-tag-02\" href=\"#" + config_1.Config.infoModalId + "\">\n            <p>or 4 payments of <b>$" + roundedDownProductPrice.toFixed(2) + "</b></p><p>Interest & fee free with <span id=\"oxipay-img\"></span></p>\n        </a><br>";
     var widget = new modal_injector_1.ModalInjector($);
-    widget.injectBanner(template, config_1.Config.moreInfoUrl);
+    widget.injectBanner(template, config_1.Config.priceInfoUrl);
 })(jq);

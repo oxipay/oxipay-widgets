@@ -17,14 +17,15 @@ import * as jq from 'jquery';
     }
 
     var productPriceDividedByFour = productPrice / 4;
+    //Banking Rounding
     var roundedDownProductPrice = Math.floor( productPriceDividedByFour * Math.pow(10, 2) ) / Math.pow(10, 2) ;
 
     const template = `<a id="oxipay-tag-02" href="#${Config.infoModalId}">
-            <p>or only 4 payments of $${roundedDownProductPrice.toFixed(2)} by</p> <img alt="Oxipay" src="${Config.baseContentUrl}/content/images/oxipay.svg" /> <span>More info</span>
-        </a>`;
+            <p>or 4 payments of <b>$${roundedDownProductPrice.toFixed(2)}</b></p><p>Interest & fee free with <span id="oxipay-img"></span></p>
+        </a><br>`;
 
     const widget = new ModalInjector($);
-    widget.injectBanner(template, Config.moreInfoUrl);
+    widget.injectBanner(template, Config.priceInfoUrl);
 
 
 

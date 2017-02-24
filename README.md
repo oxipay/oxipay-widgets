@@ -48,3 +48,5 @@ In the location you require the banner, use the following markup:
  <script id='oxipay-banner' src="more-info-small.js"></script>
 ```
 The script will bring in all of its CSS and dependencies, and register the button click events
+Guide: Installation guide is located at [http://docs.oxipay.com.au/](http://docs.oxipay.com.au/)
+Note: All of the views for widgets are located at main Oxipay Website

@@ -136,45 +136,40 @@ div[id^="oxipay-modal-"] {
 #oxipay-tag-01:hover span {
     text-decoration:underline;
 }
-
-#oxipay-tag-02 {
-    font-family: 'AvenirLTStd-Medium', 'arial', sans-serif;
-    background: #252525;
-    color: white !important;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    padding: 10px;
-    display: block;
-    overflow: hidden;
-    text-decoration:none;
-    max-width: 300px;
-    min-height: 10%;
-
-}
-@media only screen and (min-width: 300px) and (max-width: 768px){
-  #oxipay-tag-02{
-      max-width: 100%;
-  }
-}
 #oxipay-tag-01 p {
     line-height: 20px;
     margin: 0;
     color: white !important;
     float:left;
 }
+
+#oxipay-tag-02:hover {
+  text-decoration: none !important;
+}
+#oxipay-tag-02 {
+    font-family: AvenirLTStd-Medium,arial,sans-serif;
+    font-size:14px;
+    color: #3d4246 !important;
+    text-decoration: none !important;
+    display: block;
+    border-bottom: none !important;
+    box-shadow: none !important;
+    overflow: hidden;
+}
+
 #oxipay-tag-02 img {
-    height: 20px;
-    margin: 5px;
-
+    height: 16px !important;
+    display: inline !important;
+    margin-bottom: -4px !important;
 }
-#oxipay-tag-02 span {
-    float: right;
-    color: white !important;
-    height: 10px;
-    line-height: 20px;
-    margin: 5px;
+#oxipay-img{
+  background-image: url("https://images.oxipay.com.au/content/images/oxipay.svg");
+  padding: 28px;
+  margin-left: 3px;
+  background-repeat: no-repeat;
+  position: relative;
+  top: 30px;
 }
-
-#oxipay-tag-02:hover span {
-    text-decoration:underline;
+#oxipay-tag-02 > p:nth-child(2){
+  margin-top: -10px;
 }
