@@ -38,7 +38,7 @@ export class ModalInjector {
     private injectModal(url: string): void {
 
         let modalId = this.getModalId(url);
-        
+
         const bodyTag = 'body';
         const modalDiv =
             `<div id='${modalId}' class='remodal' data-remodal-id='${modalId}'>
@@ -54,12 +54,10 @@ export class ModalInjector {
         let modalId = '';
         if(url.indexOf('signup') > 0)
             modalId = Config.signupModalId;
+        else if (url.indexOf('priceInfo') > 0)
+            modalId = Config.priceInfoModalId;
         else
             modalId = Config.infoModalId;
-
         return modalId;
-    }    
+    }
 }
-
-
-

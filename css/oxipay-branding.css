@@ -163,13 +163,26 @@ div[id^="oxipay-modal-"] {
     margin-bottom: -4px !important;
 }
 #oxipay-img{
-  background-image: url("https://images.oxipay.com.au/content/images/oxipay.svg");
+  background-image: url("https://oxipay.com.au/content/img/oxipay-logo-orange.svg");
   padding: 28px;
   margin-left: 3px;
   background-repeat: no-repeat;
   position: relative;
-  top: 30px;
+  top: 29px;
 }
+
+@media only screen and (min-width: 320px) and (max-width:720px) {
+  #oxipay-img{
+  top: 26px;
+  }
+}
+
 #oxipay-tag-02 > p:nth-child(2){
   margin-top: -10px;
+}
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+     /* IE10+ CSS styles go here */
+     #oxipay-img{
+     top: 0px;
+     }
 }
