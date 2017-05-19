@@ -123,8 +123,8 @@ div[id^="oxipay-modal-"] {
 }
 #oxipay-tag-01 img {
     height: 20px;
-    margin: 5px;
-
+    margin-left: 5px;
+    margin-top: 1px;
 }
 #oxipay-tag-01 span {
     float: right;

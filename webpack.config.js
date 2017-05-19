@@ -10,7 +10,7 @@ module.exports = {
         "price-info": "./price-info.ts"
     },
     output: {
-        path: path.join(__dirname, "../widgets"),
+        path: path.join(__dirname, "widgets"),
         filename: "[name].js"
     },
     resolve: {
