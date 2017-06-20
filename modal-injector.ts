@@ -52,9 +52,9 @@ export class ModalInjector {
 
     private getModalId(url: string): string {
         let modalId = '';
-        if(url.indexOf('signup') > 0)
+        if(url.indexOf('Signup') > 0)
             modalId = Config.signupModalId;
-        else if (url.indexOf('priceInfo') > 0)
+        else if (url.indexOf('PriceInfo') > 0)
             modalId = Config.priceInfoModalId;
         else
             modalId = Config.infoModalId;

@@ -6,7 +6,7 @@ import * as jq from 'jquery';
         let template =
             `<a id="oxipay-banner-01" href="#${Config.signupModalId}">
             <div class="logo">
-                <img alt="Oxipay" src="${Config.baseContentUrl}/content/images/oxipay.svg" />
+                <img alt="Oxipay" src="${Config.baseContentUrl}/content/images/logo-orange.svg" />
             </div>
             <div class="text">
                 <h3>Pay the easier way.</h3>
@@ -14,7 +14,7 @@ import * as jq from 'jquery';
             </div>
             <div class="button">
                 <p class="info">More info</p>
-            </div>  
+            </div>
         </a>`;
 
         const widget = new ModalInjector($);

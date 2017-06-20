@@ -1,7 +1,7 @@
 ///<reference path="./typings/jquery/jquery.d.ts"/>
 ///<reference path="./typings/oxipay.d.ts"/>
 "use strict";
-var config_1 = require('./config');
+var config_1 = require("./config");
 require('jquery');
 require('remodal');
 require('./node_modules/remodal/dist/remodal.css');
@@ -38,8 +38,10 @@ var ModalInjector = (function () {
     };
     ModalInjector.prototype.getModalId = function (url) {
         var modalId = '';
-        if (url.indexOf('signup') > 0)
+        if (url.indexOf('Signup') > 0)
             modalId = config_1.Config.signupModalId;
+        else if (url.indexOf('PriceInfo') > 0)
+            modalId = config_1.Config.priceInfoModalId;
         else
             modalId = config_1.Config.infoModalId;
         return modalId;

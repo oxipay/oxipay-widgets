@@ -12,8 +12,9 @@ var jq = require("jquery");
         productPrice = 0;
     }
     var productPriceDividedByFour = productPrice / 4;
+    //Banking Rounding
     var roundedDownProductPrice = Math.floor(productPriceDividedByFour * Math.pow(10, 2)) / Math.pow(10, 2);
-    var template = "<a id=\"oxipay-tag-02\" href=\"#" + config_1.Config.infoModalId + "\">\n            <p>or 4 payments of <b>$" + roundedDownProductPrice.toFixed(2) + "</b></p><p>Interest & fee free with <span id=\"oxipay-img\"></span></p>\n        </a><br>";
+    var template = "<a id=\"oxipay-tag-02\" href=\"#" + config_1.Config.priceInfoModalId + "\">\n            <p>or 4 payments of <b>$" + roundedDownProductPrice.toFixed(2) + "</b></p><p>Interest & fee free with <span id=\"oxipay-img\"></span></p>\n        </a><br>";
     var widget = new modal_injector_1.ModalInjector($);
     widget.injectBanner(template, config_1.Config.priceInfoUrl);
 })(jq);
