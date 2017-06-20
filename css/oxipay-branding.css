@@ -131,7 +131,7 @@ div[id^="oxipay-modal-"] {
     float: right;
     color: white;
     height: 20px;
-    line-height: 18px;
+    line-height: 20px;
     margin: 5px;
 }
 #oxipay-tag-01:hover span {
