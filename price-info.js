@@ -4,9 +4,12 @@ var config_1 = require("./config");
 var jq = require("jquery");
 (function ($) {
     var productPrice;
-    var scriptTag = document.getElementsByTagName('script');
-    var scriptIndex = scriptTag[scriptTag.length - 1];
-    var queryProductPrice = scriptIndex.src.replace(/^[^\?]+\??/, '').substring(13);
+    var currentScript = document.currentScript || (function () {
+        var scripts = document.getElementsByTagName('script');
+        return scripts[scripts.length - 1];
+    })();
+    var value = currentScript.attributes.getNamedItem("src").value;
+    var queryProductPrice = value.replace(/^[^\?]+\??/, '').substring(13);
     productPrice = parseFloat(queryProductPrice);
     if (!productPrice) {
         productPrice = 0;

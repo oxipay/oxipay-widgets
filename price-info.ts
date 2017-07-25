@@ -5,10 +5,14 @@ import * as jq from 'jquery';
 (($: JQueryStatic) => {
 
     var productPrice: number;
-    var scriptTag = document.getElementsByTagName('script');
-    var scriptIndex  = scriptTag[scriptTag.length - 1];
+    var currentScript = document.currentScript || (function() {
+      var scripts = document.getElementsByTagName('script');
+      return scripts[scripts.length - 1];
+    })();
+    
+    var value = currentScript.attributes.getNamedItem("src").value;
 
-    var queryProductPrice = scriptIndex.src.replace(/^[^\?]+\??/, '').substring(13);
+    var queryProductPrice = value.replace(/^[^\?]+\??/, '').substring(13);
 
     productPrice = parseFloat(queryProductPrice);
 
