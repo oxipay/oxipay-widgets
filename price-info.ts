@@ -5,12 +5,21 @@ import * as jq from 'jquery';
 (($: JQueryStatic) => {
 
     var productPrice: number;
-    var currentScript = document.currentScript || (function() {
-      var scripts = document.getElementsByTagName('script');
-      return scripts[scripts.length - 1];
-    })();
-    
-    var value = currentScript.attributes.getNamedItem("src").value;
+    var value: string;
+    var currentElement = document.getElementById('oxipay-price-info');
+    if(currentElement)
+    {
+      value = currentElement.attributes.getNamedItem("src").value;
+    }
+    else{
+      var currentScript = document.currentScript || (function() {
+        var scripts = document.getElementsByTagName('script');
+        return scripts[scripts.length - 1];
+      })();
+
+     value = currentScript.attributes.getNamedItem("src").value;
+    }
+
 
     var queryProductPrice = value.replace(/^[^\?]+\??/, '').substring(13);
 

@@ -4,11 +4,18 @@ var config_1 = require("./config");
 var jq = require("jquery");
 (function ($) {
     var productPrice;
-    var currentScript = document.currentScript || (function () {
-        var scripts = document.getElementsByTagName('script');
-        return scripts[scripts.length - 1];
-    })();
-    var value = currentScript.attributes.getNamedItem("src").value;
+    var value;
+    var currentElement = document.getElementById('oxipay-price-info');
+    if (currentElement) {
+        value = currentElement.attributes.getNamedItem("src").value;
+    }
+    else {
+        var currentScript = document.currentScript || (function () {
+            var scripts = document.getElementsByTagName('script');
+            return scripts[scripts.length - 1];
+        })();
+        value = currentScript.attributes.getNamedItem("src").value;
+    }
     var queryProductPrice = value.replace(/^[^\?]+\??/, '').substring(13);
     productPrice = parseFloat(queryProductPrice);
     if (!productPrice) {
