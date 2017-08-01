@@ -4,8 +4,8 @@
     public static infoModalId = 'oxipay-modal-info';
     public static priceInfoModalId = 'oxipay-modal-price-info';
     public static scriptId = 'script[id^=oxipay-banner]';
-    public static moreInfoUrl = 'http://widgets.oxipay.co.nz/content/html/ExternalModal.html';
-    public static registerInterestUrl = 'http://widgets.oxipay.co.nz/content/html/Signup.html';
-    public static baseContentUrl = 'http://images.oxipay.com.au';
-    public static priceInfoUrl = 'http://widgets.oxipay.co.nz/content/html/PriceInfo.html';
+    public static moreInfoUrl = 'https://widgets.oxipay.co.nz/content/html/ExternalModal.html';
+    public static registerInterestUrl = 'https://widgets.oxipay.co.nz/content/html/Signup.html';
+    public static baseContentUrl = 'https://images.oxipay.com.au';
+    public static priceInfoUrl = 'https://widgets.oxipay.co.nz/content/html/PriceInfo.html';
 }
