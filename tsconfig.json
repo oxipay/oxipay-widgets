@@ -9,13 +9,19 @@
     "jquery": [ "node_modules/jquery/dist/jquery" ]
   },
   "files": [
-    "./modal-injector.ts",
-    "./register-interest-large.ts",
-    "./register-interest-small.ts",
-    "./more-info-large.ts",
-    "./more-info-small.ts",
-    "./price-info.ts",
-    "./config.ts"
+    "./src/nz/modal-injector.ts",  
+    "./src/nz/more-info-large.ts",
+    "./src/nz/more-info-small.ts",
+    "./src/nz/price-info.ts",
+    "./src/nz/config.ts",
+    
+    "./src/aus/modal-injector.ts",
+    "./src/aus/register-interest-small.ts",
+    "./src/aus/register-interest-large.ts",
+    "./src/aus/more-info-large.ts",
+    "./src/aus/more-info-small.ts",
+    "./src/aus/price-info.ts",
+    "./src/aus/config.ts"
   ],
   "compileOnSave": true
 }

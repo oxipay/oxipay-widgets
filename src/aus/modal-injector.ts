@@ -1,13 +1,13 @@
-﻿///<reference path="./typings/jquery/jquery.d.ts"/>
-///<reference path="./typings/oxipay.d.ts"/>
+﻿///<reference path="../../typings/jquery/jquery.d.ts"/>
+///<reference path="../../typings/oxipay.d.ts"/>
 
 import { Config } from './config';
 
 require('jquery');
 require('remodal');
-require('./node_modules/remodal/dist/remodal.css');
-require('./node_modules/remodal/dist/remodal-default-theme.css');
-require('./css/oxipay-branding.css');
+require('../../node_modules/remodal/dist/remodal.css');
+require('../../node_modules/remodal/dist/remodal-default-theme.css');
+require('../../css/oxipay-branding.css');
 
 export class ModalInjector {
     constructor(private jQuery: JQueryStatic) { }
