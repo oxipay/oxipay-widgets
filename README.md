@@ -5,8 +5,26 @@ cd /to/this/directory
 npm install
 npm run build
 ```
-This will result in a folder entitled 'widgets' and the following files will be created.
+This will result in a folder structure as build output like following :
 
+.
+ 
+* [au](./dir2)
+    * [Content](./dir2)
+        * [fonts](./dir2)
+        * [html](./dir2)
+        * [js](./dir2)
+        * [scripts](./dir2)
+        * [styles](./dir2)
+* [nz](./dir2)
+    * [Content](./dir2)
+        * [fonts](./dir2)
+        * [html](./dir2)
+        * [js](./dir2)
+        * [scripts](./dir2)
+        * [styles](./dir2)
+
+scripts folder will contains following files:
 - register-interest-large.js
 - register-interest-large.map.js
 - register-interest-small.js
