@@ -12,15 +12,11 @@ build: off
 on_success:
 - cmd: npm run build
 - ps: |
-    Write-Host "Branch is '$env:APPVEYOR_REPO_BRANCH'"
-          
-    Set-DefaultAWSRegion -Region ap-southeast-2
+     Write-Host "Branch is '$env:APPVEYOR_REPO_BRANCH'" Set-DefaultAWSRegion -Region ap-southeast-2
     Write-Host "Encrypted AWS access key: '$env:access_key'"
-	Write-Host "Encrypted secret key: '$env:secret_key'"
-    Set-AWSCredentials -AccessKey $env:access_key -SecretKey $env:secret_key
-	  
+	  Write-Host "Encrypted secret key: '$env:secret_key'" Set-AWSCredentials -AccessKey $env:access_key -SecretKey $env:secret_key	  
     $bucketName = "posdocs.oxipay.com.au"
-	$existingItems = Get-S3Object -BucketName $bucketName
+	  $existingItems = Get-S3Object -BucketName $bucketName
     Write-Host "Removing objects from '$bucketName'"
     foreach($s3object in $existingItems) {
 		Remove-S3Object -BucketName $bucketName -Key $s3object.Key -Force:$true
