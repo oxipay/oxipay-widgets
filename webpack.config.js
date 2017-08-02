@@ -3,15 +3,15 @@ var webpack = require('webpack');
 var CopyWebpackPlugin = require('copy-webpack-plugin');
 module.exports = {
     entry: {
-        "nz/scripts/more-info-large": "./src/nz/more-info-large.ts",
-        "nz/scripts/more-info-small": "./src/nz/more-info-small.ts",
-        "nz/scripts/price-info": "./src/nz/price-info.ts",
+        "nz/Content/scripts/more-info-large": "./src/nz/more-info-large.ts",
+        "nz/Content/scripts/more-info-small": "./src/nz/more-info-small.ts",
+        "nz/Content/scripts/price-info": "./src/nz/price-info.ts",
 
-        "au/scripts/more-info-large": "./src/au/more-info-large.ts",
-        "au/scripts/more-info-small": "./src/au/more-info-small.ts",        
-        "au/scripts/register-interest-small": "./src/au/register-interest-small.ts",
-        "au/scripts/register-interest-large": "./src/au/register-interest-large.ts",       
-        "au/scripts/price-info": "./src/au/price-info.ts"
+        "au/Content/scripts/more-info-large": "./src/au/more-info-large.ts",
+        "au/Content/scripts/more-info-small": "./src/au/more-info-small.ts",        
+        "au/Content/scripts/register-interest-small": "./src/au/register-interest-small.ts",
+        "au/Content/scripts/register-interest-large": "./src/au/register-interest-large.ts",       
+        "au/Content/scripts/price-info": "./src/au/price-info.ts"
     },
 
     output: {
@@ -31,43 +31,43 @@ module.exports = {
         new CopyWebpackPlugin([
             {
                 from : './src/nz/fonts/',
-                to : './nz/fonts'
+                to : './nz/Content/fonts'
             },
             {
                 from : './src/nz/html/',
-                to : './nz/html'
+                to : './nz/Content/html'
             },
             {
                 from : './src/nz/images/',
-                to : './nz/images'
+                to : './nz/Content/images'
             },
             {
                 from : './src/nz/js/',
-                to : './nz/js'
+                to : './nz/Content/js'
             },
             {
                 from : './src/nz/styles/',
-                to : './nz/styles'
+                to : './nz/Content/styles'
             },
             {
                 from : './src/au/fonts/',
-                to : './au/fonts'
+                to : './au/Content/fonts'
             },
             {
                 from : './src/au/html/',
-                to : './au/html'
+                to : './au/Content/html'
             },
             {
                 from : './src/au/images/',
-                to : './au/images'
+                to : './au/Content/images'
             },
             {
                 from : './src/au/js/',
-                to : './au/js'
+                to : './au/Content/js'
             },
             {
                 from : './src/au/styles/',
-                to : './au/styles'
+                to : './au/Content/styles'
             }
         ]),
         new webpack.SourceMapDevToolPlugin({
