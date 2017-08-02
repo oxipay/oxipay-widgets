@@ -14,7 +14,7 @@ on_success:
 - ps: |
     Write-Host "Branch is '$env:APPVEYOR_REPO_BRANCH'"
    
-      $bucketName = "posdocs.oxipay.com.au"
+      $bucketName = "widgets.oxipay.com.au"
       Set-DefaultAWSRegion -Region ap-southeast-2
       Write-Host "Encrypted AWS access key: '$env:access_key'"
       Write-Host "Encrypted secret key: '$env:secret_key'"
