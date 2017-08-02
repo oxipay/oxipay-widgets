@@ -1,6 +1,6 @@
 branches:
   only:
-    - develop/CITesting
+    - master
 environment:
   access_key:
     secure: UvGZuMN7cMD8Sa0hN5v2tky70NJZsxDiKWQaau/+s8E=
