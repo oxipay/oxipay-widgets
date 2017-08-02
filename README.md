@@ -32,14 +32,9 @@ This widget builder uses the following key technologies:
 In the location you require the banner, use the following markup:
 
 ```HTML
-<!-- Register Interest Small -->
-<script id="oxipay-banner" src="register-interest-small.js"></script>
-
-<!-- Register Interest Large -->
-<script id="oxipay-banner" src="register-interest-large.js"></script>
 
 <!-- Price Info -->
-<script id="oxipay-banner" src="price-info.js?productPrice=0"></script>
+<script id="oxipay-price-info" src="price-info.js?productPrice=0"></script>
 
  <!-- More Info Large-->
  <script id='oxipay-banner' src="more-info-large.js"></script>
@@ -49,4 +44,5 @@ In the location you require the banner, use the following markup:
 ```
 The script will bring in all of its CSS and dependencies, and register the button click events
 Guide: Installation guide is located at [http://docs.oxipay.com.au/](http://docs.oxipay.com.au/)
+[http://docs.oxipay.co.nz/](http://docs.oxipay.co.nz/)
 Note: All of the views for widgets are located at main Oxipay Website

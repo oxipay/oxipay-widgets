@@ -1,0 +1,27 @@
+﻿{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "moduleResolution": "node",
+    "module": "commonjs",
+    "target": "es5"
+  },
+  "paths": {
+    "jquery": [ "node_modules/jquery/dist/jquery" ]
+  },
+  "files": [
+    "./src/nz/modal-injector.ts",  
+    "./src/nz/more-info-large.ts",
+    "./src/nz/more-info-small.ts",
+    "./src/nz/price-info.ts",
+    "./src/nz/config.ts",
+    
+    "./src/aus/modal-injector.ts",
+    "./src/aus/register-interest-small.ts",
+    "./src/aus/register-interest-large.ts",
+    "./src/aus/more-info-large.ts",
+    "./src/aus/more-info-small.ts",
+    "./src/aus/price-info.ts",
+    "./src/aus/config.ts"
+  ],
+  "compileOnSave": true
+}

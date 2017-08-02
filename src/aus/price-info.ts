@@ -1,14 +1,27 @@
-﻿import { ModalInjector } from './modal-injector';
+import { ModalInjector } from './modal-injector';
 import { Config } from './config';
 import * as jq from 'jquery';
 
 (($: JQueryStatic) => {
 
     var productPrice: number;
-    var scriptTag = document.getElementsByTagName('script');
-    var scriptIndex  = scriptTag[scriptTag.length - 1];
+    var value: string;
+    var currentElement = document.getElementById('oxipay-price-info');
+    if(currentElement)
+    {
+      value = currentElement.attributes.getNamedItem("src").value;
+    }
+    else{
+      var currentScript = document.currentScript || (function() {
+        var scripts = document.getElementsByTagName('script');
+        return scripts[scripts.length - 1];
+      })();
 
-    var queryProductPrice = scriptIndex.src.replace(/^[^\?]+\??/, '').substring(13);
+     value = currentScript.attributes.getNamedItem("src").value;
+    }
+
+
+    var queryProductPrice = value.replace(/^[^\?]+\??/, '').substring(13);
 
     productPrice = parseFloat(queryProductPrice);
 
