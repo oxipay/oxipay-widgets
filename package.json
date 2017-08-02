@@ -8,6 +8,7 @@
     "remodal": "^1.1.0"
   },
   "devDependencies": {
+    "copy-webpack-plugin": "^4.0.1",
     "css-loader": "^0.26.0",
     "style-loader": "^0.13.1",
     "ts-loader": "^1.2.2",

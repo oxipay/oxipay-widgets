@@ -1,6 +1,7 @@
-﻿import { ModalInjector } from './modal-injector';
+﻿import * as jq from 'jquery';
+import { ModalInjector } from './modal-injector';
 import {Config } from './config';
-import * as jq from 'jquery';
+
 
 (($: JQueryStatic) => {
         let template =

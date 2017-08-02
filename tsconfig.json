@@ -15,13 +15,13 @@
     "./src/nz/price-info.ts",
     "./src/nz/config.ts",
     
-    "./src/aus/modal-injector.ts",
-    "./src/aus/register-interest-small.ts",
-    "./src/aus/register-interest-large.ts",
-    "./src/aus/more-info-large.ts",
-    "./src/aus/more-info-small.ts",
-    "./src/aus/price-info.ts",
-    "./src/aus/config.ts"
+    "./src/au/modal-injector.ts",
+    "./src/au/register-interest-small.ts",
+    "./src/au/register-interest-large.ts",
+    "./src/au/more-info-large.ts",
+    "./src/au/more-info-small.ts",
+    "./src/au/price-info.ts",
+    "./src/au/config.ts"
   ],
   "compileOnSave": true
 }

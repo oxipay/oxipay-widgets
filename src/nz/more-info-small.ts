@@ -1,6 +1,7 @@
+import * as jq from 'jquery';
 import { ModalInjector } from './modal-injector';
 import { Config } from './Config';
-import * as jq from 'jquery';
+
 
 (($: JQueryStatic) => {
     const template = `<a id="oxipay-tag-01" href="#${Config.infoModalId}">
