@@ -22,7 +22,8 @@ import { Config } from './config';
     }
 
 
-    var queryProductPrice = value.replace(/^[^\?]+\??/, '').substring(13);
+    var queryProductPrice = getParameterByName('productPrice',value);
+    var nologo = (getParameterByName('noLogo',value) !== null);
 
     productPrice = parseFloat(queryProductPrice);
 
@@ -38,9 +39,22 @@ import { Config } from './config';
             <p>or 4 payments of <b>$${roundedDownProductPrice.toFixed(2)}</b></p><p>Interest free with <span id="oxipay-img"></span></p>
         </a><br>`;
 
+    const templatenologo = `<a id="oxipay-tag-02" href="#${Config.priceInfoModalId}">
+            <p>or 4 payments of <b>$${roundedDownProductPrice.toFixed(2)}</b></p><p>Interest free - <strong>find out how</strong></p>
+        </a><br>`;
+
     const widget = new ModalInjector($);
-    widget.injectBanner(template, Config.priceInfoUrl);
+    widget.injectBanner((nologo) ? templatenologo : template, Config.priceInfoUrl);
 
 
 
 })(jq);
+
+function getParameterByName(name, url) {
+    name = name.replace(/[\[\]]/g, "\\$&");
+    var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+        results = regex.exec(url);
+    if (!results) return null;
+    if (!results[2]) return '';
+    return decodeURIComponent(results[2].replace(/\+/g, " "));
+}
