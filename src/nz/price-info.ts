@@ -34,18 +34,6 @@ import { Config } from './config';
     if (productPrice >= 1000) {
         var initialPayment = productPrice - 750;
 
-<<<<<<< 04083176e82ed3bd4a7c7b5d27c5d802b7eeca4e
-    const template = `<a id="oxipay-tag-02" href="#${Config.priceInfoModalId}">
-            <p>or 4 payments of <b>$${roundedDownProductPrice.toFixed(2)}</b></p><p>Interest free with <span id="oxipay-img"></span></p>
-        </a><br>`;
-
-    const templatenologo = `<a id="oxipay-tag-02" href="#${Config.priceInfoModalId}">
-            <p>or 4 payments of <b>$${roundedDownProductPrice.toFixed(2)}</b></p><p>Interest free - <strong>find out how</strong></p>
-        </a><br>`;
-
-    const widget = new ModalInjector($);
-    widget.injectBanner((nologo) ? templatenologo : template, Config.priceInfoUrl);
-=======
         const template = `<a id="oxipay-tag-02" href="#${Config.priceInfoModalId}">
                 <p>or 1 initial payment of <b>$${initialPayment.toFixed(2)}</b></p><p>and 3 payments of <b>$250.00</b></p><p>Interest free with <span id="oxipay-img"></span></p>
             </a><br>`;
@@ -53,7 +41,6 @@ import { Config } from './config';
         const templatenologo = `<a id="oxipay-tag-02" href="#${Config.priceInfoModalId}">
                 <p>or 1 initial payment of <b>$${initialPayment.toFixed(2)}</b></p><p>and 3 payments of <b>$250.00</b></p><p>Interest free - <strong>find out how</strong></p>
             </a><br>`;
->>>>>>> Updates for pricing widget to handle amounts over $1000 - NZ branch only
 
         const widget = new ModalInjector($);
         widget.injectBanner((nologo) ? templatenologo : template, Config.priceInfoUrl);
