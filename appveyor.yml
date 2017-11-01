@@ -61,6 +61,7 @@ notifications:
       - ryan.bartsch@certegy.com.au
       - jack.ni@certegy.com.au
       - devadmin@oxipay.com.au
+      - pit@oxipay.com.au
   - provider: Slack
     auth_token:
       secure: yXpzER0fyDmh7wYR6zrrES+wGzz5010OpUvpb5UPMsQZO12Ag3TaeOjSsZ0tDQQ4WaNoNngsPOPiaYWmsfg3fhJrSyPy240FqSwDdhSPqC0=
