@@ -23,7 +23,7 @@ module.exports = {
     },
     module: {
         loaders: [
-            { test: /\.css$/, loader: "style!css" },
+            { test: /\.css$/, loader: "style!css?url=false" },
             { test: /\.ts?$/, loader: 'ts-loader', sourceMap: false }
         ]
     },
