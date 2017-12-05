@@ -10,6 +10,23 @@
     font-weight: normal;
     font-style: normal;
 }
+
+@font-face {
+    font-family: 'Montserrat-Regular';
+    src: url("./dist/au/content/fonts/montserrat-regular-webfont.woff");
+    src: local("☺"), url("./dist/au/content/fonts/montserrat-regular-webfont.woff2") format("woff2"), url("./dist/au/content/fonts/montserrat-regular-webfont.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Montserrat-Bold';
+    src: url("./dist/au/content/fonts/montserrat-bold-webfont.woff");
+    src: local("☺"), url("./dist/au/content/fonts/montserrat-bold-webfont.woff2") format("woff2");
+    font-weight: normal;
+    font-style: normal;
+}
+
 /** Modal **/
 div[id^="oxipay-modal-"] {
     padding: 0;
@@ -185,4 +202,102 @@ div[id^="oxipay-modal-"] {
      #oxipay-img{
      top: 0px;
      }
+}
+
+/* large */
+
+#oxipay-more-info-large {
+    border: 1px solid darkgray;
+    font-size: 16px;
+    font-family: 'Montserrat-Regular', 'arial', sans-serif;
+    background: white;
+    color: #5d6071;
+    padding: 0.8em 1.5em;
+    display: block;
+    overflow: hidden;
+    text-decoration:none;
+    max-width: 44.4em;
+}
+#oxipay-more-info-large p {
+    font-family: 'Montserrat-Bold', 'arial', sans-serif;
+    font-size: 2.2em;
+    margin: 1em 0;
+    float: left;
+    line-height: 1em;
+}
+#oxipay-more-info-large .orange-area {
+    float: right;
+    height: 6em;
+    width: 11em;
+    text-align: center;
+    margin: 0 auto 1em;
+}
+#oxipay-more-info-large img {
+    width: 100%;
+    margin-bottom: 0.6em;
+}
+
+@media(max-width: 43em){
+    #oxipay-more-info-large {
+        text-align: center;
+        max-width: 22.22em;
+        min-width: 13.5em;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    #oxipay-more-info-large p {
+        float: none;
+        font-size: 2.5em;
+        max-width: 7.3em;
+        margin-bottom: 0.75em;
+        line-height: 1.1em;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    #oxipay-more-info-large .orange-area {
+        float: none;
+    }
+}
+
+.more-info-btn {
+    color: white;
+    background: #e88024;
+    padding: 0 1.111em;
+    border-radius: 1.111em;
+    line-height: 2em;
+    display: inline-block;
+    overflow: hidden;
+    vertical-align: bottom;
+}
+
+div[id^="oxipay-more-info-"]:hover .more-info-btn {
+    text-decoration: underline;
+}
+
+/* small */
+
+#oxipay-more-info-small {
+    border: 1px solid darkgray;
+    font-size: 16px;
+    font-family: 'Montserrat-Regular', 'arial', sans-serif;
+    background: white;
+    color: #5d6071;
+    padding: 0.8em 1.5em;
+    display: block;
+    overflow: hidden;
+    text-decoration:none;
+    max-width: 44.4em;
+    min-width: 38em;
+}
+#oxipay-more-info-small p {
+    font-family: 'Montserrat-Bold', 'arial', sans-serif;
+    font-size: 1.6em;
+    margin: 0 5.5em;
+}
+#oxipay-more-info-small img {
+    height: 2.22em;
+    float: left;
+}
+#oxipay-more-info-small .more-info-btn {
+    float: right;
 }

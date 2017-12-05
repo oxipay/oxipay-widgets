@@ -11,6 +11,8 @@ export class ModalInjector {
     constructor(private jQuery: JQueryStatic) { }
 
     public injectBanner(template: string, targetUrl: string) {
+        debugger;
+    
         if (!this.modalExists(targetUrl)) {
             this.injectModal(targetUrl);
         }
@@ -54,8 +56,12 @@ export class ModalInjector {
             modalId = Config.signupModalId;
         else if (url.indexOf('PriceInfo') > 0)
             modalId = Config.priceInfoModalId;
+        else if (url.indexOf('MoreInfo') > 0)
+            modalId = Config.moreInfoUrlNew;
         else
             modalId = Config.infoModalId;
+
+        console.log('modalId: ' + modalId);
         return modalId;
     }
 }
