@@ -10,9 +10,7 @@ import { Config } from './config';
 export class ModalInjector {
     constructor(private jQuery: JQueryStatic) { }
 
-    public injectBanner(template: string, targetUrl: string) {
-        debugger;
-    
+    public injectBanner (template: string, targetUrl: string) {    
         if (!this.modalExists(targetUrl)) {
             this.injectModal(targetUrl);
         }
@@ -27,12 +25,12 @@ export class ModalInjector {
         const element = this.jQuery('script[id^=' + scriptId + ']');
         element
             .first()
-            .after(template);
+            .after(template);        
     }
 
     private modalExists(url: string): boolean {
-        let modalId = this.getModalId(url);
-        return this.jQuery(modalId).length > 0;
+        let modalId = this.getModalId(url); //Element selector                
+        return this.jQuery(modalId) ? this.jQuery(modalId).length > 0 : false;
     }
 
     private injectModal(url: string): void {
@@ -48,20 +46,29 @@ export class ModalInjector {
         const body = this.jQuery(bodyTag);
 
         body.append(modalDiv);
+
+
+        // console.debug(body);
     }
 
     private getModalId(url: string): string {
         let modalId = '';
-        if(url.indexOf('Signup') > 0)
-            modalId = Config.signupModalId;
-        else if (url.indexOf('PriceInfo') > 0)
-            modalId = Config.priceInfoModalId;
-        else if (url.indexOf('MoreInfo') > 0)
-            modalId = Config.moreInfoUrlNew;
-        else
-            modalId = Config.infoModalId;
-
-        console.log('modalId: ' + modalId);
+        if(url.indexOf('Signup') > 0) {
+            return modalId = Config.signupModalId;
+        }
+            
+        else if (url.indexOf('PriceInfo') > 0) {
+            return modalId = Config.priceInfoModalId;
+        }
+        else if (url.indexOf("MoreInfo") > 0) {
+            modalId = Config.moreInfoId;            
+        }
+        // else if (url.indexOf("MoreInfo") > 0)
+        //     return modalId = Config.moreInfoUrlNew;
+        else {
+            modalId = Config.moreInfoId;
+        }
+            
         return modalId;
     }
 }

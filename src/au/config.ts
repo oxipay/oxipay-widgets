@@ -13,6 +13,7 @@ export class Config {
     public static signupModalId = 'oxipay-modal-signup';
     public static infoModalId = 'oxipay-modal-info';
     public static moreInfoId = 'oxipay-modal-more-info';
+    // public static newMoreInfoId = 'oxipay-modal-new-more-info';
     public static priceInfoModalId = 'oxipay-modal-price-info';
     public static scriptId = 'script[id^=oxipay-banner]';
     public static moreInfoUrl = Config.folder + 'content/html/ExternalModal.html';
