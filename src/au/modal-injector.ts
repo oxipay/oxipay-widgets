@@ -61,14 +61,10 @@ export class ModalInjector {
             return modalId = Config.priceInfoModalId;
         }
         else if (url.indexOf("MoreInfo") > 0) {
-            modalId = Config.moreInfoId;            
+            return modalId = Config.moreInfoId;            
         }
-        // else if (url.indexOf("MoreInfo") > 0)
-        //     return modalId = Config.moreInfoUrlNew;
         else {
-            modalId = Config.moreInfoId;
+            return modalId = Config.infoModalId;
         }
-            
-        return modalId;
     }
 }

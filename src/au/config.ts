@@ -8,17 +8,23 @@
 
 
 export class Config {
-    public static folder = "dist/au/";
+    // public static folder = "dist/"; //for remote deploy
+    public static folder = "dist/au/"; //for local testing
+
+    // public static baseContentUrl = 'http://widgets.oxipay.co.nz/dist';    // for remote deploy
+    public static baseContentUrl = 'http://localhost:3000/dist/au';       // for local testing
+
     public static oxipayModalId = 'oxipay-modal';
+
     public static signupModalId = 'oxipay-modal-signup';
+    public static priceInfoModalId = 'oxipay-modal-price-info';
     public static infoModalId = 'oxipay-modal-info';
     public static moreInfoId = 'oxipay-modal-more-info';
-    // public static newMoreInfoId = 'oxipay-modal-new-more-info';
-    public static priceInfoModalId = 'oxipay-modal-price-info';
+
     public static scriptId = 'script[id^=oxipay-banner]';
-    public static moreInfoUrl = Config.folder + 'content/html/ExternalModal.html';
-    public static moreInfoUrlNew = Config.folder + 'content/html/MoreInfo.html';
-    public static registerInterestUrl = Config.folder + 'content/html/Signup.html';
-    public static baseContentUrl = 'http://localhost:3000/dist/au';
-    public static priceInfoUrl = Config.folder + 'content/html/PriceInfo.html';
+
+    public static registerInterestUrl = Config.baseContentUrl + '/content/html/Signup.html';
+    public static priceInfoUrl = Config.baseContentUrl + '/content/html/PriceInfo.html';
+    public static moreInfoUrl = Config.baseContentUrl + '/content/html/ExternalModal.html';
+    public static moreInfoUrlNew = Config.baseContentUrl + '/content/html/MoreInfo.html';
 }

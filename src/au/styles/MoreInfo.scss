@@ -1,25 +1,32 @@
-﻿@font-face {
+@font-face {
     font-family: 'Montserrat-Regular';
-    src: url("./dist/au/content/fonts/montserrat-regular-webfont.woff");
-    src: local("☺"), url("./dist/au/content/fonts/montserrat-regular-webfont.woff2") format("woff2"), url("./dist/au/content/fonts/montserrat-regular-webfont.ttf") format("truetype");
+    src: url("../fonts/montserrat-regular-webfont.woff");
+    src: local("☺"), url("../fonts/montserrat-regular-webfont.woff2") format("woff2"), url("../fonts/montserrat-regular-webfont.ttf") format("truetype");
     font-weight: normal;
     font-style: normal;
 }
 @font-face {
     font-family: 'Montserrat-Bold';
-    src: url("./dist/au/content/fonts/montserrat-bold-webfont.woff");
-    src: local("☺"), url("./dist/au/content/fonts/montserrat-bold-webfont.woff2") format("woff2");
+    src: url("../fonts/montserrat-bold-webfont.woff");
+    src: local("☺"), url("../fonts/montserrat-bold-webfont.woff2") format("woff2");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Montserrat-ExtraLight';
+    src: url("../fonts/Montserrat-ExtraLight.ttf");
     font-weight: normal;
     font-style: normal;
 }
 
 body {
-    margin:0;
+    margin: 0;
 }
 div[id^="oxipay-modal-"] {
     font-family: 'Montserrat-Regular';
     font-size: 16px;
-    max-width: 800px;
+    width: 49.5rem;
     padding: 30px;
     background: #FFF;
     overflow: visible;
@@ -60,12 +67,6 @@ div[id^="oxipay-modal-"] {
     }
 }
 
-@media screen and (max-width: 670px) {
-    div[id^="oxipay-modal-"] {
-        top: 5vh !important;
-        left: 0 !important;
-    }
-}
 
 .text-center {
     text-align: center;
@@ -77,26 +78,41 @@ div[id^="oxipay-modal-"] {
 
 .content {
     overflow: auto;
-    margin: 0 auto 45px;
+    margin: 0 auto 3rem;
     .card {
-        width: 33.33%;
+        width: 16.5rem;
         float: left;
-        padding: 0 10px;
+        padding: 0 1rem;
         box-sizing: border-box;
         .circle {
+            text-align: center;
             box-sizing: border-box;
             border-radius: 50%;
             background: #EEE;
-            padding-top: 100%;
-            height: 0;
-            text-align: center;
-            h3 {
+            padding-top: 14.5rem;
+            height: 14.5rem;
+            width: 14.5rem;
+            .circle-content {
                 position: relative;
-                top: -110px;
-                width: 60%;
-                margin: 0 auto;
-                font-family: "Montserrat-Regular";
+                width: 14.5rem;
+                height: 14.5rem;
+                top: -14.5rem;
+                font-family: "Montserrat-Bold";
+                color: #777;
                 font-size: 1em;
+                .v-center {
+                    left: 50%;
+                    top: 50%;
+                    transform: translate(-50%, -50%);
+                    position: relative;
+                    width: 80%;
+                    img {
+                        width: 55%;
+                    }
+                    h3 {
+                        margin: 0;
+                    }
+                }
             }
         }
         p {
@@ -106,7 +122,13 @@ div[id^="oxipay-modal-"] {
     }
 }
 
-@media(max-width:600px) {
+@media screen and (max-width: 50rem) {
+    div[id^="oxipay-modal-"] {
+        width: 100%;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
     .content .card {
         width: 100%;
         max-width: 300px;
@@ -154,7 +176,11 @@ $btn-color: #e68821;
     font-size: 1rem;
 }
 
-.btn:focus,.btn:hover{
+.btn:focus, .btn:hover{
     outline: 0;
     color:#fff;
+}
+
+.font-extralight {
+    font-family: Montserrat-ExtraLight;
 }

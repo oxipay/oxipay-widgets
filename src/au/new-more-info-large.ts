@@ -4,7 +4,7 @@ import { Config } from './config';
 
 (($: JQueryStatic) => {
     const template =
-        `<a id="oxipay-banner-01" href="#${Config.moreInfoId}">
+        `<a id="oxipay-more-info-large" href="#${Config.moreInfoId}">
             <p>Shop now. Pay over time</p>
             <div class="orange-area">
                 <div class="logo">
