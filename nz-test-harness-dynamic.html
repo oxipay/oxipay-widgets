@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Latest compiled and minified CSS -->
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">-->
+  <title>Test Template</title>
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+        <br>
+        <p class="price">
+            <span id="foo" class="woocommerce-Price-amount amount">
+                <span class="woocommerce-Price-currencySymbol">$</span>1699.00
+            </span>
+        </p>
+        <!-- .woocommerce-Price-amount%20.amount -->
+        <p>Without Oxipay logo (over $1499)</p>
+        <script class='oxipay-price-info' src='dist/nz/content/scripts/price-info.js?price-selector=.woocommerce-Price-amount.amount&amp;debug=true'></script>
+        <script class="foo">
+          console.log("foo");
+        </script>
+        <script>
+          console.log("blah");
+        </script>
+        <script class='oxipay-price-info' src='dist/nz/content/scripts/price-info.js?productPrice=1214.00&amp;debug=true'></script>
+        <!-- <script id='oxipay-banner' src="dist/nz/content/scripts/more-info-large.js"></script>
+        <script id='oxipay-banner' src="dist/nz/content/scripts/more-info-small.js"></script> -->
+      </div>
+    </div>
+  </div>
+
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <!-- Include all compiled plugins (below), or include individual files as needed -->
+</body>
+
+</html>
