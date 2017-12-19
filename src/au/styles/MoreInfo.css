@@ -12,8 +12,8 @@
   font-weight: normal;
   font-style: normal; }
 @font-face {
-  font-family: 'Montserrat-ExtraLight';
-  src: url("../fonts/Montserrat-ExtraLight.ttf");
+  font-family: 'Montserrat-Light';
+  src: url("../fonts/Montserrat-Light.ttf");
   font-weight: normal;
   font-style: normal; }
 body {
@@ -22,16 +22,16 @@ body {
 div[id^="oxipay-modal-"] {
   font-family: 'Montserrat-Regular';
   font-size: 16px;
-  width: 50.5rem;
-  padding: 30px;
+  line-height: 1.3;
+  width: 48rem;
+  padding: 30px 0 0;
   background: #FFF;
   overflow: visible;
   overflow-x: hidden;
-  max-height: 90vh;
   top: 5vh !important;
   margin: 0 auto; }
   div[id^="oxipay-modal-"] .logo {
-    margin: -30px -30px 20px;
+    margin: -20px -30px 20px;
     height: 110px; }
     div[id^="oxipay-modal-"] .logo img {
       height: 100%;
@@ -59,13 +59,13 @@ div[id^="oxipay-modal-"] {
   text-align: center; }
 
 .small {
-  font-size: 0.7em; }
+  font-size: 0.65em; }
 
 .content {
   overflow: hidden;
   margin: 0 auto 3rem; }
   .content .card {
-    width: 16.5rem;
+    width: 16rem;
     float: left;
     padding: 0 1rem;
     box-sizing: border-box; }
@@ -74,14 +74,14 @@ div[id^="oxipay-modal-"] {
       box-sizing: border-box;
       border-radius: 50%;
       background: #EEE;
-      padding-top: 14.5rem;
-      height: 14.5rem;
-      width: 14.5rem; }
+      padding-top: 14rem;
+      height: 14rem;
+      width: 14rem; }
       .content .card .circle .circle-content {
         position: relative;
-        width: 14.5rem;
-        height: 14.5rem;
-        top: -14.5rem;
+        width: 14rem;
+        height: 14rem;
+        top: -14rem;
         font-family: "Montserrat-Bold";
         color: #777;
         font-size: 1em; }
@@ -90,7 +90,7 @@ div[id^="oxipay-modal-"] {
           top: 50%;
           transform: translate(-50%, -50%);
           position: relative;
-          width: 80%; }
+          width: 70%; }
           .content .card .circle .circle-content .v-center img {
             width: 55%; }
           .content .card .circle .circle-content .v-center h3 {
@@ -145,7 +145,8 @@ div[id^="oxipay-modal-"] {
   outline: 0;
   color: #fff; }
 
-.font-extralight {
-  font-family: Montserrat-ExtraLight; }
+.font-light {
+  font-family: Montserrat-Light;
+  color: #444 !important; }
 
 /*# sourceMappingURL=MoreInfo.css.map */
