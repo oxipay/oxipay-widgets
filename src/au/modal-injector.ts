@@ -1,4 +1,4 @@
-﻿///<reference path="../../typings/jquery/jquery.d.ts"/>
+///<reference path="../../typings/jquery/jquery.d.ts"/>
 ///<reference path="../../typings/oxipay.d.ts"/>
 require('jquery');
 require('remodal');
@@ -10,7 +10,7 @@ import { Config } from './config';
 export class ModalInjector {
     constructor(private jQuery: JQueryStatic) { }
 
-    public injectBanner (template: string, targetUrl: string) {    
+    public injectBanner(template: string, targetUrl: string) {
         if (!this.modalExists(targetUrl)) {
             this.injectModal(targetUrl);
         }
@@ -25,11 +25,11 @@ export class ModalInjector {
         const element = this.jQuery('script[id^=' + scriptId + ']');
         element
             .first()
-            .after(template);        
+            .after(template);
     }
 
     private modalExists(url: string): boolean {
-        let modalId = this.getModalId(url); //Element selector                
+        let modalId = this.getModalId(url); //Element selector
         return this.jQuery(modalId) ? this.jQuery(modalId).length > 0 : false;
     }
 
@@ -46,25 +46,22 @@ export class ModalInjector {
         const body = this.jQuery(bodyTag);
 
         body.append(modalDiv);
-
-
-        // console.debug(body);
     }
 
     private getModalId(url: string): string {
         let modalId = '';
         if(url.indexOf('Signup') > 0) {
-            return modalId = Config.signupModalId;
+            modalId = Config.signupModalId;
         }
-            
         else if (url.indexOf('PriceInfo') > 0) {
-            return modalId = Config.priceInfoModalId;
+            modalId = Config.priceInfoModalId;
         }
         else if (url.indexOf("MoreInfo") > 0) {
-            return modalId = Config.moreInfoId;            
+            modalId = Config.moreInfoModalId;
         }
         else {
-            return modalId = Config.infoModalId;
+            modalId = Config.infoModalId;
         }
+        return modalId;
     }
 }

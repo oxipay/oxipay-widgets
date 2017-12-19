@@ -19,7 +19,7 @@ export class Config {
     public static signupModalId = 'oxipay-modal-signup';
     public static priceInfoModalId = 'oxipay-modal-price-info';
     public static infoModalId = 'oxipay-modal-info';
-    public static moreInfoId = 'oxipay-modal-more-info';
+    public static moreInfoModalId = 'oxipay-modal-more-info';
 
     public static scriptId = 'script[id^=oxipay-banner]';
 
