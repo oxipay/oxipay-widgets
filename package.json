@@ -16,7 +16,8 @@
     "webpack": "^1.13.3"
   },
   "scripts": {
-    "build": "webpack"
+    "build": "webpack",
+    "watch": "webpack --watch"
   },
   "author": "Oxipay",
   "license": "ISC"
