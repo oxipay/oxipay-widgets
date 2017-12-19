@@ -84,7 +84,7 @@ module.exports = {
             output: {
                 comments: false,
             },
-            mangle: true,
+            mangle: false,
             sourceMap: true
         }),        
     ]
