@@ -10,7 +10,7 @@ import { Config } from './config';
 export class ModalInjector {
     constructor(private jQuery: JQueryStatic) { }
 
-    public injectBanner(template: string, targetUrl: string) {
+    public injectBanner(template: string, targetUrl: string, element?: any) {
         if (!this.modalExists(targetUrl)) {
             this.injectModal(targetUrl);
         }
@@ -20,9 +20,12 @@ export class ModalInjector {
           return scripts[scripts.length - 1];
         })();
 
-        var scriptId = currentScript.attributes.getNamedItem("id").value;
+        if (!element) {
+            var scriptId = currentScript.attributes.getNamedItem("id").value;
 
-        const element = this.jQuery('script[id^=' + scriptId + ']');
+            element = this.jQuery('script[id^=' + scriptId + ']');
+        }
+        
         element
             .first()
             .after(template);

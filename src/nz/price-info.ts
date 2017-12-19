@@ -3,70 +3,127 @@ import { ModalInjector } from './modal-injector';
 import { Config } from './config';
 
 
-(($: JQueryStatic) => {
+(($: JQueryStatic) => {    
 
-    var productPrice: number;
-    var value: string;
-    var currentElement = document.getElementById('oxipay-price-info');
-    if(currentElement)
-    {
-      value = currentElement.attributes.getNamedItem("src").value;
+    /**
+     * The src attribute from the script we are executing e.g 
+     * <script src="http://widgets.oxipay.com.au/scripts/price-info.js?foo"
+     */
+    let srcString: string;
+    let scriptElement: Element;
+    
+    /* You can pass debug=true to the query string to enable console error messages */
+    let debug: boolean;
+
+    /** 
+     * The extracted product price from either parsing the content from HTML (via css selector) 
+     * or a specifically passed in value
+    */
+    let productPrice: number;
+
+    
+    jq.fn.exists = function () {
+        return this.length !== 0;
     }
-    else{
-      var currentScript = document.currentScript || (function() {
-        var scripts = document.getElementsByTagName('script');
+
+    // get current script
+    scriptElement = getCurrentScript();
+    if (!scriptElement && !scriptElement.getAttribute("src")) {
+
+        // bail if we don't have anything
+        
+        return false;
+    }
+
+    srcString = scriptElement.getAttribute("src");
+
+    productPrice = getPrice(srcString, jq);
+
+    var noLogo = (getParameterByName('noLogo', srcString) !== null);
+
+    const widget = new ModalInjector($);
+    const template:string = generateWidget(productPrice, noLogo);
+
+  
+    widget.injectBanner(template, Config.priceInfoUrl, jq(scriptElement));
+
+    
+})(jq);
+
+function generateWidget(productPrice: number, noLogo: boolean): string {
+    let template;
+    let templatenologo;
+
+    if (productPrice >= 1000) {
+        var initialPayment = productPrice - 750;
+
+        template = `<a id="oxipay-tag-02" href="#${Config.priceInfoModalId}">
+                <p>or 1 initial payment of <b>$${initialPayment.toFixed(2)}</b></p><p>and 3 payments of <b>$250.00</b></p><p>Interest free with <span id="oxipay-img"></span></p>
+            </a><br>`;
+    
+        templatenologo = `<a id="oxipay-tag-02" href="#${Config.priceInfoModalId}">
+                <p>or 1 initial payment of <b>$${initialPayment.toFixed(2)}</b></p><p>and 3 payments of <b>$250.00</b></p><p>Interest free - <strong>find out how</strong></p>
+            </a><br>`;
+    } else {
+        var productPriceDividedByFour = productPrice / 4;
+
+        // Banking Rounding
+        var roundedDownProductPrice = Math.floor( productPriceDividedByFour * Math.pow(10, 2) ) / Math.pow(10, 2) ;
+    
+        template = `<a id="oxipay-tag-02" href="#${Config.priceInfoModalId}">
+                <p>or 4 payments of <b>$${roundedDownProductPrice.toFixed(2)}</b></p><p>Interest free with <span id="oxipay-img"></span></p>
+            </a><br>`;
+    
+        templatenologo = `<a id="oxipay-tag-02" href="#${Config.priceInfoModalId}">
+                <p>or 4 payments of <b>$${roundedDownProductPrice.toFixed(2)}</b></p><p>Interest free - <strong>find out how</strong></p>
+            </a><br>`;
+    }
+    return (noLogo) ? templatenologo : template;
+}
+
+function getCurrentScript(): Element {
+
+    let currentScript = document.currentScript || (function() {
+        const scripts = document.getElementsByTagName('script');
         return scripts[scripts.length - 1];
-      })();
+    })();
 
-     value = currentScript.attributes.getNamedItem("src").value;
-    }
+    return currentScript;
+    
+}
 
-
-    var queryProductPrice = getParameterByName('productPrice',value);
-    var nologo = (getParameterByName('noLogo',value) !== null);
-
-    productPrice = parseFloat(queryProductPrice);
+function getPrice(queryString:string, jq: JQueryStatic, debug?: boolean) : number {
+    
+    let productPrice: string;
+ 
+    // first look for an explicit product price in the query string
+    productPrice = getParameterByName('productPrice', queryString);
 
     if (!productPrice) {
-        productPrice = 0;
-    }
+        // we haven't been passed a URL, try to get the css selector for 
+        let selector = getParameterByName('price-selector', queryString);
 
-    if (productPrice <= 1500) {
-        if (productPrice >= 1000) {
-            var initialPayment = productPrice - 750;
-
-            const template = `<a id="oxipay-tag-02" href="#${Config.priceInfoModalId}">
-                    <p>or 1 initial payment of <b>$${initialPayment.toFixed(2)}</b></p><p>and 3 payments of <b>$250.00</b></p><p>Interest free with <span id="oxipay-img"></span></p>
-                </a><br>`;
-        
-            const templatenologo = `<a id="oxipay-tag-02" href="#${Config.priceInfoModalId}">
-                    <p>or 1 initial payment of <b>$${initialPayment.toFixed(2)}</b></p><p>and 3 payments of <b>$250.00</b></p><p>Interest free - <strong>find out how</strong></p>
-                </a><br>`;
-
-            const widget = new ModalInjector($);
-            widget.injectBanner((nologo) ? templatenologo : template, Config.priceInfoUrl);
-        
-        } else {
-            var productPriceDividedByFour = productPrice / 4;
-
-            //Banking Rounding
-            var roundedDownProductPrice = Math.floor( productPriceDividedByFour * Math.pow(10, 2) ) / Math.pow(10, 2) ;
-        
-            const template = `<a id="oxipay-tag-02" href="#${Config.priceInfoModalId}">
-                    <p>or 4 payments of <b>$${roundedDownProductPrice.toFixed(2)}</b></p><p>Interest free with <span id="oxipay-img"></span></p>
-                </a><br>`;
-        
-            const templatenologo = `<a id="oxipay-tag-02" href="#${Config.priceInfoModalId}">
-                    <p>or 4 payments of <b>$${roundedDownProductPrice.toFixed(2)}</b></p><p>Interest free - <strong>find out how</strong></p>
-                </a><br>`;
+        if (selector) {
+            let el = jq(selector, document.body);
+            //let el = jq("#oxipay-price-info", document.body);
             
-            const widget = new ModalInjector($);
-            widget.injectBanner((nologo) ? templatenologo : template, Config.priceInfoUrl);
-        
+            if (el.exists()) {
+                let textValue =  el.text().trim();
+                // only supports $ atm.
+                if (textValue.indexOf("$") === 0) {
+                    textValue = textValue.substring(textValue.length, 1);
+                }
+                return parseFloat(textValue);
+            }
         }
-    }
+        if (debug === true) {
+            console.log("Can't locate an element with selector :  " + selector);
+        }
 
-})(jq);
+        throw new DOMException('Unable to extract price');
+    }
+    return parseFloat(productPrice);
+}
 
 function getParameterByName(name, url) {
     name = name.replace(/[\[\]]/g, "\\$&");
