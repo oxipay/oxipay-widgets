@@ -1,4 +1,4 @@
-﻿///<reference path="../../typings/jquery/jquery.d.ts"/>
+///<reference path="../../typings/jquery/jquery.d.ts"/>
 ///<reference path="../../typings/oxipay.d.ts"/>
 require('jquery');
 require('remodal');
@@ -49,14 +49,13 @@ export class ModalInjector {
     }
 
     private getModalId(url: string): string {
-        let modalId = '';        
+        let modalId = '';
         if (url.indexOf('PriceInfo') > 0) {
             modalId = Config.priceInfoModalId;
-        }            
+        }
         else {
             modalId = Config.infoModalId;
         }
-            
         return modalId;
     }
 }

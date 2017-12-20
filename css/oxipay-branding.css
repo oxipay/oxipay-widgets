@@ -1,5 +1,5 @@
 ﻿/*
-// when doing local test, set url to: "//widgets.oxipay.co.nz/dist/content/YOUR-CONTENT"
+// when doing local test, set url to: "//localhost:3000/dist/au/content/YOUR-CONTENT" (or "//localhost:3000/dist/nz/content/YOUR-CONTENT" for NZ)
 // When deploying to server, set url to: "https://YOUR-DOMAIN/content/YOUR-CONTENT"
 */
 

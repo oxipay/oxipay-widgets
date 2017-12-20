@@ -64,3 +64,20 @@ The script will bring in all of its CSS and dependencies, and register the butto
 Guide: Installation guide is located at [http://docs.oxipay.com.au/](http://docs.oxipay.com.au/)
 [http://docs.oxipay.co.nz/](http://docs.oxipay.co.nz/)
 Note: All of the views for widgets are located at main Oxipay Website
+
+### Local Test:
+To switch between local testing and online deployment, you will make changes in the following 2 places:
+1. in /src/au/config.ts (/src/nz/config.ts for New Zealand):
+
+    change "baseContentUrl"
+
+2. in /css/oxipay-branding.css:
+
+    change font-face url (in all 3 font-faces)
+    change #oxipay-img background-image url
+
+All .scss files in /src/au/styles and /src/nz/styles have to be compile into .min.css files.
+To do so, go to styles folder and use command:
+```
+sass -t compressed MoreInfo.scss:MoreInfo.min.css ExternalModal.scss:ExternalModal.min.css priceInfo.scss:priceInfo.min.css
+```
