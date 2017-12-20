@@ -220,9 +220,9 @@ div[id^="oxipay-modal-"] {
     margin-bottom: -4px !important;
 }
 
-@media only screen and (min-width: 320px) and (max-width:720px) {
+@media only screen and (min-width: 320px) and (max-width:765px) {
   #oxipay-img{
-  top: 26px;
+    top: 26px;
   }
 }
 
@@ -272,7 +272,7 @@ div[id^="oxipay-modal-"] {
     margin-bottom: 9.6px;
 }
 
-@media screen and (max-width: 720px){
+@media screen and (max-width: 765px){
     #oxipay-more-info-large {
         text-align: center;
         max-width: 450px;
