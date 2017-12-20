@@ -1,12 +1,12 @@
 ﻿// when doing local test, set:
-//   baseContentUrl = http://localhost:port_number/
+//   baseContentUrl = http://localhost:port_number
 
 // When deploying to server:
-//   baseContentUrl = 'https://YOUR-URL/'
+//   baseContentUrl = 'https://YOUR-URL/dist/au' (or 'https://YOUR-URL/dist/nz' for New Zealand)
 
 export class Config {
-    // public static baseContentUrl = 'http://widgets.oxipay.co.nz/dist';    // for remote deploy
-    public static baseContentUrl = 'http://localhost:3000/dist/au';       // for local testing
+    public static baseContentUrl = 'http://widgets.oxipay.co.nz/dist';    // for remote deploy
+    // public static baseContentUrl = 'http://localhost:3000/dist/au';       // for local testing
     public static oxipayModalId = 'oxipay-modal';
     public static signupModalId = 'oxipay-modal-signup';
     public static priceInfoModalId = 'oxipay-modal-price-info';

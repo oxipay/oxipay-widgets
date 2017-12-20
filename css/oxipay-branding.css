@@ -3,33 +3,33 @@
 // When deploying to server, set url to: "https://YOUR-DOMAIN/content/YOUR-CONTENT"
 */
 
-/*@font-face {*/
-    /*font-family: 'AvenirLTStd-Medium';*/
-    /*src: url("//widgets.oxipay.co.nz/dist/content/fonts/AvenirLTStd-Medium.eot");*/
-    /*src: local("☺"), url("//widgets.oxipay.co.nz/dist/content/fonts/AvenirLTStd-Medium.woff") format("woff"), url("//widgets.oxipay.co.nz/dist/content/fonts/AvenirLTStd-Medium.ttf") format("truetype"), url("//widgets.oxipay.co.nz/dist/content/fonts/AvenirLTStd-Medium.svg") format("svg");*/
-    /*font-weight: normal;*/
-    /*font-style: normal;*/
-/*}*/
+@font-face {
+    font-family: 'AvenirLTStd-Medium';
+    src: url("//widgets.oxipay.co.nz/dist/content/fonts/AvenirLTStd-Medium.eot");
+    src: local("☺"), url("//widgets.oxipay.co.nz/dist/content/fonts/AvenirLTStd-Medium.woff") format("woff"), url("//widgets.oxipay.co.nz/dist/content/fonts/AvenirLTStd-Medium.ttf") format("truetype"), url("//widgets.oxipay.co.nz/dist/content/fonts/AvenirLTStd-Medium.svg") format("svg");
+    font-weight: normal;
+    font-style: normal;
+}
 
-/*@font-face {*/
-    /*font-family: 'Montserrat-Regular';*/
-    /*src: url("//widgets.oxipay.co.nz/dist/content/fonts/montserrat-regular-webfont.woff");*/
-    /*src: local("☺"), url("//widgets.oxipay.co.nz/dist/content/fonts/montserrat-regular-webfont.woff2") format("woff2"), url("//widgets.oxipay.co.nz/dist/content/fonts/montserrat-regular-webfont.ttf") format("truetype");*/
-    /*font-weight: normal;*/
-    /*font-style: normal;*/
-/*}*/
+@font-face {
+    font-family: 'Montserrat-Regular';
+    src: url("//widgets.oxipay.co.nz/dist/content/fonts/montserrat-regular-webfont.woff");
+    src: local("☺"), url("//widgets.oxipay.co.nz/dist/content/fonts/montserrat-regular-webfont.woff2") format("woff2"), url("//widgets.oxipay.co.nz/dist/content/fonts/montserrat-regular-webfont.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
 
-/*@font-face {*/
-    /*font-family: 'Montserrat-Bold';*/
-    /*src: url("//widgets.oxipay.co.nz/dist/content/fonts/montserrat-bold-webfont.woff");*/
-    /*src: local("☺"), url("//widgets.oxipay.co.nz/dist/content/fonts/montserrat-bold-webfont.woff2") format("woff2");*/
-    /*font-weight: normal;*/
-    /*font-style: normal;*/
-/*}*/
+@font-face {
+    font-family: 'Montserrat-Bold';
+    src: url("//widgets.oxipay.co.nz/dist/content/fonts/montserrat-bold-webfont.woff");
+    src: local("☺"), url("//widgets.oxipay.co.nz/dist/content/fonts/montserrat-bold-webfont.woff2") format("woff2");
+    font-weight: normal;
+    font-style: normal;
+}
 
 #oxipay-img{
-    /*background-image: url("//widgets.oxipay.co.nz/dist/content/images/logo-orange.svg");*/
-    background-image: url("//localhost:3000/dist/au/content/images/logo-orange.svg");
+    background-image: url("//widgets.oxipay.co.nz/dist/content/images/logo-orange.svg");
+    /*background-image: url("//localhost:3000/dist/au/content/images/logo-orange.svg");*/
     padding: 28px;
     margin-left: 3px;
     background-repeat: no-repeat;
@@ -37,29 +37,29 @@
     top: 29px;
   }
 
-@font-face {
-    font-family: 'AvenirLTStd-Medium';
-    src: url("//localhost:3000/dist/au/content/fonts/AvenirLTStd-Medium.eot");
-    src: local("☺"), url("//localhost:3000/dist/au/content/fonts/AvenirLTStd-Medium.woff") format("woff"), url("//localhost:3000/dist/au/content/fonts/AvenirLTStd-Medium.ttf") format("truetype"), url("//localhost:3000/dist/au/content/fonts/AvenirLTStd-Medium.svg") format("svg");
-    font-weight: normal;
-    font-style: normal;
-}
+/*@font-face {*/
+    /*font-family: 'AvenirLTStd-Medium';*/
+    /*src: url("//localhost:3000/dist/au/content/fonts/AvenirLTStd-Medium.eot");*/
+    /*src: local("☺"), url("//localhost:3000/dist/au/content/fonts/AvenirLTStd-Medium.woff") format("woff"), url("//localhost:3000/dist/au/content/fonts/AvenirLTStd-Medium.ttf") format("truetype"), url("//localhost:3000/dist/au/content/fonts/AvenirLTStd-Medium.svg") format("svg");*/
+    /*font-weight: normal;*/
+    /*font-style: normal;*/
+/*}*/
 
-@font-face {
-    font-family: 'Montserrat-Regular';
-    src: url("//localhost:3000/dist/au/content/fonts/montserrat-regular-webfont.woff");
-    src: local("☺"), url("//localhost:3000/dist/au/content/fonts/montserrat-regular-webfont.woff2") format("woff2"), url("//localhost:3000/dist/au/content/fonts/montserrat-regular-webfont.ttf") format("truetype");
-    font-weight: normal;
-    font-style: normal;
-}
+/*@font-face {*/
+    /*font-family: 'Montserrat-Regular';*/
+    /*src: url("//localhost:3000/dist/au/content/fonts/montserrat-regular-webfont.woff");*/
+    /*src: local("☺"), url("//localhost:3000/dist/au/content/fonts/montserrat-regular-webfont.woff2") format("woff2"), url("//localhost:3000/dist/au/content/fonts/montserrat-regular-webfont.ttf") format("truetype");*/
+    /*font-weight: normal;*/
+    /*font-style: normal;*/
+/*}*/
 
-@font-face {
-    font-family: 'Montserrat-Bold';
-    src: url("//localhost:3000/dist/au/content/fonts/montserrat-bold-webfont.woff");
-    src: local("☺"), url("//localhost:3000/dist/au/content/fonts/montserrat-bold-webfont.woff2") format("woff2");
-    font-weight: normal;
-    font-style: normal;
-}
+/*@font-face {*/
+    /*font-family: 'Montserrat-Bold';*/
+    /*src: url("//localhost:3000/dist/au/content/fonts/montserrat-bold-webfont.woff");*/
+    /*src: local("☺"), url("//localhost:3000/dist/au/content/fonts/montserrat-bold-webfont.woff2") format("woff2");*/
+    /*font-weight: normal;*/
+    /*font-style: normal;*/
+/*}*/
 
 /** Modal **/
 div[id^="oxipay-modal-"] {
