@@ -1,4 +1,4 @@
-﻿///<reference path="../../typings/jquery/jquery.d.ts"/>
+///<reference path="../../typings/jquery/jquery.d.ts"/>
 ///<reference path="../../typings/oxipay.d.ts"/>
 require('jquery');
 require('remodal');
@@ -29,8 +29,8 @@ export class ModalInjector {
     }
 
     private modalExists(url: string): boolean {
-        let modalId = this.getModalId(url);
-        return this.jQuery(modalId).length > 0;
+        let modalId = this.getModalId(url); //Element selector
+        return this.jQuery(modalId) ? this.jQuery(modalId).length > 0 : false;
     }
 
     private injectModal(url: string): void {
@@ -50,12 +50,18 @@ export class ModalInjector {
 
     private getModalId(url: string): string {
         let modalId = '';
-        if(url.indexOf('Signup') > 0)
+        if(url.indexOf('Signup') > 0) {
             modalId = Config.signupModalId;
-        else if (url.indexOf('PriceInfo') > 0)
+        }
+        else if (url.indexOf('PriceInfo') > 0) {
             modalId = Config.priceInfoModalId;
-        else
+        }
+        else if (url.indexOf("MoreInfo") > 0) {
+            modalId = Config.moreInfoModalId;
+        }
+        else {
             modalId = Config.infoModalId;
+        }
         return modalId;
     }
 }
