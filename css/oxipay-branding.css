@@ -76,7 +76,8 @@ div[id^="oxipay-modal-"] {
     height: 70vh;
     border: none;
 }
-/** Banner 01 **/
+
+/** Banner 01 (more info large) **/
 
 #oxipay-banner-01 {
     width: 100%;
@@ -167,6 +168,8 @@ div[id^="oxipay-modal-"] {
     }
 }
 
+/** Tag 01 (more info small) **/
+
 #oxipay-tag-01 {
     font-family: 'AvenirLTStd-Medium', 'arial', sans-serif;
     background: #1A1C28;
@@ -200,9 +203,12 @@ div[id^="oxipay-modal-"] {
     text-decoration:underline;
 }
 
+/** Tag 02 (price info) **/
+
 #oxipay-tag-02:hover {
   text-decoration: none !important;
 }
+
 #oxipay-tag-02 {
     font-family: AvenirLTStd-Medium,arial,sans-serif;
     font-size:14px;
@@ -236,7 +242,7 @@ div[id^="oxipay-modal-"] {
      }
 }
 
-/* large */
+/* new more-info large */
 
 #oxipay-more-info-large {
     border: 1px solid darkgray;
@@ -255,7 +261,7 @@ div[id^="oxipay-modal-"] {
     font-family: 'Montserrat-Bold', 'arial', sans-serif;
     font-size: 35px;
     text-align: center;
-    margin: 31px 0;
+    margin: 26px 0;
     float: left;
     line-height: 135%;
 }
@@ -265,7 +271,7 @@ div[id^="oxipay-modal-"] {
     max-width: 176px;
     width: 100%;
     text-align: center;
-    margin: 0 auto 8px;
+    margin: 0 auto;
 }
 #oxipay-more-info-large img {
     width: 100%;
@@ -297,7 +303,7 @@ div[id^="oxipay-modal-"] {
 .more-info-btn {
     color: white;
     background: #e88024;
-    padding: 0 16px;
+    padding: 0 18px;
     border-radius: 18px;
     line-height: 200%;
     display: inline-block;
@@ -309,11 +315,11 @@ div[id^="oxipay-more-info-"]:hover .more-info-btn {
     text-decoration: underline;
 }
 
-/* small */
+/* new more-info small */
 
 #oxipay-more-info-small {
     border: 1px solid darkgray;
-    font-size: 16px;
+    font-size: 18px;
     font-family: 'Montserrat-Regular', 'arial', sans-serif;
     background: white;
     color: #5d6071;
@@ -328,12 +334,14 @@ div[id^="oxipay-more-info-"]:hover .more-info-btn {
 #oxipay-more-info-small p {
     font-family: 'Montserrat-Bold', 'arial', sans-serif;
     font-size: 25px;
-    margin: 0.1em 5.5em;
+    line-height: 36px;
+    margin: 0 5.5em;
 }
 #oxipay-more-info-small img {
-    height: 35.5px;
+    height: 36px;
     float: left;
 }
 #oxipay-more-info-small .more-info-btn {
     float: right;
 }
+ 
