@@ -77,7 +77,7 @@ To switch between local testing and online deployment, you will make changes in 
     change #oxipay-img background-image url
 
 All .scss files in /src/au/styles and /src/nz/styles have to be compile into .min.css files.
-To do so, go to styles folder and use command:
+To do so, go to project root folder and use command:
 ```
 sass -t compressed src/au/styles/MoreInfo.scss:src/au/styles/MoreInfo.min.css src/au/styles/ExternalModal.scss:src/au/styles/ExternalModal.min.css src/au/styles/priceInfo.scss:src/au/styles/priceInfo.min.css src/nz/styles/ExternalModal.scss:src/nz/styles/ExternalModal.min.css src/nz/styles/priceInfo.scss:src/nz/styles/priceInfo.min.css
 ```

@@ -3,7 +3,7 @@
 // When deploying to server, set url to: "https://YOUR-DOMAIN/content/YOUR-CONTENT"
 */
 
-@font-face {
+/* @font-face {
     font-family: 'AvenirLTStd-Medium';
     src: url("https://images.oxipay.com.au/content/fonts/AvenirLTStd-Medium.eot");
     src: local("☺"), url("https://images.oxipay.com.au/content/fonts/AvenirLTStd-Medium.woff") format("woff"), url("https://images.oxipay.com.au/content/fonts/AvenirLTStd-Medium.ttf") format("truetype"), url("https://images.oxipay.com.au/content/fonts/AvenirLTStd-Medium.svg") format("svg");
@@ -13,19 +13,18 @@
 
 @font-face {
     font-family: 'Montserrat-Regular';
-    src: url("//widgets.oxipay.com.au/content/fonts/montserrat-regular-webfont.woff");
-    src: local("☺"), url("//widgets.oxipay.com.au/content/fonts/montserrat-regular-webfont.woff2") format("woff2"), url("//widgets.oxipay.com.au/content/fonts/montserrat-regular-webfont.ttf") format("truetype");
+    src: url("//widgets.oxipay.com.au/content/fonts/montserrat-v12-latin-regular.eot");
+    src: local("☺"), url("//widgets.oxipay.com.au/content/fonts/montserrat-v12-latin-regular.woff") format("woff"), url("//widgets.oxipay.com.au/content/fonts/montserrat-v12-latin-regular.woff2") format("woff2"), url("//widgets.oxipay.com.au/content/fonts/montserrat-v12-latin-regular.ttf") format("truetype");
     font-weight: normal;
     font-style: normal;
 }
-
 @font-face {
-    font-family: 'Montserrat-Bold';
-    src: url("//widgets.oxipay.com.au/content/fonts/montserrat-bold-webfont.woff");
-    src: local("☺"), url("//widgets.oxipay.com.au/content/fonts/montserrat-bold-webfont.woff2") format("woff2");
+    font-family: 'Montserrat-SemiBold';
+    src: url("//widgets.oxipay.com.au/content/fonts/montserrat-v12-latin-600.eot");
+    src: local("☺"), url("//widgets.oxipay.com.au/content/fonts/montserrat-v12-latin-600.woff") format("woff"), url("//widgets.oxipay.com.au/content/fonts/montserrat-v12-latin-600.woff2") format("woff2"), url("//widgets.oxipay.com.au/content/fonts/montserrat-v12-latin-600.ttf") format("truetype");
     font-weight: normal;
     font-style: normal;
-}
+} */
 
 #oxipay-img{
     background-image: url("//widgets.oxipay.com.au/content/images/logo-orange.svg");
@@ -37,29 +36,28 @@
     top: 29px;
   }
 
-/*@font-face {*/
-    /*font-family: 'AvenirLTStd-Medium';*/
-    /*src: url("//localhost:3000/dist/au/content/fonts/AvenirLTStd-Medium.eot");*/
-    /*src: local("☺"), url("//localhost:3000/dist/au/content/fonts/AvenirLTStd-Medium.woff") format("woff"), url("//localhost:3000/dist/au/content/fonts/AvenirLTStd-Medium.ttf") format("truetype"), url("//localhost:3000/dist/au/content/fonts/AvenirLTStd-Medium.svg") format("svg");*/
-    /*font-weight: normal;*/
-    /*font-style: normal;*/
-/*}*/
+@font-face {
+    font-family: 'AvenirLTStd-Medium';
+    src: url("//localhost:3000/dist/au/content/fonts/AvenirLTStd-Medium.eot");
+    src: local("☺"), url("//localhost:3000/dist/au/content/fonts/AvenirLTStd-Medium.woff") format("woff"), url("//localhost:3000/dist/au/content/fonts/AvenirLTStd-Medium.ttf") format("truetype"), url("//localhost:3000/dist/au/content/fonts/AvenirLTStd-Medium.svg") format("svg");
+    font-weight: normal;
+    font-style: normal;
+}
 
-/*@font-face {*/
-    /*font-family: 'Montserrat-Regular';*/
-    /*src: url("//localhost:3000/dist/au/content/fonts/montserrat-regular-webfont.woff");*/
-    /*src: local("☺"), url("//localhost:3000/dist/au/content/fonts/montserrat-regular-webfont.woff2") format("woff2"), url("//localhost:3000/dist/au/content/fonts/montserrat-regular-webfont.ttf") format("truetype");*/
-    /*font-weight: normal;*/
-    /*font-style: normal;*/
-/*}*/
-
-/*@font-face {*/
-    /*font-family: 'Montserrat-Bold';*/
-    /*src: url("//localhost:3000/dist/au/content/fonts/montserrat-bold-webfont.woff");*/
-    /*src: local("☺"), url("//localhost:3000/dist/au/content/fonts/montserrat-bold-webfont.woff2") format("woff2");*/
-    /*font-weight: normal;*/
-    /*font-style: normal;*/
-/*}*/
+@font-face {
+    font-family: 'Montserrat-Regular';
+    src: url("//localhost:3000/dist/au/content/fonts/montserrat-v12-latin-regular.eot");
+    src: local("☺"), url("//localhost:3000/dist/au/content/fonts/montserrat-v12-latin-regular.woff") format("woff"), url("//localhost:3000/dist/au/content/fonts/montserrat-v12-latin-regular.woff2") format("woff2"), url("//localhost:3000/dist/au/content/fonts/montserrat-v12-latin-regular.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Montserrat-SemiBold';
+    src: url("//localhost:3000/dist/au/content/fonts/montserrat-v12-latin-600.eot");
+    src: local("☺"), url("//localhost:3000/dist/au/content/fonts/montserrat-v12-latin-600.woff") format("woff"), url("//localhost:3000/dist/au/content/fonts/montserrat-v12-latin-600.woff2") format("woff2"), url("//localhost:3000/dist/au/content/fonts/montserrat-v12-latin-600.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
 
 /** Modal **/
 div[id^="oxipay-modal-"] {
@@ -258,7 +256,7 @@ div[id^="oxipay-modal-"] {
     max-width: 770px;
 }
 #oxipay-more-info-large p {
-    font-family: 'Montserrat-Bold', 'arial', sans-serif;
+    font-family: 'Montserrat-SemiBold', 'arial', sans-serif;
     font-size: 35px;
     text-align: center;
     margin: 26px 0;
@@ -329,10 +327,10 @@ div[id^="oxipay-more-info-"]:hover .more-info-btn {
     text-decoration:none;
     box-sizing: border-box;
     max-width: 770px;
-    min-width: 710px;
+    min-width: 715px;
 }
 #oxipay-more-info-small p {
-    font-family: 'Montserrat-Bold', 'arial', sans-serif;
+    font-family: 'Montserrat-SemiBold', 'arial', sans-serif;
     font-size: 25px;
     line-height: 36px;
     margin: 0 5.5em;
