@@ -1,9 +1,14 @@
 ///<reference path="../../typings/jquery/jquery.d.ts"/>
 ///<reference path="../../typings/oxipay.d.ts"/>
+// tslint:disable-next-line:no-var-requires
 require('jquery');
+// tslint:disable-next-line:no-var-requires
 require('remodal');
+// tslint:disable-next-line:no-var-requires
 require('../../node_modules/remodal/dist/remodal.css');
+// tslint:disable-next-line:no-var-requires
 require('../../node_modules/remodal/dist/remodal-default-theme.css');
+// tslint:disable-next-line:no-var-requires
 require('../../css/oxipay-branding.css');
 import { Config } from './config';
 
@@ -15,20 +20,28 @@ export class ModalInjector {
             this.injectModal(targetUrl);
         }
 
-        var currentScript = document.currentScript || (function() {
-          var scripts = document.getElementsByTagName('script');
+        let currentScript = document.currentScript || (function() {
+          let scripts = document.getElementsByTagName('script');
           return scripts[scripts.length - 1];
         })();
 
+        // if the element isn't passed in already then try and get it via the ID
+        // in the same way that we previously did
         if (!element) {
-            var scriptId = currentScript.attributes.getNamedItem("id").value;
+            let scriptId = currentScript.attributes.getNamedItem("id").value;
 
             element = this.jQuery('script[id^=' + scriptId + ']');
         }
-        
-        element
-            .first()
-            .after(template);
+
+        let modalId = this.getModalId(targetUrl);
+
+        // look for the id , if it exists then we replace the element
+        // this could cause issues with multiple entries.. @todo make element id dynamic
+        if (this.jQuery('#oxipay-tag-02', element).exists()) {
+            this.jQuery('#oxipay-tag-02', element).replaceWith(template);
+        } else {
+            element.first().after(template);
+        }
     }
 
     private modalExists(url: string): boolean {
@@ -37,7 +50,6 @@ export class ModalInjector {
     }
 
     private injectModal(url: string): void {
-
         let modalId = this.getModalId(url);
 
         const bodyTag = 'body';
@@ -55,8 +67,12 @@ export class ModalInjector {
         let modalId = '';
         if (url.indexOf('PriceInfo') > 0) {
             modalId = Config.priceInfoModalId;
+<<<<<<< 48009afe2bd79970c8b553de6d9cb8967472219f
         }
         else {
+=======
+        } else {
+>>>>>>> PIT-47: Modify the modal injector to look for an existing element  and replace the contents of the element if it already exists. Otherwise it will retain the previous behavior
             modalId = Config.infoModalId;
         }
         return modalId;
