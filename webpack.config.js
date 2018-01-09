@@ -6,7 +6,7 @@ module.exports = {
         "nz/content/scripts/more-info-large": "./src/nz/more-info-large.ts",
         "nz/content/scripts/more-info-small": "./src/nz/more-info-small.ts",
         "nz/content/scripts/price-info": "./src/nz/price-info.ts",
-
+        "nz/content/scripts/payments": "./src/nz/payments.ts",
         "au/content/scripts/more-info-large": "./src/au/more-info-large.ts",
         "au/content/scripts/more-info-small": "./src/au/more-info-small.ts",
         "au/content/scripts/new-more-info-large": "./src/au/new-more-info-large.ts",
