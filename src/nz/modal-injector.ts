@@ -67,12 +67,7 @@ export class ModalInjector {
         let modalId = '';
         if (url.indexOf('PriceInfo') > 0) {
             modalId = Config.priceInfoModalId;
-<<<<<<< 48009afe2bd79970c8b553de6d9cb8967472219f
-        }
-        else {
-=======
         } else {
->>>>>>> PIT-47: Modify the modal injector to look for an existing element  and replace the contents of the element if it already exists. Otherwise it will retain the previous behavior
             modalId = Config.infoModalId;
         }
         return modalId;
