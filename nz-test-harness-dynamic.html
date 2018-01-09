@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+  <!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -8,6 +8,8 @@
   <!-- Latest compiled and minified CSS -->
   <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">-->
   <title>Test Template</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
 </head>
 
 <body>
@@ -16,28 +18,56 @@
       <div class="col-sm-12">
         <br>
         <p class="price">
-            <span id="foo" class="woocommerce-Price-amount amount">
-                <span class="woocommerce-Price-currencySymbol">$</span>1699.00
+            <span id="blar" class="woocommerce-Price-amount amount">
+                <span class="woocommerce-Price-currencySymbol">$</span>600.00
             </span>
         </p>
         <!-- .woocommerce-Price-amount%20.amount -->
-        <p>Without Oxipay logo (over $1499)</p>
-        <script class='oxipay-price-info' src='dist/nz/content/scripts/price-info.js?price-selector=.woocommerce-Price-amount.amount&amp;debug=true'></script>
+        <!-- <p>Without Oxipay logo (over $1499)</p> -->
+        <!-- <script class='oxipay-price-info' src='http://widgets.oxipay.com.au/content/scripts/price-info3.js?price-selector=.woocommerce-Price-amount.amount&amp;debug=true&amp;'></script> -->
+        <script class='oxipay-price-info' src='http://localhost:8080/dist/nz/content/scripts/price-info.js?price-selector=.woocommerce-Price-amount.amount&amp;debug=true&amp;'></script>
+        
+        <!-- <script id='foo' src='http://widgets.oxipay.com.au/content/scripts/new-more-info-large.js'></script>  -->
+        
+        
+
         <script class="foo">
-          console.log("foo");
+
+        
+          setTimeout(function() {
+            // update price
+            var foo = $("#blar");
+            
+            var children = foo.contents().filter(function(){
+              return (this.nodeType == 3);
+            });
+
+            children.each(function(){            
+              let txtVal = $(this).text().trim();
+              if (txtVal) {
+                this.data = '401.00';                
+              } else {
+                console.log("Text should be empty : " + txtVal);
+              }
+            });  
+
+            console.log("Price updated ");
+          }, 8000);
+          
         </script>
         <script>
           console.log("blah");
         </script>
-        <script class='oxipay-price-info' src='dist/nz/content/scripts/price-info.js?productPrice=1214.00&amp;debug=true'></script>
+        <!-- <div>Blah 1</div> -->
+        <!-- <script class='oxipay-price-info' src='http://widgets.oxipay.com.au/content/scripts/price-info3.js?productPrice=1214.00&amp;debug=true'></script> -->
+        <!-- <div>Blah 2</div> -->
         <!-- <script id='oxipay-banner' src="dist/nz/content/scripts/more-info-large.js"></script>
         <script id='oxipay-banner' src="dist/nz/content/scripts/more-info-small.js"></script> -->
       </div>
     </div>
   </div>
 
-  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
   <!-- Include all compiled plugins (below), or include individual files as needed -->
 </body>
 
