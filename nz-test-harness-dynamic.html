@@ -25,7 +25,8 @@
         <!-- .woocommerce-Price-amount%20.amount -->
         <!-- <p>Without Oxipay logo (over $1499)</p> -->
         <!-- <script class='oxipay-price-info' src='http://widgets.oxipay.com.au/content/scripts/price-info3.js?price-selector=.woocommerce-Price-amount.amount&amp;debug=true&amp;'></script> -->
-        <script class='oxipay-price-info' src='http://localhost:8080/dist/nz/content/scripts/payments.js?price-selector=.woocommerce-Price-amount.amount&amp;debug=true&amp;'></script>
+        <!-- <script class='oxipay-price-info' src='http://localhost:8080/dist/nz/content/scripts/payments.js?price-selector=.woocommerce-Price-amount.amount&amp;debug=true'></script> -->
+        <script class='oxipay-price-info' src='http://widgets.oxipay.com.au/content/scripts/payments.js?price-selector=.woocommerce-Price-amount.amount&amp;debug=true&amp;'></script>
         
         <!-- <script id='foo' src='http://widgets.oxipay.com.au/content/scripts/new-more-info-large.js'></script>  -->
         
@@ -34,7 +35,7 @@
         <script class="foo">
 
         
-          setTimeout(function() {
+          window.setTimeout(function() {
             // update price
             var foo = $("#blar");
             
@@ -43,7 +44,7 @@
             });
 
             children.each(function(){            
-              let txtVal = $(this).text().trim();
+              var txtVal = $(this).text().trim();
               if (txtVal) {
                 this.data = '401.00';                
               } else {
