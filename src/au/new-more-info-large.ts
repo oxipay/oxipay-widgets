@@ -5,7 +5,10 @@ import { Config } from './config';
 (($: JQueryStatic) => {
     const template =
         `<a id="oxipay-more-info-large" href="#${Config.moreInfoModalId}">
-            <p>4 easy payments. No Interest.</p>
+            <div class='title'>
+                <span>4 easy payments. </span>
+                <span>No Interest.</span>
+            </div>
             <div class="orange-area">
                 <div class="logo">
                     <img alt="Oxipay" src="${Config.baseContentUrl}/content/images/logo-orange.svg" />
