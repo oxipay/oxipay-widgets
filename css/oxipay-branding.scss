@@ -28,9 +28,9 @@ $baseURL: "http://localhost:3000/dist/au";
     font-style: normal;
 }
 @font-face {
-    font-family: 'Montserrat-SemiBold';
-    src: url($baseURL+"/content/fonts/montserrat-v12-latin-600.eot");
-    src: local("☺"), url($baseURL+"/content/fonts/montserrat-v12-latin-600.woff") format("woff"), url($baseURL+"/content/fonts/montserrat-v12-latin-600.woff2") format("woff2"), url($baseURL+"/content/fonts/montserrat-v12-latin-600.ttf") format("truetype");
+    font-family: 'Montserrat-Bold';
+    src: url($baseURL+"/content/fonts/montserrat-v12-latin-700.eot");
+    src: local("☺"), url($baseURL+"/content/fonts/montserrat-v12-latin-700.woff") format("woff"), url($baseURL+"/content/fonts/montserrat-v12-latin-700.woff2") format("woff2"), url($baseURL+"/content/fonts/montserrat-v12-latin-700.ttf") format("truetype");
     font-weight: normal;
     font-style: normal;
 }
@@ -216,7 +216,7 @@ div[id^="oxipay-modal-"] {
     max-width: 1070px;
     .title {
         flex: 1;
-        font-family: 'Montserrat-SemiBold', 'arial', sans-serif;
+        font-family: 'Montserrat-Bold', 'arial', sans-serif;
         font-size: 35px;
         text-align: center;
         margin: 26px 10px 26px 0;
@@ -293,7 +293,7 @@ div[id^="oxipay-more-info-"]:hover .more-info-btn {
     max-width: 1070px;
     min-width: 700px;
     p {
-        font-family: 'Montserrat-SemiBold', 'arial', sans-serif;
+        font-family: 'Montserrat-Bold', 'arial', sans-serif;
         font-size: 25px;
         line-height: 32px;
         margin: 0 5.5em 0 5em;

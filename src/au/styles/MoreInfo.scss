@@ -6,9 +6,9 @@
     font-style: normal;
 }
 @font-face {
-    font-family: 'Montserrat-SemiBold';
-    src: url("../fonts/montserrat-v12-latin-600.eot");
-    src: local("☺"), url("../fonts/montserrat-v12-latin-600.woff") format("woff"), url("../fonts/montserrat-v12-latin-600.woff2") format("woff2"), url("../fonts/montserrat-v12-latin-600.ttf") format("truetype");
+    font-family: 'Montserrat-Bold';
+    src: url("../fonts/montserrat-v12-latin-700.eot");
+    src: local("☺"), url("../fonts/montserrat-v12-latin-700.woff") format("woff"), url("../fonts/montserrat-v12-latin-700.woff2") format("woff2"), url("../fonts/montserrat-v12-latin-700.ttf") format("truetype");
     font-weight: normal;
     font-style: normal;
 }
@@ -72,6 +72,8 @@ div[id^="oxipay-modal-"] {
 
 .text-center {
     text-align: center;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 .small {
@@ -99,7 +101,7 @@ div[id^="oxipay-modal-"] {
                 width: 14rem;
                 height: 14rem;
                 top: -14rem;
-                font-family: "Montserrat-SemiBold";
+                font-family: "Montserrat-Bold";
                 color: #777;
                 font-size: 1em;
                 .v-center {
