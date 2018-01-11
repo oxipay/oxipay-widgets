@@ -1,36 +1,39 @@
 ﻿// for deploying to server:
-// $baseURL: "https://widgets.oxipay.com.au";
+$baseURL: "https://widgets.oxipay.com.au";
 // for local test (AU)
-$baseURL: "http://localhost:3000/dist/au";
+// $baseURL: "http://localhost:3000/dist/au";
 // for local test (NZ)
 // $baseURL: "http://localhost:3000/dist/nz";
 
+// for remote test:
+// $baseURL: "http://54.252.245.32/dist/au";
+
 #oxipay-img{
-    background-image: url($baseURL+"/content/images/logo-orange.svg");
-    padding: 1px 28px;
+    background-image: url($baseURL + "/content/images/logo-orange.svg");
+    padding: 1px 35px;
     margin-left: 3px;
     background-repeat: no-repeat;
 }
 
 @font-face {
     font-family: 'AvenirLTStd-Medium';
-    src: url($baseURL+"/content/fonts/AvenirLTStd-Medium.eot");
-    src: local("☺"), url($baseURL+"/content/fonts/AvenirLTStd-Medium.woff") format("woff"), url($baseURL+"/content/fonts/AvenirLTStd-Medium.ttf") format("truetype"), url($baseURL+"/content/fonts/AvenirLTStd-Medium.svg") format("svg");
+    src: url($baseURL + "/content/fonts/AvenirLTStd-Medium.eot");
+    src: local("☺"), url($baseURL + "/content/fonts/AvenirLTStd-Medium.woff") format("woff"), url($baseURL + "/content/fonts/AvenirLTStd-Medium.ttf") format("truetype"), url($baseURL + "/content/fonts/AvenirLTStd-Medium.svg") format("svg");
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Montserrat-Regular';
-    src: url($baseURL+"/content/fonts/montserrat-v12-latin-regular.eot");
-    src: local("☺"), url($baseURL+"/content/fonts/montserrat-v12-latin-regular.woff") format("woff"), url($baseURL+"/content/fonts/montserrat-v12-latin-regular.woff2") format("woff2"), url($baseURL+"/content/fonts/montserrat-v12-latin-regular.ttf") format("truetype");
+    src: url($baseURL + "/content/fonts/montserrat-v12-latin-regular.eot");
+    src: local("☺"), url($baseURL + "/content/fonts/montserrat-v12-latin-regular.woff") format("woff"), url($baseURL + "/content/fonts/montserrat-v12-latin-regular.woff2") format("woff2"), url($baseURL + "/content/fonts/montserrat-v12-latin-regular.ttf") format("truetype");
     font-weight: normal;
     font-style: normal;
 }
 @font-face {
     font-family: 'Montserrat-Bold';
-    src: url($baseURL+"/content/fonts/montserrat-v12-latin-700.eot");
-    src: local("☺"), url($baseURL+"/content/fonts/montserrat-v12-latin-700.woff") format("woff"), url($baseURL+"/content/fonts/montserrat-v12-latin-700.woff2") format("woff2"), url($baseURL+"/content/fonts/montserrat-v12-latin-700.ttf") format("truetype");
+    src: url($baseURL + "/content/fonts/montserrat-v12-latin-700.eot");
+    src: local("☺"), url($baseURL + "/content/fonts/montserrat-v12-latin-700.woff") format("woff"), url($baseURL + "/content/fonts/montserrat-v12-latin-700.woff2") format("woff2"), url($baseURL + "/content/fonts/montserrat-v12-latin-700.ttf") format("truetype");
     font-weight: normal;
     font-style: normal;
 }
@@ -215,7 +218,7 @@ div[id^="oxipay-modal-"] {
     box-sizing: border-box;
     max-width: 1070px;
     .title {
-        flex: 1;
+        flex: 1 1 auto;
         font-family: 'Montserrat-Bold', 'arial', sans-serif;
         font-size: 35px;
         text-align: center;
@@ -235,7 +238,8 @@ div[id^="oxipay-modal-"] {
         width: 176px;
         margin: 0 auto;
         img {
-            width: 100%;
+            width: 176px;
+            height: 50px;
             margin-bottom: 10px;
         }
     }
@@ -250,13 +254,12 @@ div[id^="oxipay-modal-"] {
         margin-left: auto;
         margin-right: auto;
         .title {
-            float: none;
             font-size: 40px;
             margin-left: auto;
             margin-right: auto;
         }
         .orange-area {
-            flex: 0 0;
+            flex: 0 0 auto;
             margin-bottom: 16px;
         }
     }
@@ -291,7 +294,7 @@ div[id^="oxipay-more-info-"]:hover .more-info-btn {
     text-decoration:none;
     box-sizing: border-box;
     max-width: 1070px;
-    min-width: 700px;
+    min-width: 705px;
     p {
         font-family: 'Montserrat-Bold', 'arial', sans-serif;
         font-size: 25px;
