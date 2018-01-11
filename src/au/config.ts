@@ -5,7 +5,7 @@
 //   baseContentUrl = 'https://YOUR-URL'
 
 export class Config {
-    public static baseContentUrl = 'http://widgets.oxipay.com.au';    // for remote deploy
+    public static baseContentUrl = 'https://widgets.oxipay.com.au';    // for remote deploy
     // public static baseContentUrl = 'http://localhost:3000/dist/au';       // for local testing
     public static oxipayModalId = 'oxipay-modal';
     public static signupModalId = 'oxipay-modal-signup';
