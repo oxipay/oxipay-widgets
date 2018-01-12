@@ -59,7 +59,7 @@ const widget = new ModalInjector($);
         // we haven't been passed a URL, try to get the css selector for
         let selector = getParameterByName('price-selector', srcString);
         if (!selector) {
-            this.logDebug("Can't locate an element with selector :  " + selector);
+            logDebug("Can't locate an element with selector :  " + selector);
             return false;
         }
         
