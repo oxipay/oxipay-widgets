@@ -54,7 +54,7 @@ function generateWidget(productPrice: number, noLogo: boolean): string {
     let template;
     let templatenologo;
 
-    if (productPrice >= 1000) {
+    if (productPrice > 1000) {
         var initialPayment = productPrice - 750;
 
         template = `<a id="oxipay-tag-02" href="#${Config.priceInfoModalId}">
@@ -120,7 +120,7 @@ function getPrice(queryString:string, jq: JQueryStatic, debug?: boolean) : numbe
             console.log("Can't locate an element with selector :  " + selector);
         }
 
-        throw new DOMException('Unable to extract price');
+        throw new DOMException();
     }
     return parseFloat(productPrice);
 }
