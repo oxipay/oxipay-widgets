@@ -53,30 +53,31 @@ import { Config } from './config';
 function generateWidget(productPrice: number, noLogo: boolean): string {
     let template;
     let templatenologo;
+    if (productPrice <= 1500) {
+        if (productPrice > 1000) {
+            var initialPayment = productPrice - 750;
 
-    if (productPrice > 1000) {
-        var initialPayment = productPrice - 750;
+            template = `<a id="oxipay-tag-02" href="#${Config.priceInfoModalId}">
+                    <p>or 1 initial payment of <b>$${initialPayment.toFixed(2)}</b></p><p>and 3 payments of <b>$250.00</b></p><p>Interest free with <span id="oxipay-img"></span></p>
+                </a><br>`;
+        
+            templatenologo = `<a id="oxipay-tag-02" href="#${Config.priceInfoModalId}">
+                    <p>or 1 initial payment of <b>$${initialPayment.toFixed(2)}</b></p><p>and 3 payments of <b>$250.00</b></p><p>Interest free - <strong>find out how</strong></p>
+                </a><br>`;
+        } else {
+            var productPriceDividedByFour = productPrice / 4;
 
-        template = `<a id="oxipay-tag-02" href="#${Config.priceInfoModalId}">
-                <p>or 1 initial payment of <b>$${initialPayment.toFixed(2)}</b></p><p>and 3 payments of <b>$250.00</b></p><p>Interest free with <span id="oxipay-img"></span></p>
-            </a><br>`;
-    
-        templatenologo = `<a id="oxipay-tag-02" href="#${Config.priceInfoModalId}">
-                <p>or 1 initial payment of <b>$${initialPayment.toFixed(2)}</b></p><p>and 3 payments of <b>$250.00</b></p><p>Interest free - <strong>find out how</strong></p>
-            </a><br>`;
-    } else {
-        var productPriceDividedByFour = productPrice / 4;
-
-        // Banking Rounding
-        var roundedDownProductPrice = Math.floor( productPriceDividedByFour * Math.pow(10, 2) ) / Math.pow(10, 2) ;
-    
-        template = `<a id="oxipay-tag-02" href="#${Config.priceInfoModalId}">
-                <p>or 4 payments of <b>$${roundedDownProductPrice.toFixed(2)}</b></p><p>Interest free with <span id="oxipay-img"></span></p>
-            </a><br>`;
-    
-        templatenologo = `<a id="oxipay-tag-02" href="#${Config.priceInfoModalId}">
-                <p>or 4 payments of <b>$${roundedDownProductPrice.toFixed(2)}</b></p><p>Interest free - <strong>find out how</strong></p>
-            </a><br>`;
+            // Banking Rounding
+            var roundedDownProductPrice = Math.floor( productPriceDividedByFour * Math.pow(10, 2) ) / Math.pow(10, 2) ;
+        
+            template = `<a id="oxipay-tag-02" href="#${Config.priceInfoModalId}">
+                    <p>or 4 payments of <b>$${roundedDownProductPrice.toFixed(2)}</b></p><p>Interest free with <span id="oxipay-img"></span></p>
+                </a><br>`;
+        
+            templatenologo = `<a id="oxipay-tag-02" href="#${Config.priceInfoModalId}">
+                    <p>or 4 payments of <b>$${roundedDownProductPrice.toFixed(2)}</b></p><p>Interest free - <strong>find out how</strong></p>
+                </a><br>`;
+        }
     }
     return (noLogo) ? templatenologo : template;
 }
