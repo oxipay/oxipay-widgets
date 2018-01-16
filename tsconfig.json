@@ -15,7 +15,6 @@
     "./src/nz/price-info.ts",
     "./src/nz/payments.ts",
     "./src/nz/config.ts",
-    
     "./src/au/modal-injector.ts",
     "./src/au/register-interest-small.ts",
     "./src/au/register-interest-large.ts",
@@ -23,6 +22,7 @@
     "./src/au/more-info-small.ts",
     "./src/au/new-more-info-large.ts",
     "./src/au/price-info.ts",
+    "./src/au/payments.ts",
     "./src/au/config.ts"
   ],
   "compileOnSave": true

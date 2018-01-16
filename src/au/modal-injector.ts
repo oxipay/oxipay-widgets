@@ -10,7 +10,7 @@ import { Config } from './config';
 export class ModalInjector {
     constructor(private jQuery: JQueryStatic) { }
 
-    public injectBanner(template: string, targetUrl: string) {
+    public injectBanner(template: string, targetUrl: string, element?: any) {
         if (!this.modalExists(targetUrl)) {
             this.injectModal(targetUrl);
         }
@@ -22,10 +22,22 @@ export class ModalInjector {
 
         var scriptId = currentScript.attributes.getNamedItem("id").value;
 
-        const element = this.jQuery('script[id^=' + scriptId + ']');
-        element
-            .first()
-            .after(template);
+        if (!element) {
+            let scriptId = currentScript.attributes.getNamedItem("id").value;
+
+            element = this.jQuery('script[id^=' + scriptId + ']');
+        }
+
+        
+        let modalId = this.getModalId(targetUrl);
+
+        // look for the id , if it exists then we replace the element
+        // this could cause issues with multiple entries.. @todo make element id dynamic
+        if (this.jQuery('#oxipay-tag-02', element).length > 0) {
+            this.jQuery('#oxipay-tag-02', element).replaceWith(template);
+        } else {
+            element.first().after(template);
+        }
     }
 
     private modalExists(url: string): boolean {
