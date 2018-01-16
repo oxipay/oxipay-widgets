@@ -14,6 +14,7 @@ module.exports = {
         "au/content/scripts/register-interest-small": "./src/au/register-interest-small.ts",
         "au/content/scripts/register-interest-large": "./src/au/register-interest-large.ts",
         "au/content/scripts/price-info": "./src/au/price-info.ts",
+        "au/content/scripts/payments": "./src/au/payments.ts",
         "au/content/scripts/new-price-info": "./src/au/new-price-info.ts"
     },
 

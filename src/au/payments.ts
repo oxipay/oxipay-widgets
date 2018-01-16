@@ -2,7 +2,7 @@
 import { ModalInjector } from './modal-injector';
 import { Config } from './config';
 
-const widget = new ModalInjector($);
+let widget;
 
 (($: JQueryStatic) => {
 
@@ -13,7 +13,7 @@ const widget = new ModalInjector($);
     let srcString: string;
     let scriptElement: any;
     
-
+    widget = new ModalInjector($);
 
     /* Choose if we want to render the Oxipay Logo or not */
     let noLogo: boolean;
