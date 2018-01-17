@@ -55,9 +55,9 @@ export class ModalInjector {
         const bodyTag = 'body';
         const modalDiv =
             `<div id='${modalId}' class='remodal' data-remodal-id='${modalId}'>
-            <iframe id='oxipay-external' src='${url}'></iframe>
-            <button data-remodal-action="close" class="remodal-close"></button>
-        </div>`;
+                <iframe id='oxipay-external' src='${url}'></iframe>
+                <button data-remodal-action="close" class="remodal-close"></button>
+            </div>`;
         const body = this.jQuery(bodyTag);
 
         body.append(modalDiv);
