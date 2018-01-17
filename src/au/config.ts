@@ -7,6 +7,8 @@
 export class Config {
     public static baseContentUrl = 'https://widgets.oxipay.com.au';    // for remote deploy
     // public static baseContentUrl = 'http://localhost:3000/dist/au';       // for local testing
+    // public static baseContentUrl = 'http://54.252.245.32/dist/au' // for remote testing
+
     public static oxipayModalId = 'oxipay-modal';
     public static signupModalId = 'oxipay-modal-signup';
     public static priceInfoModalId = 'oxipay-modal-price-info';

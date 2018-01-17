@@ -1,21 +1,22 @@
 @font-face {
     font-family: 'Montserrat-Regular';
-    src: url("../fonts/montserrat-regular-webfont.woff");
-    src: local("☺"), url("../fonts/montserrat-regular-webfont.woff2") format("woff2"), url("../fonts/montserrat-regular-webfont.ttf") format("truetype");
+    src: url("../fonts/montserrat-v12-latin-regular.eot");
+    src: local("☺"), url("../fonts/montserrat-v12-latin-regular.woff") format("woff"), url("../fonts/montserrat-v12-latin-regular.woff2") format("woff2"), url("../fonts/montserrat-v12-latin-regular.ttf") format("truetype");
     font-weight: normal;
     font-style: normal;
 }
 @font-face {
     font-family: 'Montserrat-Bold';
-    src: url("../fonts/montserrat-bold-webfont.woff");
-    src: local("☺"), url("../fonts/montserrat-bold-webfont.woff2") format("woff2");
+    src: url("../fonts/montserrat-v12-latin-700.eot");
+    src: local("☺"), url("../fonts/montserrat-v12-latin-700.woff") format("woff"), url("../fonts/montserrat-v12-latin-700.woff2") format("woff2"), url("../fonts/montserrat-v12-latin-700.ttf") format("truetype");
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Montserrat-Light';
-    src: url("../fonts/Montserrat-Light.ttf");
+    src: url("../fonts/montserrat-v12-latin-200.eot");
+    src: local("☺"), url("../fonts/montserrat-v12-latin-200.woff") format("woff"), url("../fonts/montserrat-v12-latin-200.woff2") format("woff2"), url("../fonts/montserrat-v12-latin-200.ttf") format("truetype");
     font-weight: normal;
     font-style: normal;
 }
@@ -71,6 +72,8 @@ div[id^="oxipay-modal-"] {
 
 .text-center {
     text-align: center;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 .small {
