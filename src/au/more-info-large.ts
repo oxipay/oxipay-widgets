@@ -3,20 +3,19 @@ import { ModalInjector } from './modal-injector';
 import { Config } from './config';
 
 (($: JQueryStatic) => {
-        const template =
-            `<a id="oxipay-banner-01" href="#${Config.infoModalId}">
-            <div class="logo">
-                <img alt="Oxipay" src="${Config.baseContentUrl}/content/images/logo-orange.svg" />
+    const template =
+        `<a id="oxipay-more-info-large" href="#${Config.moreInfoModalId}">
+            <div class='title'>
+                <span>4 easy payments. </span>
+                <span>No Interest.</span>
             </div>
-            <div class="text">
-                <h3>Pay the easier way.</h3>
-                <p>Choose Oxipay at the checkout and pay for your purchase in 4 easy no interest payments</p>
-            </div>
-            <div class="button">
-                <p class="info">More info</p>
+            <div class="orange-area">
+                <div class="logo">
+                    <img alt="Oxipay" src="${Config.baseContentUrl}/content/images/logo-orange.svg" />
+                </div>
+                <span class="more-info-btn">MORE INFO</span>
             </div>
         </a>`;
-
-        const widget = new ModalInjector($);
-        widget.injectBanner(template, Config.moreInfoUrl);
+    const widget = new ModalInjector($);
+    widget.injectBanner(template,  Config.moreInfoUrlNew);
 })(jq);
