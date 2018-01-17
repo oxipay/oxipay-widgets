@@ -302,8 +302,9 @@ div[id^="oxipay-more-info-"]:hover .more-info-btn {
         margin: 0 5.5em 0 5em;
         text-align: center;
     }
-    img {
+    img.logo {
         height: 32px !important;
+        width: auto !important;
         float: left;
     }
     .more-info-btn {
