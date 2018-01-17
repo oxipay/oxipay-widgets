@@ -40,7 +40,7 @@ let widget;
     }
 
     srcString = scriptElement.getAttribute('src');
-    noLogo    = getParameterByName('noLogo', srcString)?true:false;
+    noLogo    = getParameterByName('noLogo', srcString)? true:false;
     debug     = scriptElement.getAttribute('debug')? true:false;
     
     let priceStr = getParameterByName('productPrice', srcString);
@@ -89,11 +89,8 @@ let widget;
 
 function extractPrice(el: any) {
     let textValue =  el.text().trim();
+    textValue = textValue.replace(/^\D+/, "")
 
-    // only supports $ atm.
-    if (textValue.indexOf('$') === 0) {
-        textValue = textValue.substring(textValue.length, 1);
-    }    
     return parseFloat(textValue);
 }
 
