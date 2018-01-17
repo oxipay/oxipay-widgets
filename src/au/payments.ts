@@ -6,7 +6,6 @@ let widget;
 
 (($: JQueryStatic) => {
 
-
     /**
      * The src attribute from the script we are executing e.g
      * <script src="http://widgets.oxipay.com.au/scripts/price-info.js?foo"
