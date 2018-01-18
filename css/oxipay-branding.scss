@@ -191,14 +191,16 @@ div[id^="oxipay-modal-"] {
     border-bottom: none !important;
     box-shadow: none !important;
     overflow: hidden;
-}
-
-#oxipay-tag-02:hover {
-    text-decoration: none !important;
-}
-
-#oxipay-tag-02 > p:nth-child(2){
-    margin-top: -10px;
+    &:hover {
+        text-decoration: none !important;
+    }
+    & > p {
+        margin-top: 1em !important;
+        margin-bottom: 1em !important;
+        &:nth-child(2){
+            margin-top: -0.7em !important;
+        }
+    }
 }
 
 /* new more-info large */
