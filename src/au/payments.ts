@@ -106,26 +106,30 @@ function generateWidget(productPrice: number, noLogo: boolean): string {
                         <p>or 1 initial payment of <b>$${initialPayment.toFixed(2)}</b></p>
                         <p>and 3 payments of <b>$250.00</b></p>
                         <p>Interest free with <span id="oxipay-img"></span></p>
-                    </a><br>`;
+                        <br>
+                    </a>`;
 
         // tslint:disable-next-line:max-line-length
         templatenologo = `<a id="oxipay-tag-02" href="#${Config.priceInfoModalId}">
-                <p>or 1 initial payment of <b>$${initialPayment.toFixed(2)}</b></p>
-                <p>and 3 payments of <b>$250.00</b></p>
-                <p>Interest free - <strong>find out how</strong></p>
-            </a><br>`;
+                            <p>or 1 initial payment of <b>$${initialPayment.toFixed(2)}</b></p>
+                            <p>and 3 payments of <b>$250.00</b></p>
+                            <p>Interest free - <strong>find out how</strong></p>
+                            <br>
+                        </a>`;
     } else {
         let productPriceDividedByFour = productPrice / 4;
 
         // Banking Rounding
         let roundedDownProductPrice = Math.floor( productPriceDividedByFour * Math.pow(10, 2) ) / Math.pow(10, 2);
         template = `<a id="oxipay-tag-02" href="#${Config.priceInfoModalId}">
-                <p>or 4 payments of <b>$${roundedDownProductPrice.toFixed(2)}</b></p><p>Interest free with <span id="oxipay-img"></span></p>
-            </a><br>`;
+                        <p>or 4 payments of <b>$${roundedDownProductPrice.toFixed(2)}</b></p><p>Interest free with <span id="oxipay-img"></span></p>
+                        <br>
+                    </a>`;
 
         templatenologo = `<a id="oxipay-tag-02" href="#${Config.priceInfoModalId}">
-                <p>or 4 payments of <b>$${roundedDownProductPrice.toFixed(2)}</b></p><p>Interest free - <strong>find out how</strong></p>
-            </a><br>`;
+                            <p>or 4 payments of <b>$${roundedDownProductPrice.toFixed(2)}</b></p><p>Interest free - <strong>find out how</strong></p>
+                            <br>
+                        </a>`;
     }
     return (noLogo) ? templatenologo : template;
 }
