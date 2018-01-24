@@ -73,7 +73,7 @@ let widget;
             }
 
             // register event handler to update the price
-            el.on("DOMSubtreeModified", function(e) {
+            el.parent().on("DOMSubtreeModified", function(e) {
                 updatePrice(e, jq);
             });
         }            
