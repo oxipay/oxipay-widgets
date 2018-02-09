@@ -45,8 +45,8 @@ export class ModalInjector {
     }
 
     private modalExists(url: string): boolean {
-        let modalId = this.getModalId(url);
-        return this.jQuery(modalId).length > 0;
+        let modalId = this.getModalId(url); //Element selector
+        return this.jQuery(modalId) ? this.jQuery(modalId).length > 0 : false;
     }
 
     private injectModal(url: string): void {
@@ -67,7 +67,8 @@ export class ModalInjector {
         let modalId = '';
         if (url.indexOf('PriceInfo') > 0) {
             modalId = Config.priceInfoModalId;
-        } else {
+        }
+        else {
             modalId = Config.infoModalId;
         }
         return modalId;

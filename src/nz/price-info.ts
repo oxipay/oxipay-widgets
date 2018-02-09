@@ -1,9 +1,8 @@
-﻿import * as jq from 'jquery';
+import * as jq from 'jquery';
 import { ModalInjector } from './modal-injector';
 import { Config } from './config';
 
-
-(($: JQueryStatic) => {    
+(($: JQueryStatic) => {
 
     /**
      * The src attribute from the script we are executing e.g 
@@ -21,7 +20,6 @@ import { Config } from './config';
     */
     let productPrice: number;
 
-    
     jq.fn.exists = function () {
         return this.length !== 0;
     }

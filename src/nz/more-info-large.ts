@@ -1,10 +1,10 @@
 ﻿import * as jq from 'jquery';
 import { ModalInjector } from './modal-injector';
-import {Config } from './config';
+import { Config } from './config';
 
 (($: JQueryStatic) => {
-        const template =
-            `<a id="oxipay-banner-01" href="#${Config.infoModalId}">
+    const template =
+        `<a id="oxipay-banner-01" href="#${Config.infoModalId}">
             <div class="logo">
                 <img alt="Oxipay" src="${Config.baseContentUrl}/content/images/logo-orange.svg" />
             </div>
@@ -16,7 +16,6 @@ import {Config } from './config';
                 <p class="info">More info</p>
             </div>
         </a>`;
-
-        const widget = new ModalInjector($);
-        widget.injectBanner(template, Config.moreInfoUrl);
+    const widget = new ModalInjector($);
+    widget.injectBanner(template, Config.moreInfoUrl);
 })(jq);
