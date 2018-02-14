@@ -22,15 +22,15 @@ let widget;
     /* You can pass debug=true to the query string to enable console error messages */
     let debug: boolean;
 
-    /*
+    /**
      * The extracted product price from either parsing the content from HTML (via css selector)
      * or a specifically passed in value
-     **/
+     */
     let productPrice: number;
 
     jq.fn.exists = function () {
         return this.length !== 0;
-    };
+    }
 
     // get current script
     scriptElement = getCurrentScript();
@@ -97,39 +97,40 @@ function extractPrice(el: any) {
 function generateWidget(productPrice: number, noLogo: boolean): string {
     let template;
     let templatenologo;
+    if (productPrice <= 1500) {
+        if (productPrice > 1000) {
+            let initialPayment = productPrice - 750;
 
-    if (productPrice > 1000) {
-        let initialPayment = productPrice - 750;
-
-        // tslint:disable-next-line:max-line-length
-        template = `<a id="oxipay-tag-02" href="#${Config.priceInfoModalId}">
-                        <p>or 1 initial payment of <b>$${initialPayment.toFixed(2)}</b></p>
-                        <p>and 3 payments of <b>$250.00</b></p>
-                        <p>Interest free with <span id="oxipay-img"></span></p>
-                        <br>
-                    </a>`;
-
-        // tslint:disable-next-line:max-line-length
-        templatenologo = `<a id="oxipay-tag-02" href="#${Config.priceInfoModalId}">
+            // tslint:disable-next-line:max-line-length
+            template = `<a id="oxipay-tag-02" href="#${Config.priceInfoModalId}">
                             <p>or 1 initial payment of <b>$${initialPayment.toFixed(2)}</b></p>
                             <p>and 3 payments of <b>$250.00</b></p>
-                            <p>Interest free - <strong>find out how</strong></p>
+                            <p>Interest free with <span id="oxipay-img"></span></p>
                             <br>
                         </a>`;
-    } else {
-        let productPriceDividedByFour = productPrice / 4;
 
-        // Banking Rounding
-        let roundedDownProductPrice = Math.floor( productPriceDividedByFour * Math.pow(10, 2) ) / Math.pow(10, 2);
-        template = `<a id="oxipay-tag-02" href="#${Config.priceInfoModalId}">
-                        <p>or 4 payments of <b>$${roundedDownProductPrice.toFixed(2)}</b></p><p>Interest free with <span id="oxipay-img"></span></p>
-                        <br>
-                    </a>`;
+            // tslint:disable-next-line:max-line-length
+            templatenologo = `<a id="oxipay-tag-02" href="#${Config.priceInfoModalId}">
+                                <p>or 1 initial payment of <b>$${initialPayment.toFixed(2)}</b></p>
+                                <p>and 3 payments of <b>$250.00</b></p>
+                                <p>Interest free - <strong>find out how</strong></p>
+                                <br>
+                            </a>`;
+        } else {
+            let productPriceDividedByFour = productPrice / 4;
 
-        templatenologo = `<a id="oxipay-tag-02" href="#${Config.priceInfoModalId}">
-                            <p>or 4 payments of <b>$${roundedDownProductPrice.toFixed(2)}</b></p><p>Interest free - <strong>find out how</strong></p>
+            // Banking Rounding
+            let roundedDownProductPrice = Math.floor( productPriceDividedByFour * Math.pow(10, 2) ) / Math.pow(10, 2);
+            template = `<a id="oxipay-tag-02" href="#${Config.priceInfoModalId}">
+                            <p>or 4 payments of <b>$${roundedDownProductPrice.toFixed(2)}</b></p><p>Interest free with <span id="oxipay-img"></span></p>
                             <br>
                         </a>`;
+
+            templatenologo = `<a id="oxipay-tag-02" href="#${Config.priceInfoModalId}">
+                                <p>or 4 payments of <b>$${roundedDownProductPrice.toFixed(2)}</b></p><p>Interest free - <strong>find out how</strong></p>
+                                <br>
+                            </a>`;
+        }
     }
     return (noLogo) ? templatenologo : template;
 }
