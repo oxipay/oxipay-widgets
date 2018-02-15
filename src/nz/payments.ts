@@ -40,7 +40,7 @@ let widget;
     }
 
     srcString = scriptElement.getAttribute('src');
-    noLogo    = getParameterByName('noLogo', srcString)? true:false;
+    noLogo    = (getParameterByName('noLogo', srcString) !== null);
     debug     = scriptElement.getAttribute('debug')? true:false;
     
     let priceStr = getParameterByName('productPrice', srcString);
@@ -156,9 +156,9 @@ function getParameterByName(name: string, url: string): string {
     name = name.replace(/[\[\]]/g, '\\$&');
     let regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
     results = regex.exec(url);
-
+    
     if (!results) {
-        return '';
+        return null;
     }
     if (!results[2]) {
         return '';
