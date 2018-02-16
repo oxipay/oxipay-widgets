@@ -1,5 +1,6 @@
 ﻿export class Config {
     public static baseContentUrl = 'https://widgets.oxipay.co.nz';
+    // public static baseContentUrl = 'http://localhost:3000/dist/nz';       // for local testing
 
     public static oxipayModalId = 'oxipay-modal';
     public static priceInfoModalId = 'oxipay-modal-price-info';
