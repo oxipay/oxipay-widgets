@@ -74,7 +74,7 @@ let widget;
 
             // register event handler to update the price
             el.on("DOMSubtreeModified", function(e) {
-                updatePrice(e, jq);
+                updatePrice(e, jq, noLogo);
             });
         }            
     }
@@ -145,9 +145,9 @@ function getCurrentScript(): any {
     return currentScript;
 }
 
-function updatePrice(e: any, jq: JQueryStatic) {
+function updatePrice(e: any, jq: JQueryStatic, noLogo: boolean) {
     let productPrice = extractPrice(jq(e.target));
-    let template = generateWidget(productPrice, false);
+    let template = generateWidget(productPrice, noLogo);
     let parent =  jq(getCurrentScript()).parent();
     widget.injectBanner(template, Config.priceInfoUrl, parent);
 }
