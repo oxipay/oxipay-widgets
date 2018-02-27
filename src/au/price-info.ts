@@ -98,13 +98,13 @@ function generateWidget(productPrice: number, noLogo: boolean): string {
     let template;
     let templatenologo;
     if (productPrice <= 2100) {
-        if (productPrice > 1000) {
-            let initialPayment = productPrice - 750;
+        if (productPrice > 1400) {
+            let initialPayment = productPrice - 1050;
 
             // tslint:disable-next-line:max-line-length
             template = `<a id="oxipay-tag-02" href="#${Config.priceInfoModalId}">
                             <p>or 1 initial payment of <b>$${initialPayment.toFixed(2)}</b></p>
-                            <p>and 3 payments of <b>$250.00</b></p>
+                            <p>and 3 payments of <b>$350.00</b></p>
                             <p>Interest free with <span id="oxipay-img"></span></p>
                             <br>
                         </a>`;
@@ -112,7 +112,7 @@ function generateWidget(productPrice: number, noLogo: boolean): string {
             // tslint:disable-next-line:max-line-length
             templatenologo = `<a id="oxipay-tag-02" href="#${Config.priceInfoModalId}">
                                 <p>or 1 initial payment of <b>$${initialPayment.toFixed(2)}</b></p>
-                                <p>and 3 payments of <b>$250.00</b></p>
+                                <p>and 3 payments of <b>$350.00</b></p>
                                 <p>Interest free - <strong>find out how</strong></p>
                                 <br>
                             </a>`;
