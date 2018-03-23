@@ -10,7 +10,7 @@ $baseURL: "https://widgets.oxipay.com.au";
 
 #oxipay-img{
     background-image: url($baseURL + "/content/images/logo-orange.svg");
-    padding: 1px 35px;
+    padding: 1px 32px;
     margin-left: 3px;
     background-repeat: no-repeat;
 }
@@ -282,6 +282,10 @@ div[id^="oxipay-modal-"] {
     vertical-align: bottom;
 }
 
+.more-info {
+    text-decoration: underline; font-size: 0.7em; vertical-align: middle;
+}
+
 div[id^="oxipay-more-info-"]:hover .more-info-btn {
     text-decoration: underline;
 }
@@ -315,4 +319,8 @@ div[id^="oxipay-more-info-"]:hover .more-info-btn {
     .more-info-btn {
         float: right;
     }
+}
+
+a[data-remodal-target]{
+    cursor: pointer;
 }
