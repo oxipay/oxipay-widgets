@@ -5,7 +5,7 @@ import {Config } from './config';
 
 (($: JQueryStatic) => {
         let template =
-            `<a id="oxipay-banner-01" href="#${Config.signupModalId}">
+            `<a id="oxipay-banner-01" data-remodal-target="${Config.signupModalId}">
             <div class="logo">
                 <img alt="Oxipay" src="${Config.baseContentUrl}/content/images/logo-orange.svg" />
             </div>

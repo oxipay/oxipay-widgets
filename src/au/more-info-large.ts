@@ -4,7 +4,7 @@ import { Config } from './config';
 
 (($: JQueryStatic) => {
     const template =
-        `<a id="oxipay-more-info-large" href="#${Config.moreInfoModalId}">
+        `<a id="oxipay-more-info-large" data-remodal-target="${Config.moreInfoModalId}">
             <div class='title'>
                 <span>4 easy payments. </span>
                 <span>No Interest.</span>

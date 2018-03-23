@@ -102,7 +102,7 @@ function generateWidget(productPrice: number, noLogo: boolean): string {
             let initialPayment = productPrice - 1050;
 
             // tslint:disable-next-line:max-line-length
-            template = `<a id="oxipay-tag-02" href="#${Config.priceInfoModalId}">
+            template = `<a id="oxipay-tag-02" data-remodal-target="${Config.priceInfoModalId}">
                             <p>or 1 initial payment of <b>$${initialPayment.toFixed(2)}</b></p>
                             <p>and 3 payments of <b>$350.00</b></p>
                             <p>Interest free with <span id="oxipay-img"></span></p>
@@ -110,7 +110,7 @@ function generateWidget(productPrice: number, noLogo: boolean): string {
                         </a>`;
 
             // tslint:disable-next-line:max-line-length
-            templatenologo = `<a id="oxipay-tag-02" href="#${Config.priceInfoModalId}">
+            templatenologo = `<a id="oxipay-tag-02" data-remodal-target="${Config.priceInfoModalId}">
                                 <p>or 1 initial payment of <b>$${initialPayment.toFixed(2)}</b></p>
                                 <p>and 3 payments of <b>$350.00</b></p>
                                 <p>Interest free - <strong>find out how</strong></p>
@@ -121,12 +121,12 @@ function generateWidget(productPrice: number, noLogo: boolean): string {
 
             // Banking Rounding
             let roundedDownProductPrice = Math.floor( productPriceDividedByFour * Math.pow(10, 2) ) / Math.pow(10, 2);
-            template = `<a id="oxipay-tag-02" href="#${Config.priceInfoModalId}">
+            template = `<a id="oxipay-tag-02" data-remodal-target="${Config.priceInfoModalId}">
                             <p>or 4 payments of <b>$${roundedDownProductPrice.toFixed(2)}</b></p><p>Interest free with <span id="oxipay-img"></span></p>
                             <br>
                         </a>`;
 
-            templatenologo = `<a id="oxipay-tag-02" href="#${Config.priceInfoModalId}">
+            templatenologo = `<a id="oxipay-tag-02" data-remodal-target="${Config.priceInfoModalId}">
                                 <p>or 4 payments of <b>$${roundedDownProductPrice.toFixed(2)}</b></p><p>Interest free - <strong>find out how</strong></p>
                                 <br>
                             </a>`;
