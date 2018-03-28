@@ -46,7 +46,7 @@ export class ModalInjector {
 
     private modalExists(url: string): boolean {
         let modalId = this.getModalId(url); //Element selector
-        return this.jQuery(modalId) ? this.jQuery(modalId).length > 0 : false;
+        return this.jQuery("#"+modalId) ? this.jQuery("#"+modalId).length > 0 : false;
     }
 
     private injectModal(url: string): void {
