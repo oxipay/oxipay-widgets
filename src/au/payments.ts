@@ -141,6 +141,8 @@ function generateWidget(productPrice: number, noLogo: boolean): string {
                                 <br>
                             </a>`;
         }
+    } else {
+        return '<a id="oxipay-tag-02"></a>'
     }
     return (noLogo) ? templatenologo : template;
 }
