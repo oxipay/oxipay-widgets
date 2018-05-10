@@ -6,8 +6,9 @@ import { Config } from './config';
     const template =
         `<a id="oxipay-more-info-large" data-remodal-target="${Config.moreInfoModalId}">
             <div class='title'>
-                <span>4 easy payments. </span>
-                <span>No Interest.</span>
+                <span>Get it now. </span>
+                <span>Pay over time. </span>
+                <span>no interest ever.</span>
             </div>
             <div class="orange-area">
                 <div class="logo">
