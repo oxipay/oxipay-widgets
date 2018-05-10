@@ -8,7 +8,7 @@ import { Config } from './config';
             <div class='title'>
                 <span>Get it now. </span>
                 <span>Pay over time. </span>
-                <span>no interest ever.</span>
+                <span>No interest ever.</span>
             </div>
             <div class="orange-area">
                 <div class="logo">
