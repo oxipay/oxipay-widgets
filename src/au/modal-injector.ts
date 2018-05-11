@@ -71,6 +71,9 @@ export class ModalInjector {
         else if (url.indexOf('PriceInfo') > 0) {
             modalId = Config.priceInfoModalId;
         }
+        else if (url.indexOf('MoreInfo-modal') > 0) {
+            modalId = Config.moreInfoModalId_1;
+        }
         else if (url.indexOf("MoreInfo") > 0) {
             modalId = Config.moreInfoModalId;
         }
