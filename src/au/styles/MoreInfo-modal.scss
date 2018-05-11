@@ -90,7 +90,7 @@ div[id^="oxipay-modal-"] {
             padding: 0 0.5rem;
             box-sizing: border-box;
             img {
-                width: 60%;
+                width: 56%;
                 margin: 0 auto;
             }
             p {
@@ -101,13 +101,13 @@ div[id^="oxipay-modal-"] {
     }
 
     #middle {
-        font-size: 1.2rem;
+        font-size: 1.65rem;
         padding: 1.2em;
         background: $OXIPAY_GRAY;
         font-family: "Montserrat-Bold";
         color: $OXIPAY_ORANGE;
         p {
-            max-width: 15em;
+            max-width: 14em;
             margin: 0 auto;
             text-align: center;
             line-height: 1.4em;
@@ -121,6 +121,7 @@ div[id^="oxipay-modal-"] {
             margin: 0 auto;
             text-align: center;
             line-height: 1.9em;
+            font-size: 1.05em;
         }
     }
 
@@ -136,6 +137,7 @@ div[id^="oxipay-modal-"] {
     }
 
     footer {
+        bottom: 0;
         background-color: $OXIPAY_DARK_GRAY;
         color: white;
         font-weight:100;

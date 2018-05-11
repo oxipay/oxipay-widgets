@@ -1,4 +1,4 @@
-﻿var path = require('path');
+var path = require('path');
 var webpack = require('webpack');
 var CopyWebpackPlugin = require('copy-webpack-plugin');
 module.exports = {
@@ -15,7 +15,8 @@ module.exports = {
         "au/content/scripts/register-interest-large": "./src/au/register-interest-large.ts",
         "au/content/scripts/price-info": "./src/au/price-info.ts",
         "au/content/scripts/payments": "./src/au/payments.ts",
-        "au/content/scripts/payments-weekly": "./src/au/payments-weekly.ts"
+        "au/content/scripts/payments-weekly": "./src/au/payments-weekly.ts",
+        "au/content/scripts/more-info-1": "./src/au/more-info-1.ts"
     },
 
     output: {
