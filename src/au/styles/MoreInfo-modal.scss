@@ -51,11 +51,23 @@ div[id^="oxipay-modal-"] {
     margin: 0 auto;
 
     header {
-        background-color: $OXIPAY_ORANGE;
-        text-align: center;
         padding-top: 30px;
         padding-bottom: 0;
+
+
+    }
+
+    .branding-area {
+        position: relative;
+        z-index: 100;
+        width: 100%;
         font-family: "Montserrat-Bold";
+        // background-color: $OXIPAY_ORANGE;    
+        // border-bottom-left-radius:50%;
+        // border-bottom-right-radius:50%;
+        text-align: center;
+        padding-top: 30px;
+        padding-bottom: 30px;
         img.logo {
             width: 150px;
             max-width: 50%;
@@ -66,21 +78,23 @@ div[id^="oxipay-modal-"] {
             color: white;
             margin: 0;
         }
+        p.small {
+            font-size: 1.2rem;
+            color: white;
+            margin: 0;
+        }
     }
+
     .curve {
         width: 100%;
-        height: 60px;
-        background-color: $OXIPAY_ORANGE;
-        border-bottom-left-radius:50%;
-        border-bottom-right-radius:50%;
-
+        height: 160px;
+        position: absolute;
+        z-index: 0;
         text-align: center;
-        color: white;
-        margin: 0;
-        font-size: 1.1rem;
-        color: white;
-        font-family: 'Montserrat-Medium';
-        margin: 0;
+        background-image: url("../images/curve.svg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center bottom;
     }
     #top {
         overflow: hidden;

@@ -55,7 +55,7 @@ div[id^="oxipay-modal-"] {
 
 #oxipay-external {
     width: 100%;
-    height: 700px;
+    height: 706px;
     max-height: 80vh;
     border: none;
 }
@@ -420,6 +420,10 @@ div[id^="oxipay-modal-"] {
             }
         }
     }
+}
+
+#oxipay-modal-more-info_1 {
+    background-color: #515565;
 }
 
 .more-info-btn {
