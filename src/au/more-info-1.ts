@@ -10,9 +10,8 @@ import { Config } from './config';
             </div>
             <div class="placeholder"></div>
             <div class='title'>
-                <div class="full-height"></div>
-                <div>Get it now.</div>
-                <div>Pay over time.</div>
+                <div>Get it now.&nbsp;</div>
+                <div>Pay over time.&nbsp;</div>
                 <div class="light">No Interest ever.</div>
                 <div id="narrow-screen">
                     <span class="more-info-btn">MORE INFO</span>
