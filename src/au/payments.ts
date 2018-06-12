@@ -100,7 +100,7 @@ let widget;
 function extractPrice(el: any) {
     let textValue =  el.text().trim();
     textValue = textValue.replace(/^\D+/, "")
-
+    textValue = textValue.replace(/,/, "")
     return parseFloat(textValue);
 }
 
