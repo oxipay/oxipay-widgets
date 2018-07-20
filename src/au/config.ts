@@ -17,6 +17,8 @@ export class Config {
     public static priceInfoModalId = 'oxipay-modal-price-info';
     public static priceInfoUrl = Config.baseContentUrl + '/content/html/PriceInfo.html';
 
+    public static priceInfoWeeklyUrl = Config.baseContentUrl + '/content/html/PriceInfo-weekly.html';
+
     public static infoModalId = 'oxipay-modal-info';
     public static moreInfoUrl = Config.baseContentUrl + '/content/html/ExternalModal.html';
 

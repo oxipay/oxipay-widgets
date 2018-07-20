@@ -55,7 +55,7 @@ let widget;
         // because we have been provided the price we can't bind to events on 
         // the element containing the price. We just inject the template
         const template: string = generateWidget(productPrice, noLogo);
-        widget.injectBanner(template, Config.priceInfoUrl, jq(scriptElement));
+        widget.injectBanner(template, Config.priceInfoWeeklyUrl, jq(scriptElement));
 
     } else {
         
@@ -72,7 +72,7 @@ let widget;
             productPrice = extractPrice(el);
 
             if (productPrice) {
-                widget.injectBanner(generateWidget(productPrice, noLogo), Config.priceInfoUrl, jq(scriptElement));
+                widget.injectBanner(generateWidget(productPrice, noLogo), Config.priceInfoWeeklyUrl, jq(scriptElement));
             }
 
             // register event handler to update the price
@@ -159,7 +159,7 @@ function updatePrice(el: JQuery, jq: JQueryStatic, noLogo: boolean) {
     let productPrice = extractPrice(el);
     let template = generateWidget(productPrice, noLogo);
     let parent =  jq(getCurrentScript()).parent();
-    widget.injectBanner(template, Config.priceInfoUrl, parent);
+    widget.injectBanner(template, Config.priceInfoWeeklyUrl, parent);
 }
 
 function getParameterByName(name: string, url: string): string {
