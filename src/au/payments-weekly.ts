@@ -112,7 +112,7 @@ function generateWidget(productPrice: number, noLogo: boolean): string {
             let initialPayment = productPrice - 1225;
 
             // tslint:disable-next-line:max-line-length
-            template = `<a id="oxipay-tag-02" data-remodal-target="${Config.priceInfoModalId}">
+            template = `<a id="oxipay-tag-02" data-remodal-target="${Config.priceInfoWeeklyModalId}">
                             <p>or 1 initial payment of <b>$${initialPayment.toFixed(2)}</b></p>
                             <p>and 7 weekly payments of <b>$175.00</b></p>
                             <p>Interest free with <span id="oxipay-img"></span><span class="more-info">more info</span></p>
@@ -120,7 +120,7 @@ function generateWidget(productPrice: number, noLogo: boolean): string {
                         </a>`;
 
             // tslint:disable-next-line:max-line-length
-            templatenologo = `<a id="oxipay-tag-02" data-remodal-target="${Config.priceInfoModalId}">
+            templatenologo = `<a id="oxipay-tag-02" data-remodal-target="${Config.priceInfoWeeklyModalId}">
                                 <p>or 1 initial payment of <b>$${initialPayment.toFixed(2)}</b></p>
                                 <p>and 7 weekly payments of <b>$175.00</b></p>
                                 <p>Interest free - <strong>find out how</strong></p>
@@ -131,12 +131,12 @@ function generateWidget(productPrice: number, noLogo: boolean): string {
 
             // Banking Rounding
             let roundedDownProductPrice = Math.floor( productPriceDividedByEight * Math.pow(10, 2) ) / Math.pow(10, 2);
-            template = `<a id="oxipay-tag-02" data-remodal-target="${Config.priceInfoModalId}">
+            template = `<a id="oxipay-tag-02" data-remodal-target="${Config.priceInfoWeeklyModalId}">
                             <p>or 8 weekly payments of <b>$${roundedDownProductPrice.toFixed(2)}</b></p><p>Interest free with <span id="oxipay-img"></span><span class="more-info">more info</span></p>
                             <br>
                         </a>`;
 
-            templatenologo = `<a id="oxipay-tag-02" data-remodal-target="${Config.priceInfoModalId}">
+            templatenologo = `<a id="oxipay-tag-02" data-remodal-target="${Config.priceInfoWeeklyModalId}">
                                 <p>or 8 weekly payments of <b>$${roundedDownProductPrice.toFixed(2)}</b></p><p>Interest free - <strong>find out how</strong></p>
                                 <br>
                             </a>`;
