@@ -33,6 +33,8 @@ export class ModalInjector {
             element = this.jQuery('script[id^=' + scriptId + ']');
         }
 
+        let modalId = this.getModalId(targetUrl);
+
         // look for the id , if it exists then we replace the element
         // this could cause issues with multiple entries.. @todo make element id dynamic
         if (this.jQuery('#oxipay-tag-02', element).length > 0) {
@@ -65,9 +67,6 @@ export class ModalInjector {
         let modalId = '';
         if(url.indexOf('Signup') > 0) {
             modalId = Config.signupModalId;
-        }
-        else if (url.indexOf('PriceInfo-weekly') > 0) {
-            modalId = Config.priceInfoWeeklyModalId;
         }
         else if (url.indexOf('PriceInfo') > 0) {
             modalId = Config.priceInfoModalId;
