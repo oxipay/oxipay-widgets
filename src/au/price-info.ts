@@ -46,7 +46,7 @@ let widget;
     let priceStr = getParameterByName('productPrice', srcString);
 
     if (priceStr) {
-        productPrice = parseFloat(priceStr);
+        productPrice = parseFloat(priceStr.replace(',', ''));
 
         // just render the widget
         // because we have been provided the price we can't bind to events on 
