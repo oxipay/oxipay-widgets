@@ -1,13 +1,12 @@
 // when doing local test, set:
-//   baseContentUrl = http://localhost:PORT_NUMBER/dist/au' (or 'http://localhost:PORT_NUMBER/dist/nz' for New Zealand)
+//   baseContentUrl = "./dist/au' (or './dist/nz' for New Zealand)
 
 // When deploying to server:
 //   baseContentUrl = 'https://YOUR-URL'
 
 export class Config {
     public static baseContentUrl = 'https://widgets.oxipay.com.au';    // for remote deploy
-    // public static baseContentUrl = 'http://localhost:3000/dist/au';       // for local testing
-    // public static baseContentUrl = 'http://54.252.245.32/dist/au' // for remote testing
+    // public static baseContentUrl = './dist/au';       // for local testing
 
     public static scriptId = 'script[id^=oxipay-banner]';
 

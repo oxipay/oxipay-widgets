@@ -29,11 +29,8 @@ export class ModalInjector {
         // in the same way that we previously did
         if (!element) {
             let scriptId = currentScript.attributes.getNamedItem("id").value;
-
             element = this.jQuery('script[id^=' + scriptId + ']');
         }
-
-        let modalId = this.getModalId(targetUrl);
 
         // look for the id , if it exists then we replace the element
         // this could cause issues with multiple entries.. @todo make element id dynamic
@@ -74,11 +71,8 @@ export class ModalInjector {
         else if (url.indexOf('MoreInfo-modal') > 0) {
             modalId = Config.moreInfoModalId_1;
         }
-        else if (url.indexOf("MoreInfo") > 0) {
-            modalId = Config.moreInfoModalId;
-        }
         else {
-            modalId = Config.infoModalId;
+            modalId = Config.moreInfoModalId;
         }
         return modalId;
     }
