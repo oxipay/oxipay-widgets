@@ -1,9 +1,9 @@
 // for deploying to server:
 $baseURL: "https://widgets.oxipay.com.au";
 // for local test (AU)
-// $baseURL: "http://localhost:3000/dist/au";
+// $baseURL: "/dist/au";
 // for local test (NZ)
-// $baseURL: "http://localhost:3000/dist/nz";
+// $baseURL: "/dist/nz";
 
 // for remote test:
 // $baseURL: "http://54.252.245.32/dist/au";
@@ -55,7 +55,7 @@ div[id^="oxipay-modal-"] {
 
 #oxipay-external {
     width: 100%;
-    height: 700px;
+    height: 725px;
     max-height: 80vh;
     border: none;
 }
@@ -302,8 +302,12 @@ div[id^="oxipay-modal-"] {
         }
     }
     .title {
+        display: flex;
         flex: 1 1 auto;
         font-family: 'Montserrat-Bold', 'arial', sans-serif;
+        justify-content: center;
+        flex-wrap: wrap;
+        align-items: center;
         text-align: center;
         margin: 0 0 0 20px;
         font-size: 26px;
@@ -314,12 +318,6 @@ div[id^="oxipay-modal-"] {
         }
         #narrow-screen {
             display: none;
-        }
-        .full-height{
-            height: 100%;
-            text-align: center;
-            display: inline-block;
-            vertical-align: middle;
         }
         .light {
             font-family: 'Montserrat-Regular';
@@ -355,6 +353,7 @@ div[id^="oxipay-modal-"] {
             flex: 1 1 auto;
         }
         .title {
+            display: block;
             width: 42%;
             flex: 1 1 auto;
             margin-left: 0;
@@ -364,9 +363,6 @@ div[id^="oxipay-modal-"] {
                 display: block;
                 white-space: nowrap;
             }
-            .full-height {
-                display: none;
-            }        
             #narrow-screen {
                 display: block;
                 margin-top: 0.5em;
@@ -405,11 +401,9 @@ div[id^="oxipay-modal-"] {
             }
         }
         .title {
-            .full-height {
-                height: 0;
-            }
+            display: block;
             font-size: 32px;
-            margin: 0 -15px;
+            margin: 3rem -15px 0;
             div {
                 display: block;
                 margin: 0 auto;
@@ -418,6 +412,16 @@ div[id^="oxipay-modal-"] {
                 margin-top: 1em;
                 margin-bottom: 0.65em;
             }
+        }
+    }
+}
+
+#oxipay-modal-more-info_1 {
+    background-color: #515565;
+    .remodal-close {
+        color: white;
+        &:hover {
+            color: #2b2e38;
         }
     }
 }
