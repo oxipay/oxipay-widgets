@@ -5,7 +5,7 @@ module.exports = {
     entry: {
         "nz/content/scripts/more-info-large": "./src/nz/more-info-large.ts",
         "nz/content/scripts/more-info-small": "./src/nz/more-info-small.ts",
-        "nz/content/scripts/price-info": "./src/nz/price-info.ts",
+        "nz/content/scripts/price-info": "./src/nz/payments.ts",
         "nz/content/scripts/payments": "./src/nz/payments.ts",
         "nz/content/scripts/payments-weekly": "./src/nz/payments-weekly.ts",
 
@@ -13,7 +13,7 @@ module.exports = {
         "au/content/scripts/more-info-small": "./src/au/more-info-small.ts",
         "au/content/scripts/register-interest-small": "./src/au/register-interest-small.ts",
         "au/content/scripts/register-interest-large": "./src/au/register-interest-large.ts",
-        "au/content/scripts/price-info": "./src/au/price-info.ts",
+        "au/content/scripts/price-info": "./src/au/payments.ts",
         "au/content/scripts/payments": "./src/au/payments.ts",
         "au/content/scripts/payments-weekly": "./src/au/payments-weekly.ts",
         "au/content/scripts/landing-page": "./src/au/landing-page.ts",
