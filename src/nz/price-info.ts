@@ -18,6 +18,8 @@ let widget;
     /* Choose if we want to render the Oxipay Logo or not */
     let noLogo: boolean;
 
+    /* Choose if we want to monitor price change ever half second */
+    let monitor: boolean;
 
     /* You can pass debug=true to the query string to enable console error messages */
     let debug: boolean;
@@ -30,7 +32,7 @@ let widget;
 
     jq.fn.exists = function () {
         return this.length !== 0;
-    }
+    };
 
     // get current script
     scriptElement = getCurrentScript();
@@ -41,6 +43,7 @@ let widget;
 
     srcString = scriptElement.getAttribute('src');
     noLogo    = (getParameterByName('noLogo', srcString) !== null);
+    monitor   = (getParameterByName('monitor', srcString) !== null);
     debug     = scriptElement.getAttribute('debug')? true:false;
     
     let priceStr = getParameterByName('productPrice', srcString);
@@ -73,10 +76,17 @@ let widget;
             }
 
             // register event handler to update the price
-            el.on("DOMSubtreeModified", function(e) {
-                updatePrice(e, jq, noLogo);
-            });
-        }            
+            if (monitor){
+                setInterval(function(){
+                    let el = jq(selector, document.body);
+                    updatePrice(el, jq, noLogo);
+                },1000);
+            } else {
+                el.on("DOMSubtreeModified", function(e) {
+                    updatePrice(jq(e.target), jq, noLogo);
+                });
+            }
+        }
     }
 
     function logDebug(msg: string) {
@@ -131,6 +141,8 @@ function generateWidget(productPrice: number, noLogo: boolean): string {
                                 <br>
                             </a>`;
         }
+    } else {
+        return '<a id="oxipay-tag-02"></a>'
     }
     return (noLogo) ? templatenologo : template;
 }
@@ -145,8 +157,8 @@ function getCurrentScript(): any {
     return currentScript;
 }
 
-function updatePrice(e: any, jq: JQueryStatic, noLogo: boolean) {
-    let productPrice = extractPrice(jq(e.target));
+function updatePrice(el: JQuery, jq: JQueryStatic, noLogo: boolean) {
+    let productPrice = extractPrice(el);
     let template = generateWidget(productPrice, noLogo);
     let parent =  jq(getCurrentScript()).parent();
     widget.injectBanner(template, Config.priceInfoUrl, parent);
@@ -156,7 +168,7 @@ function getParameterByName(name: string, url: string): string {
     name = name.replace(/[\[\]]/g, '\\$&');
     let regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
     results = regex.exec(url);
-    
+
     if (!results) {
         return null;
     }
