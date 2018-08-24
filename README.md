@@ -79,5 +79,15 @@ To switch between local testing and online deployment, you will make changes in 
 All .scss files in /src/au/styles and /src/nz/styles have to be compile into .min.css files.
 To do so, go to project root folder and use command:
 ```
-sass -t compressed src/au/styles/MoreInfo.scss:src/au/styles/MoreInfo.min.css src/au/styles/MoreInfo-modal.scss:src/au/styles/MoreInfo-modal.min.css src/au/styles/ExternalModal.scss:src/au/styles/ExternalModal.min.css src/au/styles/priceInfo.scss:src/au/styles/priceInfo.min.css src/nz/styles/ExternalModal.scss:src/nz/styles/ExternalModal.min.css src/nz/styles/priceInfo.scss:src/nz/styles/priceInfo.min.css css/oxipay-branding.scss:css/oxipay-branding.css
+sass -t compressed src/au/styles/MoreInfo.scss:src/au/styles/MoreInfo.min.css src/au/styles/MoreInfo-modal.scss:src/au/styles/MoreInfo-modal.min.css src/au/styles/ExternalModal.scss:src/au/styles/ExternalModal.min.css src/au/styles/priceInfo.scss:src/au/styles/priceInfo.min.css src/nz/styles/ExternalModal.scss:src/nz/styles/ExternalModal.min.css src/nz/styles/priceInfo.scss:src/nz/styles/priceInfo.min.css css/oxipay-branding.scss:css/oxipay-branding.css src/au/html/landing-page/styles/landing.scss:src/au/html/landing-page/styles/landing.css
+
+```
+
+## Landing Page
+### how to use
+1. Create a new page in your online store
+2. Paste the following code to the created page:  
+```html
+<script id="oxipay-landing-page" src="https://s3-ap-southeast-2.amazonaws.com/widgets.oxipay.com.au/content/scripts/landing-page.js"></script></pre>
+
 ```
