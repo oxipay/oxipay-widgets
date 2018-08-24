@@ -46,6 +46,7 @@ let widget;
     let priceStr = getParameterByName('productPrice', srcString);
 
     if (priceStr) {
+        priceStr = priceStr.replace(/^\D+/, '');
         productPrice = parseFloat(priceStr.replace(',', ''));
 
         // just render the widget
