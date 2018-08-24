@@ -16,8 +16,8 @@ module.exports = {
         "au/content/scripts/price-info": "./src/au/price-info.ts",
         "au/content/scripts/payments": "./src/au/payments.ts",
         "au/content/scripts/payments-weekly": "./src/au/payments-weekly.ts",
+        "au/content/scripts/landing-page": "./src/au/landing-page.ts",
         "au/content/scripts/more-info-1": "./src/au/more-info-1.ts"
-        "au/content/scripts/landing-page": "./src/au/landing-page.ts"
     },
 
     output: {
