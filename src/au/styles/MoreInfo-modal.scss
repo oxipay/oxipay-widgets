@@ -53,8 +53,6 @@ div[id^="oxipay-modal-"] {
     header {
         padding-top: 30px;
         padding-bottom: 0;
-
-
     }
 
     .branding-area {
@@ -62,9 +60,6 @@ div[id^="oxipay-modal-"] {
         z-index: 100;
         width: 100%;
         font-family: "Montserrat-Bold";
-        // background-color: $OXIPAY_ORANGE;    
-        // border-bottom-left-radius:50%;
-        // border-bottom-right-radius:50%;
         text-align: center;
         padding-top: 30px;
         padding-bottom: 30px;
@@ -79,7 +74,7 @@ div[id^="oxipay-modal-"] {
             margin: 0;
         }
         p.small {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             color: white;
             margin: 0;
         }
@@ -91,14 +86,13 @@ div[id^="oxipay-modal-"] {
         position: absolute;
         z-index: 0;
         text-align: center;
-        background-image: url("../images/curve.svg");
+        background: url("../images/curve.svg"), no-repeat;
         background-size: cover;
-        background-repeat: no-repeat;
         background-position: center bottom;
     }
     #top {
         overflow: hidden;
-        margin: 3rem auto 1.5rem;
+        margin: 1.6rem auto 0.6rem;
         font-family: 'Montserrat-Medium';
         max-width: 38rem;
         .card {
@@ -119,8 +113,8 @@ div[id^="oxipay-modal-"] {
     }
 
     #middle {
-        font-size: 1.65rem;
-        padding: 1.2em;
+        font-size: 1.5rem;
+        padding: 0.5em;
         background: $OXIPAY_GRAY;
         font-family: "Montserrat-Bold";
         color: $OXIPAY_ORANGE;
@@ -133,7 +127,7 @@ div[id^="oxipay-modal-"] {
     }
 
     #bottom {
-        padding: 1.5rem 0;
+        padding: 1.4rem 0;
         p {
             max-width: 22em;
             margin: 0 auto;

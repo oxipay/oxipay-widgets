@@ -32,7 +32,7 @@ let widget;
 
     jq.fn.exists = function () {
         return this.length !== 0;
-    }
+    };
 
     // get current script
     scriptElement = getCurrentScript();
@@ -87,7 +87,7 @@ let widget;
                     updatePrice(jq(e.target), jq, noLogo);
                 });
             }
-        }    
+        }
     }
 
     function logDebug(msg: string) {
