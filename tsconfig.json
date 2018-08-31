@@ -19,6 +19,8 @@
     "./src/au/register-interest-large.ts",
     "./src/au/more-info-large.ts",
     "./src/au/more-info-small.ts",
+    "./src/au/more-info-general.ts",
+    "./src/au/top-banner.ts",
     "./src/au/payments.ts",
     "./src/au/config.ts"
   ],

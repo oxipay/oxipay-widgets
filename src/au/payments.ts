@@ -27,6 +27,7 @@ let widget;
     // You can pass in min="" and max="" in the script tag.
     let min: number;
     let max: number;
+    let element: any;
 
     /**
      * The extracted product price from either parsing the content from HTML (via css selector)
@@ -52,6 +53,8 @@ let widget;
     min       = scriptElement.dataset.min || 0;
     max       = scriptElement.dataset.max || 999999;
 
+    element = (getParameterByName('element', srcString))? jq(getParameterByName('element', srcString)) : jq(scriptElement);
+
     let priceStr = getParameterByName('productPrice', srcString);
 
     if (priceStr) {
@@ -62,7 +65,7 @@ let widget;
         // because we have been provided the price we can't bind to events on 
         // the element containing the price. We just inject the template
         const template: string = generateWidget(productPrice, noLogo, min, max);
-        widget.injectBanner(template, Config.priceInfoUrl, jq(scriptElement));
+        widget.injectBanner(template, Config.priceInfoUrl, element);
 
     } else {
         
@@ -79,7 +82,7 @@ let widget;
             productPrice = extractPrice(el);
 
             if (productPrice) {
-                widget.injectBanner(generateWidget(productPrice, noLogo, min, max), Config.priceInfoUrl, jq(scriptElement));
+                widget.injectBanner(generateWidget(productPrice, noLogo, min, max), Config.priceInfoUrl, element);
             }
 
             // register event handler to update the price
