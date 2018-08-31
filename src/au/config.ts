@@ -21,6 +21,10 @@ export class Config {
     public static moreInfoUrlNew = Config.baseContentUrl + '/content/html/MoreInfo.html';
 
     // more-info modal (future)
-    public static moreInfoModalId_1 = 'oxipay-modal-more-info_1';
-    public static moreInfoModalUrl_1 = Config.baseContentUrl + '/content/html/MoreInfo-modal.html';
+    public static oxipayMoreInfoGeneralModalId = 'oxipay-modal-more-info_1';
+    public static oxipayMoreInfoGeneralModalUrl = Config.baseContentUrl + '/content/html/MoreInfo-modal.html';
+
+    // top-banner modal
+    public static oxipayBannerTopModalId = 'oxipay-modal-more-info_1';
+    public static oxipayBannerTopModalUrl = Config.baseContentUrl + '/content/html/MoreInfo-modal.html';
 }
