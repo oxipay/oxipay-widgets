@@ -27,6 +27,7 @@ let widget;
     // You can pass in min="" and max="" in the script tag.
     let min: number;
     let max: number;
+    let used_in: string;
     let element: any;
 
     /**
@@ -52,6 +53,7 @@ let widget;
     debug     = scriptElement.getAttribute('debug')? true:false;
     min       = scriptElement.dataset.min || 0;
     max       = scriptElement.dataset.max || 999999;
+    used_in   =  (getParameterByName('used_in', srcString));
 
     element = (getParameterByName('element', srcString))? jq(getParameterByName('element', srcString)) : jq(scriptElement);
 
@@ -64,7 +66,7 @@ let widget;
         // just render the widget
         // because we have been provided the price we can't bind to events on 
         // the element containing the price. We just inject the template
-        const template: string = generateWidget(productPrice, noLogo, min, max);
+        const template: string = generateWidget(productPrice, noLogo, min, max, used_in);
         widget.injectBanner(template, Config.priceInfoUrl, element);
 
     } else {
@@ -82,18 +84,18 @@ let widget;
             productPrice = extractPrice(el);
 
             if (productPrice) {
-                widget.injectBanner(generateWidget(productPrice, noLogo, min, max), Config.priceInfoUrl, element);
+                widget.injectBanner(generateWidget(productPrice, noLogo, min, max, used_in), Config.priceInfoUrl, element);
             }
 
             // register event handler to update the price
             if (monitor){
                 setInterval(function(){
                     let el = jq(selector, document.body);
-                    updatePrice(el, jq, noLogo, min, max);
+                    updatePrice(el, jq, noLogo, min, max, used_in);
                 },1000);
             } else {
                 el.on("DOMSubtreeModified", function(e) {
-                    updatePrice(jq(e.target), jq, noLogo, min, max);
+                    updatePrice(jq(e.target), jq, noLogo, min, max, used_in);
                 });
             }
         }
@@ -109,18 +111,23 @@ let widget;
 
 function extractPrice(el: any) {
     let textValue =  el.text().trim();
-    textValue = textValue.replace(/^\D+/, "")
-    textValue = textValue.replace(/,/, "")
+    textValue = textValue.replace(/^\D+/, "");
+    textValue = textValue.replace(/,/, "");
     return parseFloat(textValue);
 }
 
-function generateWidget(productPrice: number, noLogo: boolean, min: number, max: number): string {
+function generateWidget(productPrice: number, noLogo: boolean, min: number, max: number, used_in): string {
     let template;
+    let templateCheckout;
     let templatenologo;
     if (productPrice < min){
         template = `<a id="oxipay-tag-02" data-remodal-target="${Config.priceInfoModalId}">
                             <p>or 8 weekly payments </b></p><p>Interest free with <span id="oxipay-img"></span></p>
                             <br>
+                        </a>`;
+
+        templateCheckout = `<a id="oxipay-tag-02" data-remodal-target="${Config.priceInfoModalId}">
+                            <p>8 weekly payments </b></p><p>Interest free with <span id="oxipay-img"></span></p>
                         </a>`;
 
         templatenologo = `<a id="oxipay-tag-02" data-remodal-target="${Config.priceInfoModalId}">
@@ -140,6 +147,12 @@ function generateWidget(productPrice: number, noLogo: boolean, min: number, max:
                             <br>
                         </a>`;
 
+            templateCheckout = `<a id="oxipay-tag-02" data-remodal-target="${Config.priceInfoModalId}">
+                            <p>1 initial payment of <b>$${initialPayment.toFixed(2)}</b></p>
+                            <p>and 7 weekly payments of <b>$175.00</b></p>
+                            <p>Interest free with <span id="oxipay-img"></span><span class="more-info">more info</span></p>
+                        </a>`;
+
             // tslint:disable-next-line:max-line-length
             templatenologo = `<a id="oxipay-tag-02" data-remodal-target="${Config.priceInfoModalId}">
                                 <p>or 1 initial payment of <b>$${initialPayment.toFixed(2)}</b></p>
@@ -157,6 +170,10 @@ function generateWidget(productPrice: number, noLogo: boolean, min: number, max:
                             <br>
                         </a>`;
 
+            templateCheckout = `<a id="oxipay-tag-02" data-remodal-target="${Config.priceInfoModalId}">
+                            <p>8 weekly payments of <b>$${roundedDownProductPrice.toFixed(2)}</b></p><p>Interest free with <span id="oxipay-img"></span><span class="more-info">more info</span></p>
+                        </a>`;
+
             templatenologo = `<a id="oxipay-tag-02" data-remodal-target="${Config.priceInfoModalId}">
                                 <p>or 8 weekly payments of <b>$${roundedDownProductPrice.toFixed(2)}</b></p><p>Interest free - <strong>find out how</strong></p>
                                 <br>
@@ -165,7 +182,11 @@ function generateWidget(productPrice: number, noLogo: boolean, min: number, max:
     } else {
         return '<a id="oxipay-tag-02"></a>'
     }
-    return (noLogo) ? templatenologo : template;
+    if(used_in == "checkout"){
+        return templateCheckout;
+    }else {
+        return (noLogo) ? templatenologo : template;
+    }
 }
 
 function getCurrentScript(): any {
@@ -178,9 +199,9 @@ function getCurrentScript(): any {
     return currentScript;
 }
 
-function updatePrice(el: JQuery, jq: JQueryStatic, noLogo: boolean, min: number, max: number) {
+function updatePrice(el: JQuery, jq: JQueryStatic, noLogo: boolean, min: number, max: number, used_in) {
     let productPrice = extractPrice(el);
-    let template = generateWidget(productPrice, noLogo, min, max);
+    let template = generateWidget(productPrice, noLogo, min, max, used_in);
     let parent =  jq(getCurrentScript()).parent();
     widget.injectBanner(template, Config.priceInfoUrl, parent);
 }
