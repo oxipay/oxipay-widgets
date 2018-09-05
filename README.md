@@ -54,11 +54,11 @@ In the location you require the banner, use the following markup:
 <!-- Price Info -->
 <script id="oxipay-price-info" src="price-info.js?productPrice=0"></script>
 
- <!-- More Info Large-->
- <script id='oxipay-banner' src="more-info-large.js"></script>
+<!-- More Info Large-->
+<script id='oxipay-banner' src="more-info-large.js"></script>
 
- <!-- More Info Small-->
- <script id='oxipay-banner' src="more-info-small.js"></script>
+<!-- More Info Small-->
+<script id='oxipay-banner' src="more-info-small.js"></script>
 ```
 The script will bring in all of its CSS and dependencies, and register the button click events
 Guide: Installation guide is located at [http://docs.oxipay.com.au/](http://docs.oxipay.com.au/)
