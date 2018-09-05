@@ -13,12 +13,12 @@ export class Config {
     public static registerInterestUrl = Config.baseContentUrl + '/content/html/Signup.html';
 
     // price-info modal
-    public static priceInfoModalId = 'oxipay-modal-more-info';
-    public static priceInfoUrl = Config.baseContentUrl + '/content/html/MoreInfo.html';
+    public static priceInfoModalId = 'oxipay-modal-more-info_1';
+    public static priceInfoUrl = Config.baseContentUrl + '/content/html/MoreInfo-modal.html';
 
     // more-info modal (current)
-    public static moreInfoModalId = 'oxipay-modal-more-info';
-    public static moreInfoUrlNew = Config.baseContentUrl + '/content/html/MoreInfo.html';
+    public static moreInfoModalId = 'oxipay-modal-more-info_1';
+    public static moreInfoUrlNew = Config.baseContentUrl + '/content/html/MoreInfo-modal.html';
 
     // more-info modal (future)
     public static oxipayMoreInfoGeneralModalId = 'oxipay-modal-more-info_1';
