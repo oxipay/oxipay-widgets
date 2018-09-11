@@ -64,6 +64,9 @@ export class ModalInjector {
         if (url.indexOf('PriceInfo') > 0) {
             modalId = Config.priceInfoModalId;
         }
+        else if (url.indexOf('MoreInfo-modal') > 0) {
+            modalId = Config.oxipayBannerTopModalId;
+        }
         else {
             modalId = Config.infoModalId;
         }
