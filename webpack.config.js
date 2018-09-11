@@ -8,6 +8,7 @@ module.exports = {
         "nz/content/scripts/price-info": "./src/nz/payments.ts",
         "nz/content/scripts/payments": "./src/nz/payments.ts",
         "nz/content/scripts/landing-page": "./src/nz/landing-page.ts",
+        "nz/content/scripts/top-banner": "./src/nz/top-banner.ts",
         // "nz/content/scripts/payments-weekly": "./src/nz/payments-weekly.ts",
 
         "au/content/scripts/more-info-large": "./src/au/more-info-large.ts",
