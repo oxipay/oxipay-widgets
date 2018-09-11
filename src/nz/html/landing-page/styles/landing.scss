@@ -1,0 +1,139 @@
+// @font-face {
+//     font-family: 'Montserrat-Regular';
+//     src: url("../fonts/montserrat-v12-latin-regular.eot");
+//     src: local("☺"), url("../fonts/montserrat-v12-latin-regular.woff") format("woff"), url("../fonts/montserrat-v12-latin-regular.woff2") format("woff2"), url("../fonts/montserrat-v12-latin-regular.ttf") format("truetype");
+//     font-weight: normal;
+//     font-style: normal;
+// }
+// @font-face {
+//     font-family: 'Montserrat-Bold';
+//     src: url("../fonts/montserrat-v12-latin-700.eot");
+//     src: local("☺"), url("../fonts/montserrat-v12-latin-700.woff") format("woff"), url("../fonts/montserrat-v12-latin-700.woff2") format("woff2"), url("../fonts/montserrat-v12-latin-700.ttf") format("truetype");
+//     font-weight: normal;
+//     font-style: normal;
+// }
+
+// @font-face {
+//     font-family: 'Montserrat-Medium';
+//     src: url("../fonts/montserrat-v12-latin-600.eot");
+//     src: local("☺"), url("../fonts/montserrat-v12-latin-600.woff") format("woff"), url("../fonts/montserrat-v12-latin-600.woff2") format("woff2"), url("../fonts/montserrat-v12-latin-600.ttf") format("truetype");
+//     font-weight: normal;
+//     font-style: normal;
+// }
+
+// @font-face {
+//     font-family: 'Montserrat-Light';
+//     src: url("../fonts/montserrat-v12-latin-200.eot");
+//     src: local("☺"), url("../fonts/montserrat-v12-latin-200.woff") format("woff"), url("../fonts/montserrat-v12-latin-200.woff2") format("woff2"), url("../fonts/montserrat-v12-latin-200.ttf") format("truetype");
+//     font-weight: normal;
+//     font-style: normal;
+// }
+
+$OXIPAY_ORANGE: #f6771c;
+$OXIPAY_GRAY: #ecedee;
+$OXIPAY_LIGHT_GRAY: #f9f9f9;
+$OXIPAY_DARK_GRAY: #515565;
+
+#oxipay-landing-content {
+  font-family: 'Montserrat';
+  font-weight: 400;
+  color: $OXIPAY_DARK_GRAY;
+  background-color: #f9f9f9;
+
+  .branding-area {
+    .curve {
+      margin-top: -30px;
+      width: 100%;
+      height: 160px;
+      position: absolute;
+      z-index: -100;
+      text-align: center;
+      background-image: url("../images/curve-white-bg.svg");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center bottom;
+    }
+    position: relative;
+    z-index: 100;
+    width: 100%;
+    // background-color: $OXIPAY_ORANGE;
+    // border-bottom-left-radius:50%;
+    // border-bottom-right-radius:50%;
+    text-align: center;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    font-family: "Montserrat";
+    font-weight: 700;
+    img.logo {
+      display: inline;
+      width: 150px;
+      max-width: 50%;
+      margin-bottom: 0.8rem;
+    }
+    p.large {
+      font-size: 1.8rem;
+      color: white;
+      margin: 0;
+    }
+    p.small {
+      font-size: 1.5rem;
+      color: white;
+      margin: 0;
+    }
+  }
+
+  #top {
+    overflow: hidden;
+    margin: 6.5rem auto 2.5rem;
+    font-family: 'Montserrat';
+    font-weight: 500;
+    max-width: 52em;
+    .card {
+      @media (max-width: 600px) {
+        width: 33%;
+        &:nth-child(4), &:nth-child(5) {
+          display: none;
+        }
+      }
+      width: 20%;
+      float: left;
+      text-align: center;
+      padding: 0 1.5rem;
+      box-sizing: border-box;
+      img {
+        width: 56%;
+        margin: 0 auto 1em;
+      }
+      p {
+        padding: 0;
+        text-align: center;
+        font-size: 0.85em;
+        font-weight: 500;
+      }
+    }
+  }
+
+  #q-and-a {
+    max-width: 37em;
+    margin-top: 3.3em;
+    margin-bottom: 2.5em;
+    h3 {
+      font-family: 'Montserrat';
+      font-weight: 600;
+      font-size: 1.1em;
+    }
+  }
+
+  .white-bg {
+    background-color: #FFF;
+  }
+
+  .signup-btn {
+    color: white;
+    font-weight: 500;
+    background: $OXIPAY_ORANGE;
+    padding: 0.5em 4.5em;
+    border-radius: 18px;
+    line-height: 225%;
+  }
+}
