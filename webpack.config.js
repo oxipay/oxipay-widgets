@@ -7,7 +7,7 @@ module.exports = {
         "nz/content/scripts/more-info-small": "./src/nz/more-info-small.ts",
         "nz/content/scripts/price-info": "./src/nz/payments.ts",
         "nz/content/scripts/payments": "./src/nz/payments.ts",
-        "nz/content/scripts/payments-weekly": "./src/nz/payments-weekly.ts",
+        // "nz/content/scripts/payments-weekly": "./src/nz/payments-weekly.ts",
 
         "au/content/scripts/more-info-large": "./src/au/more-info-large.ts",
         "au/content/scripts/more-info-small": "./src/au/more-info-small.ts",
@@ -90,6 +90,6 @@ module.exports = {
             },
             mangle: false,
             sourceMap: true
-        }),        
+        }),
     ]
 }

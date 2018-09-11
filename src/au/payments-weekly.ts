@@ -116,7 +116,7 @@ function extractPrice(el: any) {
     return parseFloat(textValue);
 }
 
-function generateWidget(productPrice: number, noLogo: boolean, min: number, max: number, used_in): string {
+function generateWidget(productPrice: number, noLogo: boolean, min: number, max: number, used_in: string): string {
     let template;
     let templateCheckout;
     let templatenologo;
@@ -199,7 +199,7 @@ function getCurrentScript(): any {
     return currentScript;
 }
 
-function updatePrice(el: JQuery, jq: JQueryStatic, noLogo: boolean, min: number, max: number, used_in) {
+function updatePrice(el: JQuery, jq: JQueryStatic, noLogo: boolean, min: number, max: number, used_in: string) {
     let productPrice = extractPrice(el);
     let template = generateWidget(productPrice, noLogo, min, max, used_in);
     let parent =  jq(getCurrentScript()).parent();
