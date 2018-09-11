@@ -1,4 +1,4 @@
-﻿export class Config {
+export class Config {
     public static baseContentUrl = 'https://widgets.oxipay.co.nz';
     // public static baseContentUrl = './dist/nz';       // for local testing
 
@@ -7,4 +7,8 @@
 
     public static infoModalId = 'oxipay-modal-info';
     public static moreInfoUrl = Config.baseContentUrl + '/content/html/ExternalModal.html';
+
+    // top-banner modal
+    public static oxipayBannerTopModalId = 'oxipay-modal-more-info_1';
+    public static oxipayBannerTopModalUrl = Config.baseContentUrl + '/content/html/MoreInfo-modal.html';
 }
