@@ -37,6 +37,8 @@ $OXIPAY_DARK_GRAY: #515565;
 #oxipay-landing-content {
   font-family: 'Montserrat';
   font-weight: 400;
+  font-size: 14px !important;
+  line-height: 1.43 !important;
   color: $OXIPAY_DARK_GRAY;
   background-color: #f9f9f9;
 
@@ -66,9 +68,7 @@ $OXIPAY_DARK_GRAY: #515565;
     font-weight: 700;
     img.logo {
       display: inline;
-      width: 150px;
       max-width: 50%;
-      margin-bottom: 0.8rem;
     }
     p.large {
       font-size: 1.8rem;
@@ -122,6 +122,9 @@ $OXIPAY_DARK_GRAY: #515565;
       font-weight: 600;
       font-size: 1.1em;
     }
+    p {
+      font-size: 14px !important;
+    }
   }
 
   .white-bg {
@@ -134,6 +137,6 @@ $OXIPAY_DARK_GRAY: #515565;
     background: $OXIPAY_ORANGE;
     padding: 0.5em 4.5em;
     border-radius: 18px;
-    line-height: 225%;
+    line-height: 225% !important;
   }
 }
