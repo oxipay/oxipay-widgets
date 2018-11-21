@@ -62,7 +62,7 @@ let widget;
         // because we have been provided the price we can't bind to events on 
         // the element containing the price. We just inject the template
         const template: string = generateWidget(productPrice, noLogo, min, max);
-        widget.injectBanner(template, Config.priceInfoUrl, jq(scriptElement));
+        widget.injectBanner(template, Config.priceInfoUrl, Config.priceInfoModalId, jq(scriptElement));
 
     } else {
         
@@ -79,7 +79,7 @@ let widget;
             productPrice = extractPrice(el);
 
             if (productPrice) {
-                widget.injectBanner(generateWidget(productPrice, noLogo, min, max), Config.priceInfoUrl, jq(scriptElement));
+                widget.injectBanner(generateWidget(productPrice, noLogo, min, max), Config.priceInfoUrl, Config.priceInfoModalId, jq(scriptElement));
             }
 
             // register event handler to update the price
@@ -106,8 +106,8 @@ let widget;
 
 function extractPrice(el: any) {
     let textValue =  el.text().trim();
-    textValue = textValue.replace(/^\D+/, "")
-    textValue = textValue.replace(/,/, "")
+    textValue = textValue.replace(/^\D+/, "");
+    textValue = textValue.replace(/,/, "");
     return parseFloat(textValue);
 }
 
@@ -179,7 +179,7 @@ function updatePrice(el: JQuery, jq: JQueryStatic, noLogo: boolean, min: number,
     let productPrice = extractPrice(el);
     let template = generateWidget(productPrice, noLogo, min, max);
     let parent =  jq(getCurrentScript()).parent();
-    widget.injectBanner(template, Config.priceInfoUrl, parent);
+    widget.injectBanner(template, Config.priceInfoUrl, Config.priceInfoModalId, parent);
 }
 
 function getParameterByName(name: string, url: string): string {

@@ -10,15 +10,14 @@ require('../../node_modules/remodal/dist/remodal.css');
 require('../../node_modules/remodal/dist/remodal-default-theme.css');
 // tslint:disable-next-line:no-var-requires
 require('../../css/oxipay-branding.css');
-import {Config} from './config';
 
 export class ModalInjector {
     constructor(private jQuery: JQueryStatic) {
     }
 
-    public injectBanner(template: string, targetUrl: string, element?: JQuery) {
-        if (!this.modalExists(targetUrl)) {
-            this.injectModal(targetUrl);
+    public injectBanner(template: string, targetUrl: string, modalId: string, element?: JQuery) {
+        if (!this.modalExists(modalId)) {
+            this.injectModal(targetUrl, modalId);
         }
 
         let currentScript = document.currentScript || (function () {
@@ -40,14 +39,11 @@ export class ModalInjector {
         }
     }
 
-    private modalExists(url: string): boolean {
-        let modalId = this.getModalId(url); //Element selector
+    private modalExists(modalId: string): boolean {
         return this.jQuery("#" + modalId) ? this.jQuery("#" + modalId).length > 0 : false;
     }
 
-    private injectModal(url: string): void {
-        let modalId = this.getModalId(url);
-
+    private injectModal(url: string, modalId: string): void {
         const bodyTag = 'body';
         const modalDiv =
             `<div id='${modalId}' class='remodal' data-remodal-id='${modalId}'>
@@ -57,19 +53,5 @@ export class ModalInjector {
         const body = this.jQuery(bodyTag);
 
         body.append(modalDiv);
-    }
-
-    private getModalId(url: string): string {
-        let modalId = '';
-        if (url.indexOf('PriceInfo') > 0) {
-            modalId = Config.priceInfoModalId;
-        }
-        else if (url.indexOf('MoreInfo-modal') > 0) {
-            modalId = Config.oxipayBannerTopModalId;
-        }
-        else {
-            modalId = Config.infoModalId;
-        }
-        return modalId;
     }
 }
