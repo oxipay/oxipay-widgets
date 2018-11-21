@@ -79,9 +79,9 @@ To switch between local testing and online deployment, you will make changes in 
 All .scss files in /src/au/styles and /src/nz/styles have to be compile into .min.css files.
 To do so, go to project root folder and use command:
 ```
-sass -t compressed src/au/styles/ExternalModal.scss:src/au/styles/ExternalModal.min.css src/au/styles/priceInfo.scss:src/au/styles/priceInfo.min.css src/au/styles/MoreInfo-modal.scss:src/au/styles/MoreInfo-modal.min.css src/au/html/landing-page/styles/landing.scss:src/au/html/landing-page/styles/landing.css src/au/styles/MoreInfo.scss:src/au/styles/MoreInfo.min.css 
-sass -t compressed src/nz/styles/ExternalModal.scss:src/nz/styles/ExternalModal.min.css src/nz/styles/priceInfo.scss:src/nz/styles/priceInfo.min.css src/nz/styles/MoreInfo-modal.scss:src/nz/styles/MoreInfo-modal.min.css src/nz/html/landing-page/styles/landing.scss:src/nz/html/landing-page/styles/landing.css
-sass -t compressed css/oxipay-branding.scss:css/oxipay-branding.css 
+sass -s compressed src/au/styles/ExternalModal.scss:src/au/styles/ExternalModal.min.css src/au/styles/priceInfo.scss:src/au/styles/priceInfo.min.css src/au/styles/MoreInfo-modal.scss:src/au/styles/MoreInfo-modal.min.css src/au/html/landing-page/styles/landing.scss:src/au/html/landing-page/styles/landing.css src/au/styles/MoreInfo.scss:src/au/styles/MoreInfo.min.css 
+sass -s compressed src/nz/styles/ExternalModal.scss:src/nz/styles/ExternalModal.min.css src/nz/styles/priceInfo.scss:src/nz/styles/priceInfo.min.css src/nz/styles/MoreInfo-modal.scss:src/nz/styles/MoreInfo-modal.min.css src/nz/html/landing-page/styles/landing.scss:src/nz/html/landing-page/styles/landing.css
+sass -s compressed css/oxipay-branding.scss:css/oxipay-branding.css 
 
 ```
 
