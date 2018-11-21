@@ -16,6 +16,10 @@ export class Config {
     public static priceInfoModalId = 'oxipay-modal-more-info_1';
     public static priceInfoUrl = Config.baseContentUrl + '/content/html/MoreInfo-modal.html';
 
+    // price-info modal (ezipay)
+    public static ezipayPriceInfoModalId = 'ezipay-modal-more-info_1';
+    public static ezipayPriceInfoUrl = Config.baseContentUrl + '/content/html/MoreInfo-modal-ezipay.html';
+
     // more-info modal (current)
     public static moreInfoModalId = 'oxipay-modal-more-info_1';
     public static moreInfoUrlNew = Config.baseContentUrl + '/content/html/MoreInfo-modal.html';
