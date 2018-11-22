@@ -20,6 +20,14 @@ $OXIPAY_DARK_GRAY: #515565;
     background-repeat: no-repeat;
 }
 
+#ezipay-img{
+    background-image: url($baseURL + "/content/images/logo-ezipay.svg");
+    background-size: contain;
+    padding: 1px 32px;
+    margin-left: 3px;
+    background-repeat: no-repeat;
+}
+
 @font-face {
     font-family: 'AvenirLTStd-Medium';
     src: url($baseURL + "/content/fonts/AvenirLTStd-Medium.eot");
@@ -44,7 +52,7 @@ $OXIPAY_DARK_GRAY: #515565;
 }
 
 /** Modal **/
-div[id^="oxipay-modal-"] {
+div[id^="oxipay-modal-"], div[id^="ezipay-modal-"] {
     padding: 0;
     max-width:660px;
 }
@@ -188,7 +196,7 @@ div[id^="oxipay-modal-"] {
 
 /** Tag 02 (price info) **/
 
-#oxipay-tag-02 {
+#oxipay-tag-02, #ezipay-tag-02 {
     font-family: AvenirLTStd-Medium,arial,sans-serif;
     font-size:14px;
     color: #3d4246 !important;

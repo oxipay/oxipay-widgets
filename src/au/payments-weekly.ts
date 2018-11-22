@@ -67,7 +67,7 @@ let widget;
         // because we have been provided the price we can't bind to events on 
         // the element containing the price. We just inject the template
         const template: string = generateWidget(productPrice, noLogo, min, max, used_in);
-        widget.injectBanner(template, Config.priceInfoUrl, Config.priceInfoModalId, element);
+        widget.injectBanner(template, Config.oxipayPriceInfoUrl, Config.oxipayPriceInfoModalId, element);
 
     } else {
         
@@ -84,7 +84,7 @@ let widget;
             productPrice = extractPrice(el);
 
             if (productPrice) {
-                widget.injectBanner(generateWidget(productPrice, noLogo, min, max, used_in), Config.priceInfoUrl, Config.priceInfoModalId, element);
+                widget.injectBanner(generateWidget(productPrice, noLogo, min, max, used_in), Config.oxipayPriceInfoUrl, Config.oxipayPriceInfoModalId, element);
             }
 
             // register event handler to update the price
@@ -121,16 +121,16 @@ function generateWidget(productPrice: number, noLogo: boolean, min: number, max:
     let templateCheckout;
     let templatenologo;
     if (productPrice < min){
-        template = `<a id="oxipay-tag-02" data-remodal-target="${Config.priceInfoModalId}">
+        template = `<a id="oxipay-tag-02" data-remodal-target="${Config.oxipayPriceInfoModalId}">
                             <p>or 8 weekly payments </b></p><p>Interest free with <span id="oxipay-img"></span></p>
                             <br>
                         </a>`;
 
-        templateCheckout = `<a id="oxipay-tag-02" data-remodal-target="${Config.priceInfoModalId}">
+        templateCheckout = `<a id="oxipay-tag-02" data-remodal-target="${Config.oxipayPriceInfoModalId}">
                             <p>8 weekly payments </b></p><p>Interest free with <span id="oxipay-img"></span></p>
                         </a>`;
 
-        templatenologo = `<a id="oxipay-tag-02" data-remodal-target="${Config.priceInfoModalId}">
+        templatenologo = `<a id="oxipay-tag-02" data-remodal-target="${Config.oxipayPriceInfoModalId}">
                                 <p>or 8 weekly payments </b></p><p>Interest free - <strong>find out how</strong></p>
                                 <br>
                             </a>`;
@@ -140,21 +140,21 @@ function generateWidget(productPrice: number, noLogo: boolean, min: number, max:
             let initialPayment = productPrice - 1225;
 
             // tslint:disable-next-line:max-line-length
-            template = `<a id="oxipay-tag-02" data-remodal-target="${Config.priceInfoModalId}">
+            template = `<a id="oxipay-tag-02" data-remodal-target="${Config.oxipayPriceInfoModalId}">
                             <p>or 1 initial payment of <b>$${initialPayment.toFixed(2)}</b></p>
                             <p>and 7 weekly payments of <b>$175.00</b></p>
                             <p>Interest free with <span id="oxipay-img"></span><span class="more-info">more info</span></p>
                             <br>
                         </a>`;
 
-            templateCheckout = `<a id="oxipay-tag-02" data-remodal-target="${Config.priceInfoModalId}">
+            templateCheckout = `<a id="oxipay-tag-02" data-remodal-target="${Config.oxipayPriceInfoModalId}">
                             <p>1 initial payment of <b>$${initialPayment.toFixed(2)}</b></p>
                             <p>and 7 weekly payments of <b>$175.00</b></p>
                             <p>Interest free with <span id="oxipay-img"></span><span class="more-info">more info</span></p>
                         </a>`;
 
             // tslint:disable-next-line:max-line-length
-            templatenologo = `<a id="oxipay-tag-02" data-remodal-target="${Config.priceInfoModalId}">
+            templatenologo = `<a id="oxipay-tag-02" data-remodal-target="${Config.oxipayPriceInfoModalId}">
                                 <p>or 1 initial payment of <b>$${initialPayment.toFixed(2)}</b></p>
                                 <p>and 7 weekly payments of <b>$175.00</b></p>
                                 <p>Interest free - <strong>find out how</strong></p>
@@ -165,16 +165,16 @@ function generateWidget(productPrice: number, noLogo: boolean, min: number, max:
 
             // Banking Rounding
             let roundedDownProductPrice = Math.floor( productPriceDividedByEight * Math.pow(10, 2) ) / Math.pow(10, 2);
-            template = `<a id="oxipay-tag-02" data-remodal-target="${Config.priceInfoModalId}">
+            template = `<a id="oxipay-tag-02" data-remodal-target="${Config.oxipayPriceInfoModalId}">
                             <p>or 8 weekly payments of <b>$${roundedDownProductPrice.toFixed(2)}</b></p><p>Interest free with <span id="oxipay-img"></span><span class="more-info">more info</span></p>
                             <br>
                         </a>`;
 
-            templateCheckout = `<a id="oxipay-tag-02" data-remodal-target="${Config.priceInfoModalId}">
+            templateCheckout = `<a id="oxipay-tag-02" data-remodal-target="${Config.oxipayPriceInfoModalId}">
                             <p>8 weekly payments of <b>$${roundedDownProductPrice.toFixed(2)}</b></p><p>Interest free with <span id="oxipay-img"></span><span class="more-info">more info</span></p>
                         </a>`;
 
-            templatenologo = `<a id="oxipay-tag-02" data-remodal-target="${Config.priceInfoModalId}">
+            templatenologo = `<a id="oxipay-tag-02" data-remodal-target="${Config.oxipayPriceInfoModalId}">
                                 <p>or 8 weekly payments of <b>$${roundedDownProductPrice.toFixed(2)}</b></p><p>Interest free - <strong>find out how</strong></p>
                                 <br>
                             </a>`;
@@ -203,7 +203,7 @@ function updatePrice(el: JQuery, jq: JQueryStatic, noLogo: boolean, min: number,
     let productPrice = extractPrice(el);
     let template = generateWidget(productPrice, noLogo, min, max, used_in);
     let parent =  jq(getCurrentScript()).parent();
-    widget.injectBanner(template, Config.priceInfoUrl, Config.priceInfoModalId, parent);
+    widget.injectBanner(template, Config.oxipayPriceInfoUrl, Config.oxipayPriceInfoModalId, parent);
 }
 
 function getParameterByName(name: string, url: string): string {

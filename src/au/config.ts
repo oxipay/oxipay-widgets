@@ -5,16 +5,16 @@
 //   baseContentUrl = 'https://YOUR-URL'
 
 export class Config {
-    public static baseContentUrl = 'https://widgets.oxipay.com.au';    // for remote deploy
-    // public static baseContentUrl = './dist/au';       // for local testing
+    // public static baseContentUrl = 'https://widgets.oxipay.com.au';    // for remote deploy
+    public static baseContentUrl = './dist/au';       // for local testing
 
     // register interest modal
     public static registerInterestModalId = 'oxipay-modal-signup';
     public static registerInterestUrl = Config.baseContentUrl + '/content/html/Signup.html';
 
     // price-info modal
-    public static priceInfoModalId = 'oxipay-modal-more-info_1';
-    public static priceInfoUrl = Config.baseContentUrl + '/content/html/MoreInfo-modal.html';
+    public static oxipayPriceInfoModalId = 'oxipay-modal-more-info_1';
+    public static oxipayPriceInfoUrl = Config.baseContentUrl + '/content/html/MoreInfo-modal.html';
 
     // price-info modal (ezipay)
     public static ezipayPriceInfoModalId = 'ezipay-modal-more-info_1';
