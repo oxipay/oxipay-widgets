@@ -123,7 +123,6 @@ function generateWidget(productPrice: number, noLogo: boolean, min: number, max:
     if (productPrice < min){
         template = `<a id="oxipay-tag-02" data-remodal-target="${Config.priceInfoModalId}">
                             <p>or 4 fortnightly payments </b></p><p>Interest free with <span id="oxipay-img"></span></p>
-                            <br>
                         </a>`;
 
         templateCheckout = `<a id="oxipay-tag-02" data-remodal-target="${Config.priceInfoModalId}">
@@ -132,7 +131,6 @@ function generateWidget(productPrice: number, noLogo: boolean, min: number, max:
 
         templatenologo = `<a id="oxipay-tag-02" data-remodal-target="${Config.priceInfoModalId}">
                                 <p>or 4 fortnightly payments </b></p><p>Interest free - <strong>find out how</strong></p>
-                                <br>
                             </a>`;
     }
     else if (productPrice <= 2100 && productPrice <= max) {
@@ -144,7 +142,6 @@ function generateWidget(productPrice: number, noLogo: boolean, min: number, max:
                             <p>or 1 initial payment of <b>$${initialPayment.toFixed(2)}</b></p>
                             <p>and 3 payments of <b>$350.00</b></p>
                             <p>Interest free with <span id="oxipay-img"></span></p>
-                            <br>
                         </a>`;
 
             templateCheckout = `<a id="oxipay-tag-02" data-remodal-target="${Config.priceInfoModalId}">
@@ -158,7 +155,6 @@ function generateWidget(productPrice: number, noLogo: boolean, min: number, max:
                                 <p>or 1 initial payment of <b>$${initialPayment.toFixed(2)}</b></p>
                                 <p>and 3 payments of <b>$350.00</b></p>
                                 <p>Interest free - <strong>find out how</strong></p>
-                                <br>
                             </a>`;
         } else {
             let productPriceDividedByFour = productPrice / 4;
@@ -167,7 +163,6 @@ function generateWidget(productPrice: number, noLogo: boolean, min: number, max:
             let roundedDownProductPrice = Math.floor( productPriceDividedByFour * Math.pow(10, 2) ) / Math.pow(10, 2);
             template = `<a id="oxipay-tag-02" data-remodal-target="${Config.priceInfoModalId}">
                             <p>or 4 payments of <b>$${roundedDownProductPrice.toFixed(2)}</b></p><p>Interest free with <span id="oxipay-img"></span></p>
-                            <br>
                         </a>`;
 
             templateCheckout = `<a id="oxipay-tag-02" data-remodal-target="${Config.priceInfoModalId}">
@@ -176,7 +171,6 @@ function generateWidget(productPrice: number, noLogo: boolean, min: number, max:
 
             templatenologo = `<a id="oxipay-tag-02" data-remodal-target="${Config.priceInfoModalId}">
                                 <p>or 4 payments of <b>$${roundedDownProductPrice.toFixed(2)}</b></p><p>Interest free - <strong>find out how</strong></p>
-                                <br>
                             </a>`;
         }
     } else {
