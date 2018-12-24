@@ -22,5 +22,5 @@ import { Config } from './config';
             </div>
         </a>`;
     const widget = new ModalInjector($);
-    widget.injectBanner(template,  Config.oxipayMoreInfoGeneralModalUrl);
+    widget.injectBanner(template,  Config.oxipayMoreInfoGeneralModalUrl, Config.oxipayMoreInfoGeneralModalId);
 })(jq);

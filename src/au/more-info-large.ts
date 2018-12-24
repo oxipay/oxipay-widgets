@@ -18,5 +18,5 @@ import { Config } from './config';
             </div>
         </a>`;
     const widget = new ModalInjector($);
-    widget.injectBanner(template,  Config.moreInfoUrlNew);
+    widget.injectBanner(template, Config.moreInfoUrlNew, Config.moreInfoModalId);
 })(jq);

@@ -5,7 +5,7 @@ import {Config } from './config';
 
 (($: JQueryStatic) => {
         let template =
-            `<a id="oxipay-banner-01" data-remodal-target="${Config.signupModalId}">
+            `<a id="oxipay-banner-01" data-remodal-target="${Config.registerInterestModalId}">
             <div class="logo">
                 <img alt="Oxipay" src="${Config.baseContentUrl}/content/images/logo-orange.svg" />
             </div>
@@ -19,5 +19,5 @@ import {Config } from './config';
         </a>`;
 
         const widget = new ModalInjector($);
-        widget.injectBanner(template, Config.registerInterestUrl);
+        widget.injectBanner(template, Config.registerInterestUrl, Config.registerInterestModalId);
 })(jq);

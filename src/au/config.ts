@@ -9,7 +9,7 @@ export class Config {
     // public static baseContentUrl = './dist/au';       // for local testing
 
     // register interest modal
-    public static signupModalId = 'oxipay-modal-signup';
+    public static registerInterestModalId = 'oxipay-modal-signup';
     public static registerInterestUrl = Config.baseContentUrl + '/content/html/Signup.html';
 
     // price-info modal

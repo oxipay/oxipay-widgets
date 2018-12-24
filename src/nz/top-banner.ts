@@ -36,7 +36,7 @@ import { Config } from './config';
             </div>
         </a>`;
     const widget = new ModalInjector($);
-    widget.injectBanner(template,  Config.oxipayBannerTopModalUrl, element);
+    widget.injectBanner(template,  Config.oxipayBannerTopModalUrl, Config.oxipayBannerTopModalId, element);
 
 
     function getCurrentScript(): any {
