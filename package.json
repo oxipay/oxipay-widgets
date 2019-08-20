@@ -1,11 +1,12 @@
 {
-  "name": "oxipay-register-interest-banner",
+  "name": "oxipay-widgets",
   "version": "1.0.0",
-  "description": "Interactive drop in banners for oxipay",
-  "main": "register-interest.js",
+  "description": "Interactive drop in banners for Oxipay",
+  "main": "price-info.js",
   "dependencies": {
     "jquery": "^3.1.1",
-    "remodal": "^1.1.0"
+    "remodal": "^1.1.0",
+    "sass": "^1.18.0"
   },
   "devDependencies": {
     "copy-webpack-plugin": "^4.0.1",
@@ -16,8 +17,9 @@
     "webpack": "^1.13.3"
   },
   "scripts": {
-    "build": "webpack",
-    "watch": "webpack --watch"
+    "css": "sass -s compressed src/nz/styles/ExternalModal.scss:src/nz/styles/ExternalModal.min.css src/nz/styles/priceInfo.scss:src/nz/styles/priceInfo.min.css src/nz/styles/MoreInfo-modal.scss:src/nz/styles/MoreInfo-modal.min.css src/nz/html/landing-page/styles/landing.scss:src/nz/html/landing-page/styles/landing.css css/oxipay-branding.scss:css/oxipay-branding.css",
+    "build": "npm run css && webpack",
+    "watch": "npm run css && webpack --watch"
   },
   "author": "Oxipay",
   "license": "ISC"
