@@ -12,7 +12,7 @@ let widget;
      */
     let srcString: string;
     let scriptElement: any;
-    
+
     widget = new ModalInjector($);
 
     /* Choose if we want to render the Oxipay Logo or not */
@@ -36,7 +36,7 @@ let widget;
      */
     let productPrice: number;
 
-    jq.fn.exists = function () {
+    jq.fn.exists = function() {
         return this.length !== 0;
     };
 
@@ -48,14 +48,14 @@ let widget;
     }
 
     srcString = scriptElement.getAttribute('src');
-    noLogo    = (getParameterByName('noLogo', srcString) !== null);
-    monitor   = (getParameterByName('monitor', srcString) !== null);
-    debug     = scriptElement.getAttribute('debug')? true:false;
-    min       = scriptElement.dataset.min || 0;
-    max       = scriptElement.dataset.max || 999999;
-    used_in   =  (getParameterByName('used_in', srcString));
+    noLogo = (getParameterByName('noLogo', srcString) !== null);
+    monitor = (getParameterByName('monitor', srcString) !== null);
+    debug = scriptElement.getAttribute('debug') ? true : false;
+    min = scriptElement.dataset.min || 0;
+    max = scriptElement.dataset.max || 999999;
+    used_in = (getParameterByName('used_in', srcString));
 
-    element = (getParameterByName('element', srcString))? jq(getParameterByName('element', srcString)) : jq(scriptElement);
+    element = (getParameterByName('element', srcString)) ? jq(getParameterByName('element', srcString)) : jq(scriptElement);
 
     let priceStr = getParameterByName('productPrice', srcString);
 
@@ -70,16 +70,16 @@ let widget;
         widget.injectBanner(template, Config.priceInfoUrl, Config.priceInfoModalId, element);
 
     } else {
-        
+
         // we haven't been passed a URL, try to get the css selector for
         let selector = getParameterByName('price-selector', srcString);
         if (!selector) {
             logDebug("Can't locate an element with selector :  " + selector);
             return false;
         }
-        
+
         let el = jq(selector, document.body);
-        
+
         if (el.exists()) {
             productPrice = extractPrice(el);
 
@@ -88,11 +88,11 @@ let widget;
             }
 
             // register event handler to update the price
-            if (monitor){
-                setInterval(function(){
+            if (monitor) {
+                setInterval(function() {
                     let el = jq(selector, document.body);
                     updatePrice(el, jq, noLogo, min, max, used_in);
-                },1000);
+                }, 1000);
             } else {
                 el.on("DOMSubtreeModified", function(e) {
                     updatePrice(jq(e.target), jq, noLogo, min, max, used_in);
@@ -110,7 +110,7 @@ let widget;
 
 
 function extractPrice(el: any) {
-    let textValue =  el.text().trim();
+    let textValue = el.text().trim();
     textValue = textValue.replace(/^\D+/, "");
     textValue = textValue.replace(/,/, "");
     return parseFloat(textValue);
@@ -120,7 +120,7 @@ function generateWidget(productPrice: number, noLogo: boolean, min: number, max:
     let template;
     let templateCheckout;
     let templatenologo;
-    if (productPrice < min){
+    if (productPrice < min) {
         template = `<a id="oxipay-tag-02" data-remodal-target="${Config.priceInfoModalId}">
                             <p>or 8 weekly payments </b></p><p>Interest free with <span id="oxipay-img"></span></p>
                         </a>`;
@@ -132,8 +132,7 @@ function generateWidget(productPrice: number, noLogo: boolean, min: number, max:
         templatenologo = `<a id="oxipay-tag-02" data-remodal-target="${Config.priceInfoModalId}">
                                 <p>or 8 weekly payments </b></p><p>Interest free - <strong>find out how</strong></p>
                             </a>`;
-    }
-    else if (productPrice <= 2100 && productPrice <= max) {
+    } else if (productPrice <= 2100 && productPrice <= max) {
         if (productPrice > 1400) {
             let initialPayment = productPrice - 1225;
 
@@ -160,7 +159,7 @@ function generateWidget(productPrice: number, noLogo: boolean, min: number, max:
             let productPriceDividedByEight = productPrice / 8;
 
             // Banking Rounding
-            let roundedDownProductPrice = Math.floor( productPriceDividedByEight * Math.pow(10, 2) ) / Math.pow(10, 2);
+            let roundedDownProductPrice = Math.floor(productPriceDividedByEight * Math.pow(10, 2)) / Math.pow(10, 2);
             template = `<a id="oxipay-tag-02" data-remodal-target="${Config.priceInfoModalId}">
                             <p>or 8 weekly payments of <b>$${roundedDownProductPrice.toFixed(2)}</b></p><p>Interest free with <span id="oxipay-img"></span><span class="more-info">more info</span></p>
                         </a>`;
@@ -176,9 +175,9 @@ function generateWidget(productPrice: number, noLogo: boolean, min: number, max:
     } else {
         return '<a id="oxipay-tag-02"></a>'
     }
-    if(used_in == "checkout"){
+    if (used_in == "checkout") {
         return templateCheckout;
-    }else {
+    } else {
         return (noLogo) ? templatenologo : template;
     }
 }
@@ -196,14 +195,14 @@ function getCurrentScript(): any {
 function updatePrice(el: JQuery, jq: JQueryStatic, noLogo: boolean, min: number, max: number, used_in: string) {
     let productPrice = extractPrice(el);
     let template = generateWidget(productPrice, noLogo, min, max, used_in);
-    let parent =  jq(getCurrentScript()).parent();
+    let parent = jq(getCurrentScript()).parent();
     widget.injectBanner(template, Config.priceInfoUrl, Config.priceInfoModalId, parent);
 }
 
 function getParameterByName(name: string, url: string): string {
     name = name.replace(/[\[\]]/g, '\\$&');
     let regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
-    results = regex.exec(url);
+        results = regex.exec(url);
 
     if (!results) {
         return null;

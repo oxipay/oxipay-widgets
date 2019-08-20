@@ -15,7 +15,7 @@ import { Config } from './config';
     }
 
     srcString = scriptElement.getAttribute('src');
-    element = (getParameterByName('element', srcString))? jq(getParameterByName('element', srcString)) : jq(scriptElement);
+    element = (getParameterByName('element', srcString)) ? jq(getParameterByName('element', srcString)) : jq(scriptElement);
 
     const template =
         `<a id="oxipay-banner-top" data-remodal-target="${Config.oxipayBannerTopModalId}">
@@ -36,7 +36,7 @@ import { Config } from './config';
             </div>
         </a>`;
     const widget = new ModalInjector($);
-    widget.injectBanner(template,  Config.oxipayBannerTopModalUrl, Config.oxipayBannerTopModalId, element);
+    widget.injectBanner(template, Config.oxipayBannerTopModalUrl, Config.oxipayBannerTopModalId, element);
 
 
     function getCurrentScript(): any {

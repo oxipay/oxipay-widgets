@@ -20,7 +20,7 @@ export class ModalInjector {
             this.injectModal(targetUrl, modalId);
         }
 
-        let currentScript = document.currentScript || (function () {
+        let currentScript = document.currentScript || (function() {
             let scripts = document.getElementsByTagName('script');
             return scripts[scripts.length - 1];
         })();
