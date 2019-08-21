@@ -189,6 +189,8 @@ div[id^="oxipay-modal-"] {
 /** Tag 02 (price info) **/
 
 #oxipay-tag-02 {
+    padding-top: 0.7em !important;
+    padding-bottom: 1em !important;
     font-family: AvenirLTStd-Medium,arial,sans-serif;
     font-size:14px;
     color: #3d4246 !important;
@@ -201,11 +203,8 @@ div[id^="oxipay-modal-"] {
         text-decoration: none !important;
     }
     & > p {
-        margin-top: 1em !important;
-        margin-bottom: 1em !important;
-        &:nth-child(2){
-            margin-top: -0.7em !important;
-        }
+        margin-top: 0.3em !important;
+        margin-bottom: 0 !important;
     }
     &.whiteText {
         color: #EEE !important;
