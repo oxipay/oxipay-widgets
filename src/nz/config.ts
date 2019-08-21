@@ -6,9 +6,12 @@ export class Config {
     public static priceInfoUrl = Config.baseContentUrl + '/content/html/PriceInfo.html';
 
     public static moreInfoModalId = 'oxipay-modal-info';
-    public static moreInfoUrl = Config.baseContentUrl + '/content/html/ExternalModal.html';
+    public static moreInfoUrl = Config.baseContentUrl + '/content/html/MoreInfoModal.html';
+
+    public static moreInfoModalWeeklyId = 'oxipay-modal-info-weekly';
+    public static moreInfoWeeklyUrl = Config.baseContentUrl + '/content/html/MoreInfoModal-weekly.html';
 
     // top-banner modal
     public static oxipayBannerTopModalId = 'oxipay-modal-more-info_1';
-    public static oxipayBannerTopModalUrl = Config.baseContentUrl + '/content/html/MoreInfo-modal.html';
+    public static oxipayBannerTopModalUrl = Config.baseContentUrl + '/content/html/MoreInfo-modal-new.html';
 }
