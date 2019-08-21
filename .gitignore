@@ -3,6 +3,7 @@ node_modules/
 /dist/
 .sass-cache/
 css/oxipay-branding.css.map
+css/oxipay-branding.css
 
 package-lock\.json
 
