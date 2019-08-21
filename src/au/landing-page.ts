@@ -3,17 +3,18 @@
 import * as jq from 'jquery';
 
 class PageInjector {
-    constructor(private jQuery: JQueryStatic) { }
+    constructor(private jQuery: JQueryStatic) {
+    }
 
     public injectPage(targetUrl: string, element?: any) {
 
         this.jQuery.ajax({
             dataType: "html",
             url: targetUrl,
-            success: function (data) {
-                if(element) {
+            success: function(data) {
+                if (element) {
                     jq(element).after(data);
-                }else{
+                } else {
                     jq("body").append(data);
                 }
             }

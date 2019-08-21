@@ -40,7 +40,7 @@ $OXIPAY_DARK_GRAY: #515565;
   font-size: 14px !important;
   line-height: 1.43 !important;
   color: $OXIPAY_DARK_GRAY;
-  background-color: #f9f9f9;
+  background-color: #FFF;
 
   .branding-area {
     .curve {
@@ -138,5 +138,9 @@ $OXIPAY_DARK_GRAY: #515565;
     padding: 0.5em 4.5em;
     border-radius: 18px;
     line-height: 225% !important;
+  }
+
+  .light-gray {
+    background-color: $OXIPAY_LIGHT_GRAY;
   }
 }

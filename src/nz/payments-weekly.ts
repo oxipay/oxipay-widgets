@@ -114,7 +114,10 @@ function extractPrice(el: any) {
 function generateWidget(productPrice: number, noLogo: boolean, min: number, max: number): string {
     let template;
     let templatenologo;
-    if (productPrice < min){
+    if (productPrice < 40 || productPrice > 1500) {
+        return '<a id="oxipay-tag-02"></a>'
+    }
+    else if (productPrice < min && productPrice < 40){
         template = `<a id="oxipay-tag-02" data-remodal-target="${Config.priceInfoModalId}">
                             <p>or 8 weekly payments </b></p><p>Interest free with <span id="oxipay-img"></span></p>
                         </a>`;
@@ -153,8 +156,6 @@ function generateWidget(productPrice: number, noLogo: boolean, min: number, max:
                                 <p>or 8 weekly payments of <b>$${roundedDownProductPrice.toFixed(2)}</b></p><p>Interest free - <strong>find out how</strong></p>
                             </a>`;
         }
-    } else {
-        return '<a id="oxipay-tag-02"></a>'
     }
     return (noLogo) ? templatenologo : template;
 }
