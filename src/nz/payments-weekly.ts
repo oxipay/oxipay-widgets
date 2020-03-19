@@ -119,32 +119,40 @@ function generateWidget(productPrice: number, noLogo: boolean, min: number, max:
     }
     else if (productPrice <= 1500 && productPrice <= max) {
         if (productPrice > 1000) {
-            let initialPayment = productPrice - 875;
+            let initialPayment = productPrice - 750;
 
             // tslint:disable-next-line:max-line-length
             template = `<a id="oxipay-tag-02" data-remodal-target="${Config.priceInfoModalId}">
                             <p>or 1 initial payment of <b>$${initialPayment.toFixed(2)}</b></p>
-                            <p>and 7 weekly payments of <b>$125.00</b></p>
+                            <p>and 7 weekly payments of <b>$107.14</b></p>
                             <p>Interest free with <span id="oxipay-img"></span><span class="more-info">more info</span></p>
                         </a>`;
 
             // tslint:disable-next-line:max-line-length
             templatenologo = `<a id="oxipay-tag-02" data-remodal-target="${Config.priceInfoModalId}">
                                 <p>or 1 initial payment of <b>$${initialPayment.toFixed(2)}</b></p>
-                                <p>and 7 weekly payments of <b>$125.00</b></p>
+                                <p>and 7 weekly payments of <b>$107.14</b></p>
                                 <p>Interest free - <strong>find out how</strong></p>
                             </a>`;
         } else {
-            let productPriceDividedByEight = productPrice / 8;
+            //let productPriceDividedByEight = productPrice / 8;
+            let initialDeposit = Math.floor((productPrice / 4) * Math.pow(10, 2)) / Math.pow(10, 2);
+            let remainingPaymentsDividedBySeven = (productPrice - initialDeposit) / 7;
+
 
             // Banking Rounding
-            let roundedDownProductPrice = Math.floor( productPriceDividedByEight * Math.pow(10, 2) ) / Math.pow(10, 2);
+            // let roundedDownProductPrice = Math.floor( productPriceDividedByEight * Math.pow(10, 2) ) / Math.pow(10, 2);
+            let roundedDownProductPrice = Math.floor( remainingPaymentsDividedBySeven * Math.pow(10, 2) ) / Math.pow(10, 2);
             template = `<a id="oxipay-tag-02" data-remodal-target="${Config.priceInfoModalId}">
-                            <p>or 8 weekly payments of <b>$${roundedDownProductPrice.toFixed(2)}</b></p><p>Interest free with <span id="oxipay-img"></span><span class="more-info">more info</span></p>
+                            <p>or 1 initial payment of <b>$${initialDeposit.toFixed(2)}</b></p>
+                            <p>and 7 weekly payments of <b>$${roundedDownProductPrice.toFixed(2)}</b></p>
+                            <p>Interest free with <span id="oxipay-img"></span><span class="more-info">more info</span></p>
                         </a>`;
 
             templatenologo = `<a id="oxipay-tag-02" data-remodal-target="${Config.priceInfoModalId}">
-                                <p>or 8 weekly payments of <b>$${roundedDownProductPrice.toFixed(2)}</b></p><p>Interest free - <strong>find out how</strong></p>
+                                <p>or 1 initial payment of <b>$${initialDeposit.toFixed(2)}</b></p>
+                                <p>and 7 weekly payments of <b>$${roundedDownProductPrice.toFixed(2)}</b></p>
+                                <p>Interest free - <strong>find out how</strong></p>
                             </a>`;
         }
     } else {
